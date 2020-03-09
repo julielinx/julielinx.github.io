@@ -76,8 +76,8 @@ author:
 footer:
   links:
     - label: "Kaggle"
-        icon: "fas fa-fw fa-kaggle"
-        url: "https://www.kaggle.com/julielinx"
+      icon: "fas fa-fw fa-kaggle"
+      url: "https://www.kaggle.com/julielinx"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/ReplicatingBlue"
