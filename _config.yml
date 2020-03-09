@@ -61,7 +61,7 @@ author:
   bio    : "Problem solver extraordinaire applying critical thinking through data science."
   links:
     - label: "Kaggle"
-      icon: "fas fa-fw fa-kaggle"
+      icon: "fab fa-fw fa-kaggle"
       url: "https://www.kaggle.com/julielinx"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -76,7 +76,7 @@ author:
 footer:
   links:
     - label: "Kaggle"
-      icon: "fas fa-fw fa-kaggle"
+      icon: "fab fa-fw fa-kaggle"
       url: "https://www.kaggle.com/julielinx"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
