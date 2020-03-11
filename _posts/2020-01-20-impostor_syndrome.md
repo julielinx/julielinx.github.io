@@ -1,12 +1,12 @@
 ---
-title: "Entry 1: Impostor Syndrome"
+title: "Impostor Syndrome"
 categories:
   - Blog
 tags:
   - process
 ---
 
-# Entry 1 - Impostor Syndrome
+# Entry 1
 
 ## The Problem
 
