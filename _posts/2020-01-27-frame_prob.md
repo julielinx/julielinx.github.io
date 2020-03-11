@@ -7,8 +7,6 @@ tags:
   - frame problem
 ---
 
-# Entry 3 - Frame the Problem
-
 In Entry 2 I decided to follow the [ML Project Checklist](https://www.kdnuggets.com/2018/12/machine-learning-project-checklist.html) from [Hands on Machine Learning with Scikit-Learn & TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291). The first step in that process is to frame the problem and look at the big picture.
 
 ## The Problem

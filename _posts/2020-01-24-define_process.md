@@ -6,8 +6,6 @@ tags:
   - process
 ---
 
-# Entry 2 - Define the Process
-
 In Entry 1, I decided to take the smallest problem I could find and solve just one aspect. Only after I've solved that single problem am I allowed to move on to the next. Jason Brownlee of [Machine Learning Mastery](https://machinelearningmastery.com/start-here/) recommends small projects that take [no more than 5-15 hours](https://machinelearningmastery.com/self-study-machine-learning-projects/) from inception to presentation of the results. He also points out that with a good process in place, a specific problem can be addressed in [1-2 hours](https://machinelearningmastery.com/practice-machine-learning-with-small-in-memory-datasets-from-the-uci-machine-learning-repository/).
 
 After pouring hours at a time into self-study, debugging, research, troubleshooting, and a host of other things, 1-2 hours to solve a specific problem sounds pretty good.
@@ -15,7 +13,6 @@ After pouring hours at a time into self-study, debugging, research, troubleshoot
 The first problem to solve is naturally **how do I pick what to work on first**?
 
 ## The Problem
-
 
 There are a lot of skills involved in doing data science. To name a few:
 

@@ -6,8 +6,6 @@ tags:
   - process
 ---
 
-## The Problem
-
 I am qualified. Quantitatively, I know this is true:
 - I have a Master of Science degree in Data Science 
 - I have a job on a machine learning team at a large company
@@ -15,7 +13,9 @@ I am qualified. Quantitatively, I know this is true:
 - I've played with [Kaggle data](https://www.kaggle.com/datasets) and worked my way through several of their [tutorials](https://www.kaggle.com/learn/overview)
 - I've read blogs and books, listened to podcasts, worked my way through a plethora of tutorials, and read more documentation than I'd wish on my worst enemy
 
-Still, I feel like I can't convert all that knowledge to know-how - where I can actually implement solutions. I feel like [an impostor](https://towardsdatascience.com/how-to-manage-impostor-syndrome-in-data-science-ad814809f068).
+## The Problem
+
+I feel like I can't convert all that knowledge to know-how - where I can actually implement solutions. I feel like [an impostor](https://towardsdatascience.com/how-to-manage-impostor-syndrome-in-data-science-ad814809f068).
 
 So the question is, **how do I improve my skills and increase confidence in my abilities?**
 
