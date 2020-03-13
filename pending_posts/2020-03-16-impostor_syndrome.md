@@ -15,7 +15,7 @@ I am qualified. Quantitatively, I know this is true:
 
 ## The Problem
 
-I feel like I can't convert all that knowledge to know-how - where I can actually implement solutions. I feel like [an impostor](https://towardsdatascience.com/how-to-manage-impostor-syndrome-in-data-science-ad814809f068).
+I feel like I can't convert all my knowledge to know-how. I'm not comfortable implementing actual solutions. I feel like [an impostor](https://towardsdatascience.com/how-to-manage-impostor-syndrome-in-data-science-ad814809f068).
 
 So the question is, **how do I improve my skills and increase confidence in my abilities?**
 
