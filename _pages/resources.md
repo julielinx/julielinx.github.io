@@ -1,25 +1,26 @@
 ---
+title: "Resources"
 permalink: /resources/
-title: "About"
+author_profile: true
 ---
 
 # Resources
 
-## Topic specific
+## Python
 
-### Python
+- [Python 3 Programming Specialization](https://www.coursera.org/specializations/python-3-programming)
+- [Kaggle courses](https://www.kaggle.com/learn/overview)
+- [Python for Data Science and Machine Learning Bootcamp](https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/)
+- [Fundamentals of Computing Specialization](https://www.coursera.org/specializations/computer-fundamentals)
+- [Python for Everybody Specialization](https://www.coursera.org/specializations/python)
+- [Applied Data Science with Python Specialization](https://www.coursera.org/specializations/data-science-python)
 
-- 
+## R
 
-### R
+- [Data Science Specialization](https://www.coursera.org/specializations/jhu-data-science)
+- [DataCamp](https://www.datacamp.com/)
 
-- 
-
-### Machine Learning
-
-- 
-
-### Visualization
+## Visualization
 
 - [From Data to Viz](https://www.data-to-viz.com/)
 - [Data Visualization Society](https://www.datavisualizationsociety.com/challenge)
