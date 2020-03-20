@@ -150,7 +150,7 @@ The added bonus of using these steps is that each one helps pick the next mini-c
 
 ## Next up
 
-[Frame the Problem](https://julielinx.github.io/blog/frame_prob/).
+[Frame the Problem](https://julielinx.github.io/blog/frame_prob/)
 
 ### Resources
 

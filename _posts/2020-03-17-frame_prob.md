@@ -76,7 +76,7 @@ Correctly defining the problem is a common challenge. I've seen it at multiple c
 
 ## Next Up
 
-[Get the data](https://julielinx.github.io/blog/get_data/).
+[Get the data](https://julielinx.github.io/blog/get_data/)
 
 ### Resources
 
