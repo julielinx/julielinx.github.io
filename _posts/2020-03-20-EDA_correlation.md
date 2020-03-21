@@ -28,7 +28,7 @@ This correlation measure is best at detecting linear relationships. It is genera
 
 This measure is best at finding linear relationships like the one between mass_1024kg and atmospheric_mass_kg.
 
-![linear relationship](../assets/images/06_EDA_1.png)
+![linear relationship](https://julielinx.github.io/assets/images/06_EDA_1.png)
 
 ### Spearman
 
@@ -36,7 +36,7 @@ This correlation measure uses rank order to determine correlation and can find n
 
 This measure can find linear relationships like the one above between mass_1024kg and atmospheric_mass_kg, but it can also find power law type relationships like that between mass_1024kg and diameter_kg.
 
-![non-linear relationship](../assets/images/06_EDA_2.png)
+![non-linear relationship](https://julielinx.github.io/assets/images/06_EDA_2.png)
 
 ### Maximal
 
