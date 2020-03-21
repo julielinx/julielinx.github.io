@@ -42,7 +42,7 @@ This measure can find linear relationships like the one above between mass_1024k
 
 This is the most flexible of the correlation measures. Pearson and Spearman have difficulty with relationships such as circular and quadratic. Some of the limitations of Pearson can be seen in the following image (1 is a perfect positive relationship, 0 is no relationship, and -1 is a perfect negative relationship):
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Correlation_examples2.svg/1920px-Correlation_examples2.svg.png" width=600 style="margin:6px 6px">
+![Correlations visualized](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Correlation_examples2.svg/1920px-Correlation_examples2.svg.png)
 
 Maximal correlation is designed to characterize independence completely, which would find the relationships left on the table by Pearson and Spearman. I didn't dive too deep into this measure, but there seem to be different versions of it. Sabber and I discussed ACE (alternating conditional expectations), but the Wikipedia article referenced above discussed a MAC (maximal multivariate correlation analysis - don't ask me how they came up with their acronym, I have no idea) version.
 
