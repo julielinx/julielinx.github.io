@@ -1,13 +1,11 @@
 ---
-title: "Entry 6: Collinearity"
+title: "Entry 6: Correlations"
 categories:
   - Blog
 tags:
   - process
   - pre-process
 ---
-
-# Entry 6 - EDA with correlation
 
 I need to find a way to automate some of the process outlined in [Entry 5](https://julielinx.github.io/blog/EDA/). My coworker [Sabber](https://medium.com/@sabber) suggested using correlation to help sort out the wheat from the chaff.
 
