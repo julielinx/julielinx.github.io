@@ -64,7 +64,7 @@ The process as it stands has helped me develop a more reasonable list of feature
 
 ## Next Up
 
-Reviewing collinearity.
+[Reviewing collinearity](https://julielinx.github.io/blog/collinearity/)
 
 ### Resources
 
