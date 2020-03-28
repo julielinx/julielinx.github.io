@@ -49,7 +49,7 @@ I had planned on making a prediction in this entry too. Unfortunately, I forgot 
 
 Separating the target variable after all the pre-processing leaves me with a scaled value. The scaled value has no meaning and would need to be un-scaled to get the actual prediction. In reviewing the purpose of scaling (to allow the model to quickly converge on a better solution), there really isn't a reason to scale the target value. As such, it should be separated from the features before pre-processing.
 
-## Next Up
+## Up Next
 
-Fixing Entry 9 failures and making a prediction
+[Fixing Entry 9 failures and making a prediction](https://julielinx.github.io/blog/reorder_and_predict/))
 
