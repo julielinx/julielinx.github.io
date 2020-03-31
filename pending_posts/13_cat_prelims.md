@@ -1,11 +1,19 @@
-# Entry 13 - Categorical Preliminaries
+---
+title: "Entry 13: Categorical Preliminaries"
+categories:
+  - Blog
+tags:
+  - pre-process
+---
 
 Real world data often includes categorical variables like:
 - Male or female
-- Continent: North America, South America, Europe, Asia, Australia, Antartica, Africa
+- Continent: North America, South America, Europe, Asia, Australia, Antarctica, Africa
 - Smoker or Non-smoker
 
-## The Problem<img src="../img/reading_list.jpg" width=300 align='right' style='margin:6px 6px'>
+## The Problem
+
+<img src="../img/reading_list.jpg" width=300 align='right' style='margin:6px 6px'>
 
 I combed through ten of my data science/machine learning/data mining books for information on categorical variables. Some assumed all data was numerical, others said categorical variables would need to be changed to numbers (without specifying how to go about that), and others offered two options for encoding (label/ordinal encoding or one hot encoding - discussed later).
 

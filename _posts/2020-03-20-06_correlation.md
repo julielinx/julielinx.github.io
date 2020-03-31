@@ -7,7 +7,7 @@ tags:
   - pre-process
 ---
 
-I need to find a way to automate some of the process outlined in [Entry 5](https://julielinx.github.io/blog/EDA/). My coworker [Sabber](https://medium.com/@sabber) suggested using correlation to help sort out the wheat from the chaff.
+I need to find a way to automate some of the process outlined in [Entry 5](https://julielinx.github.io/blog/05_EDA/). My coworker [Sabber](https://medium.com/@sabber) suggested using correlation to help sort out the wheat from the chaff.
 
 ## The Problem
 
@@ -64,7 +64,7 @@ The process as it stands has helped me develop a more reasonable list of feature
 
 ## Next Up
 
-[Reviewing collinearity](https://julielinx.github.io/blog/collinearity/)
+[Reviewing collinearity](https://julielinx.github.io/blog/07_collinearity/)
 
 ### Resources
 

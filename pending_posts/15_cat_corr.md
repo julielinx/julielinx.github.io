@@ -1,29 +1,16 @@
-# Entry 15 - Categorical Correlation/Collinearity
+---
+title: "Entry 15: Categorical Correlation/Collinearity"
+categories:
+  - Blog
+tags:
+  - pre-process
+---
 
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-%matplotlib inline
-plt.style.use('ggplot')
-
-raw = pd.read_csv('../data/bikeshare.csv', usecols = ['datetime', 'count'])
-raw['datetime'] = pd.to_datetime(raw['datetime'])
-raw['date'] = raw['datetime'].dt.date
-raw['time'] = raw['datetime'].dt.hour
-# .astype('str').str.split(':', expand=True)[0].astype('int32')
-raw['index'] = raw['datetime']
-raw.set_index('index', inplace=True)
-raw['time_of_day'] = np.nan
-raw.loc[(raw['time'] >= 6) & (raw['time'] < 12), 'time_of_day'] = 'morning'
-raw.loc[(raw['time'] >= 12) & (raw['time'] < 18), 'time_of_day'] = 'afternoon'
-raw.loc[(raw['time'] >= 18) & (raw['time'] < 24), 'time_of_day'] = 'evening'
-raw.loc[(raw['time'] >= 0) & (raw['time'] < 6), 'time_of_day'] = 'night'
-raw['season'] = (raw['datetime'].dt.month%12 + 3)//3
-feb_1 = raw.loc['2011-02-01 00:00:00':'2011-02-02 00:00:00']
-```
+To ensure my process worked, I used it on multiple datasets. The code from notebook to notebook is mostly the same, just run on different data. Per usual, the notebooks can be found on my github page:
+ - [Entry 15a notebook (Mushroom)](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/15a_nb_cat_corr.ipynb)
+ - [Entry 15b notebook (Solar Flare)](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/15b_nb_cat_corr.ipynb)
+ - [Entry 15c notebook (Nursery)](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/15c_nb_cat_corr.ipynb)
+ - [Entry 15d notebook (Chess](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/15d_nb_cat_corr.ipynb)
 
 ## The Problem
 

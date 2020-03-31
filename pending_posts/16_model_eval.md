@@ -1,4 +1,10 @@
-# Entry 16 - Model Evaluation
+---
+title: "Entry 16: Model Evaluation"
+categories:
+  - Blog
+tags:
+  - model-eval
+---
 
 ## The Problem
 

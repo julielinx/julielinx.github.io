@@ -17,7 +17,7 @@ To ensure my process worked, I used it on multiple datasets. The code from noteb
 
 ## The Problem
 
-I spent a significant amount of time (more than 5 hours) consolidating things into functions in [Entry 10](https://julielinx.github.io/blog/reorder_and_predict/). However, because of the dataset I was using (tiny training set, faked test set) I didn't have to do things like split the data into train/test. The problem to tackle in this entry was to consolidate functions from previous notebooks, write new functions to catch what I missed, and generally automate whenever possible. 
+I spent a significant amount of time (more than 5 hours) consolidating things into functions in [Entry 10](https://julielinx.github.io/blog/10_reorder_and_predict/). However, because of the dataset I was using (tiny training set, faked test set) I didn't have to do things like split the data into train/test. The problem to tackle in this entry was to consolidate functions from previous notebooks, write new functions to catch what I missed, and generally automate whenever possible. 
 
 ## The Options
 
@@ -68,4 +68,4 @@ I thought about reverting the correlation function to pulling the X most correla
 
 # Up Next
 
-Missing values
+[Missing values](https://julielinx.github.io/blog/12_missing_values))

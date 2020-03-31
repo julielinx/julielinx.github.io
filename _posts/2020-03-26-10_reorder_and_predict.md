@@ -12,7 +12,7 @@ The notebooks where I did my code for this entry can be found on my github page 
 
 ## The Problem
 
-[Entry 9](https://julielinx.github.io/blog/train_model/) resulted in a trained model. However, I ran into several problems that need to be addressed before a prediction can be made. These problems are:
+[Entry 9](https://julielinx.github.io/blog/09_train_model/) resulted in a trained model. However, I ran into several problems that need to be addressed before a prediction can be made. These problems are:
 
 - Categorical and scaling parameters weren't retained, so they couldn't be applied to the test data
 - Target value would be scaled during the standardization step, rendering the predictions uninterpretable
@@ -49,7 +49,7 @@ Correlation only works on numeric values. I'm going to explore determining colli
 
 This is where I encode categorical features and scale numeric features. To ensure the categorical features don't accidentally get scaled (which they did in the [entry 8 and 9 notebooks](https://github.com/julielinx/datascience_diaries/tree/master/01_ml_process)), scaling should happen first on just numeric features, then categorical features can be encoded. Per [these](https://stats.stackexchange.com/questions/169350/centering-and-scaling-dummy-variables) two [posts](https://en.wikipedia.org/wiki/Categorical_variable), categorical features (including 1/0 encoding) should never be scaled.
 
-When scaling the numeric features, one of the books/tutorials/blogs recommended scaling when the values were different by an order of magnitude (power of 10). In [Entry 8](https://julielinx.github.io/blog/center_scale_and_latex/) I delved into centering and scaling. The two most common options in scaling are normalization (centering and dividing by range) and standardization (centering and dividing by standard deviation). Normalization brings the mean to 0 and the range of values between 0 and 1. Standardization brings the mean to 0 and the standard deviation to 1. There is no set range on the standardized value, but because of [the way standard deviation works](https://en.wikipedia.org/wiki/Standard_deviation#Rules_for_normally_distributed_data), for normally distributed data 68.3% of values should be within 1 standard deviation, 95.4% within 2 standard deviations, and 99.7% within 3 standard deviations. As such, values an order of magnitude larger between features should be rare.
+When scaling the numeric features, one of the books/tutorials/blogs recommended scaling when the values were different by an order of magnitude (power of 10). In [Entry 8](https://julielinx.github.io/blog/08_center_scale_and_latex/) I delved into centering and scaling. The two most common options in scaling are normalization (centering and dividing by range) and standardization (centering and dividing by standard deviation). Normalization brings the mean to 0 and the range of values between 0 and 1. Standardization brings the mean to 0 and the standard deviation to 1. There is no set range on the standardized value, but because of [the way standard deviation works](https://en.wikipedia.org/wiki/Standard_deviation#Rules_for_normally_distributed_data), for normally distributed data 68.3% of values should be within 1 standard deviation, 95.4% within 2 standard deviations, and 99.7% within 3 standard deviations. As such, values an order of magnitude larger between features should be rare.
 
 If there are more than 100 categories in a categorical feature, that could present a problem. However, I plan to delve further into categorical features and the options for encoding then in <font color='red'>Entry 14</font>.
 
@@ -63,7 +63,7 @@ Once the above steps have been implemented in order, I can finally make predicti
 
 I used the pipeline to predict both mass and atmospheric mass where I only varied the surface pressure in the 'test' data. At first glance, the results don't make any sense - both sets of predictions returned negative values. In attempting to raise the surface pressure of Mars, I expected positive values for both predicted mass and atmospheric mass. Upon further reflection, I was able to make sense of the mass prediction.
 
-Changes in mass effect many of the other variables, such as diameter, gravity, density, escape velocity, etc via known mathematical equations (see [Entry 7](https://julielinx.github.io/blog/collinearity/) for the escape velocity equation). By leaving these values all the same and only changing surface pressure there would need to be more atmosphere per surface area. As atmospheric mass was removed from the features by collinearity, I expected the mass to go up. However, escape velocity and density stayed the same, putting a constraint on mass. A decrease in mass (and thus diameter - also removed by collinearity) would then allow more atmosphere per surface area.
+Changes in mass effect many of the other variables, such as diameter, gravity, density, escape velocity, etc via known mathematical equations (see [Entry 7](https://julielinx.github.io/blog/07_collinearity/) for the escape velocity equation). By leaving these values all the same and only changing surface pressure there would need to be more atmosphere per surface area. As atmospheric mass was removed from the features by collinearity, I expected the mass to go up. However, escape velocity and density stayed the same, putting a constraint on mass. A decrease in mass (and thus diameter - also removed by collinearity) would then allow more atmosphere per surface area.
 
 Also, there's a statistical principle that I forgot in generating my dataset. Generally, there's an assumption of independent and identically distributed (IID or i.i.d.) variables in machine learning. IID is an important concept. [Wikipedia](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) has a good definition: 
 
@@ -87,4 +87,4 @@ However, this entry resulted in a working pipeline to go from loading data to ma
 
 ## Up Next
 
-[Consolidate process to date](https://julielinx.github.io/blog/01_consolidate_preprocess/)
+[Consolidate process to date](https://julielinx.github.io/blog/11_consolidate_preprocess/)

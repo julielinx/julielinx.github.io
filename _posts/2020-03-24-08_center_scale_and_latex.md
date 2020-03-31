@@ -7,7 +7,7 @@ tags:
   - latex
 ---
 
-By the end of [Entry 7](https://julielinx.github.io/blog/collinearity/) I'd finalized the feature set to train a model and make predictions. One last step is needed before a prediction can be made.
+By the end of [Entry 7](https://julielinx.github.io/blog/07_collinearity/) I'd finalized the feature set to train a model and make predictions. One last step is needed before a prediction can be made.
 
 The notebook where I did my code for this entry can be found on my github page in the [Entry 8 notebook](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/08_nb_center_scale.ipynb)
 
@@ -99,7 +99,7 @@ Per *Applied Predictive Modeling* 'the only real downside to these transformatio
 
 ## The Proposed Solution
 
-The features in the planets dataset certainly have a wide variety of ranges. As such, normalization or standardization are recommended. Based on the EDA completed in [Entry 5](https://julielinx.github.io/blog/EDA/), Jupiter tends to be an outlier in several of the features (See? The visualization step was useful. I wouldn't have known this if I'd only done the automated correlation/collinear step - which is a good argument for mathematically determining skewness and outliers if the visualization step is eliminated). Based on this, I applied standardization to all the features.
+The features in the planets dataset certainly have a wide variety of ranges. As such, normalization or standardization are recommended. Based on the EDA completed in [Entry 5](https://julielinx.github.io/blog/05_EDA/), Jupiter tends to be an outlier in several of the features (See? The visualization step was useful. I wouldn't have known this if I'd only done the automated correlation/collinear step - which is a good argument for mathematically determining skewness and outliers if the visualization step is eliminated). Based on this, I applied standardization to all the features.
 
 ## The Fail
 
@@ -119,7 +119,7 @@ The transformation parameters as applied to the training data can be saved to be
 
 ## Up Next
 
-[Train a model](https://julielinx.github.io/blog/train_model/)
+[Train a model](https://julielinx.github.io/blog/09_train_model/)
 
 ## Resources
 

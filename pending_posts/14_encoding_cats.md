@@ -1,10 +1,18 @@
-# Entry 14 - Encoding Categoricals
+---
+title: "Entry 14: Encoding Categorical Variables"
+categories:
+  - Blog
+tags:
+  - pre-process
+---
 
 ## The Problem
 
 Most machine learning algorithms require features to be numeric. Per usual, decision trees/random forests are the exception (the algorithm is just more forgiving in general). Last time I played with R, categorical variables were allowed to remain categorical for decision trees/random forests.
 
 My tool of choice, scikit-learn, [doesn't allow for categoricals](https://scikit-learn.org/stable/faq.html#why-do-categorical-variables-need-preprocessing-in-scikit-learn-compared-to-other-tools). All features must be encoded as numeric values. The reasons for this have to do with the [extensive amount of work](https://scikit-learn.org/stable/faq.html#why-does-scikit-learn-not-directly-work-with-for-example-pandas-dataframe) needed to support categorical types.
+
+The notebook where I did my code for this entry can be found on my github page in the [Entry 14 notebook](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/14_nb_encoding_cats.ipynb)
 
 ## The Options
 

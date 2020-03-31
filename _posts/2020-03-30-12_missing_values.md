@@ -1,12 +1,20 @@
-# Entry 12 - Missing Values
+---
+title: "Entry 12: Missing Values"
+categories:
+  - Blog
+tags:
+  - pre-process
+---
 
-[Wikipedia](https://en.wikipedia.org/wiki/Missing_data) has a succint definition of missing values: "missing data, or missing values, occur when no data value is stored for the variable in an observation." Seems straight forward, but there are different underling reasons for missing data and those reasons can compound their effect in a model.
+[Wikipedia](https://en.wikipedia.org/wiki/Missing_data) has a succinct definition of missing values: "missing data, or missing values, occur when no data value is stored for the variable in an observation." Seems straight forward, but there are different underling reasons for missing data and those reasons can compound their effect in a model.
+
+The notebook where I did my code for this entry can be found on my github page in the [Entry 12 notebook](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/12_nb_missing_values.ipynb)
 
 ## The Problem
 
-Most models are unable to run missing values. Tree-based models are an exception to this rule, but many of the others are intolerate of missingness. Unless I want to be confined to tree-based models (I don't, neural nets are basically a bunch of regression models strung together, and they build some of the most robust and accurate models currently possible) I need to be able to account for missing information.
+Most models are unable to run missing values. Tree-based models are an exception to this rule, but many of the others are intolerant of missingness. Unless I want to be confined to tree-based models (I don't, neural nets are basically a bunch of regression models strung together, and they build some of the most robust and accurate models currently possible) I need to be able to account for missing information.
 
-The major hurdle with this issue, as stated above, is that a missing value can mean different things in different contexts. There are various ways to indicate missingness in the dataset, some more appropriate for certain contexts than others.
+The major hurdle with this issue, as stated above, is that a missing value can mean different things in different contexts. There are various ways to indicate missingness in a dataset, some more appropriate than others in certain contexts.
 
 ### Definitions
 
@@ -16,14 +24,16 @@ There are [two general ways](http://www.stat.cmu.edu/~hseltman/726/Missing%20Dat
   - If I received a call from a customer and the system usually logs the phone number they called from, if the logging system is down that would be a lack of a recorded answer.
   - If the customer interacts with me on the internet and the system usually logs the IP address, the phone number logging entry would be empty.
   - Most every model type except tree-based models evaluate missingness on this criteria. If the value is empty, it needs to be addressed one way or another before the model can be run.
-- Definitions are based on *context*: Missing data is lack of a recorded answer where we “expected” to find one.
+- Definitions based on *context*: Missing data is lack of a recorded answer where we “expected” to find one.
   - In the second example above with the internet customer interaction, I wouldn't expect to record the phone number they're calling from - the value would be missing, but it's not expected in the context.
   - Context can be addressed through modeling choices - ie only model for phone interactions or web interactions (separating these two interaction types immediately reduces the number of missing values because it considers context)
 
-Within these two definition types we can see the following types of missingness as defined in section 3.4 of [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn/dp/1461468485/ref=sr_1_1?crid=3JBOCQY3WJAL5&keywords=applied+predictive+modeling&qid=1581021287&sprefix=predictive+modeling%2Caps%2C172&sr=8-1) by Max Kuhn and Kjell Johnson:
+Within these two definition types we can see the following types of missingness as defined in section 3.4 of [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn/dp/1461468485) by Max Kuhn and Kjell Johnson:
 
-- **Undetermined**: the value was not determined at the time the data was gathered. For the same customer interaction data, if the process that captures IP addresses goes down we would be unable to capture that data - the information existed but was unable to be determined/recorded.
-- **Structurally missing**: the missing value itself has information. For the customer interaction scenario, a missing IP for a phone interactions is structurally missing - there was no IP to be captured.
+- **Undetermined**: the value was not determined at the time the data was gathered.
+  - Example: For the same customer interaction data, if the process that captures IP addresses goes down we would be unable to capture the data - the information existed but was unable to be determined/recorded.
+- **Structurally missing**: the missing value itself has information.
+  - Example: For the customer interaction scenario, a missing IP for a phone interaction is structurally missing - there was no IP to be captured.
 
 ### Categories
 
@@ -35,18 +45,18 @@ Within these two definition types we can see the following types of missingness 
 - **Missing at random** (MAR)
   - The  the probability of missingness depends on only other, fully recorded variables
   - Example: A power outage shut down a remote sensor and the power outage is captured in another variable
-  - The other variables don't have to predict the missing value, just that it is missing
+  - The other variables don't have to predict the missing value, just that it's missing
 - **Missing not at random I** (MNAR)
   - Missingness depends on information that has not been recorded
-  - Example: the same power outage scenario as in MAR, but the power outage wasn't recorded
+  - Example: The same power outage scenario as in MAR, but the power outage wasn't recorded
 - **Missing not at random II** (MNAR)
   - The probability of missingness depends on the variable itself
   - Example: people with higher earnings are less likely to reveal their salary
   - **Censoring**: where the exact value is missing but something is known about its value
-    - People who make >$100K don't report their earnings
-    - Lighter weight chicks die before they can be sampled
-    - A sensor cannot measure values under a specific value
-    - A duration is unknown because the interaction isn't yet complete
+    - Example: People who make >$100K don't report their earnings
+    - Example: Lighter weight chicks die before they can be sampled
+    - Example: A sensor cannot measure values under a specific value
+    - Example: A duration is unknown because the interaction isn't yet complete
 
 ## The Options
 
@@ -54,7 +64,7 @@ There are four ways to deal with missing data:
 
 - **Remove the observation** (delete the whole row)
 - **Remove the variable** (delete the whole column)
-- **Create a new category or enter a dummy value** (new category - like 'missing'; dummy variable - like 999 or -1)
+- **Create a new category or enter a dummy value** (new category - like "missing" or "unknown"; dummy variable - like 999 or -1)
 - **Impute the value** (make an educated guess)
 
 The first three options are pretty straight forward, but the fourth has a variety of sub-options.
@@ -63,7 +73,7 @@ The first three options are pretty straight forward, but the fourth has a variet
 
 There are quite a few options when it comes to imputation. 
 
-- Pandas [.fillna()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html) method allows the following [strategies](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#filling-missing-values-fillna):
+- Pandas' [.fillna()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html) method allows the following [strategies](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#filling-missing-values-fillna):
   - scalar (ie: a constant)
   - forward fill
   - backward fill
@@ -90,11 +100,11 @@ Most of the sub-options for the fourth method (imputation) were also straight fo
 
 - Mean is good when there is an even distribution of values.
 - Median is good when there are outliers that distort the mean.
-- Most frequent is best for situations where one value dominates the others (like power law sitations and highly skewed data)
+- Most frequent is best for situations where one value dominates the others (like power law distributions and highly skewed data)
 
 ## The Fail
 
-### Accounting for distrubution
+### Accounting for distribution
 
 I was unable to account for the [bimodal distribution](https://en.wikipedia.org/wiki/Multimodal_distribution) of one of the attributes - Screens. There were two distinct peaks in the distribution which made mean, median, and most frequent all bad choices. Mean and median would both start to fill in the dip between the peaks, while most frequent would just make the higher peak more prominent.
 
@@ -104,11 +114,11 @@ The last solution, predicting the missing value using the remaining features as 
 
 ### Automating the solution
 
-The tricky part of addressing missing values will be automating the solution. Since each method is best used on a specific criteria (frequency of missingness, data distribution, etc), I'll need to develop logic and code to programatically determine the best solution given the data's characteristics. Like feature reduction in entry 11 - Consolidate Pre-processing Steps, this gets into the territory of needing a way to measure the efficacy of my logic. All of which sounds time consuming. This was already another time-consuming, research heavy entry that took way longer than 1-2 hours. So my final decision is that I'm going to skip automating the missingness solution until I've got a way to evaluate model performance.
+The tricky part of addressing missing values will be automating the solution. Since each method is best used on a specific criteria (frequency of missingness, data distribution, etc), I'll need to develop logic and code to programmatically determine the best solution given the data's characteristics. Like feature reduction in [Entry 11](https://julielinx.github.io/blog/11_consolidate_preprocess), this gets into the territory of needing a way to measure the efficacy of my logic. All of which sounds time consuming. This was already another time-consuming, research heavy entry that took way longer than 1-2 hours. So my final decision is that I'm going to skip automating the missingness solution until I've got a way to evaluate model performance.
 
 ## Up Next
 
-Endcoding categorical variables.
+Endcoding categorical variables
 
 ## Resources
 

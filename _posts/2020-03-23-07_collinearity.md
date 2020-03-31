@@ -7,7 +7,7 @@ tags:
   - pre-process
 ---
 
-In [Entry 6](https://julielinx.github.io/blog/EDA_correlation/) I looked at the correlation between the prediction features and the feature of interest (well, kinda. This problem question is a little weird in that I'll be predicting mass_1024kg, but am interested in how the other features relate to atmospheric_mass_kg). Now I'll look at how all of the features relate to each other.
+In [Entry 6](https://julielinx.github.io/blog/06_correlation/) I looked at the correlation between the prediction features and the feature of interest (well, kinda. This problem question is a little weird in that I'll be predicting mass_1024kg, but am interested in how the other features relate to atmospheric_mass_kg). Now I'll look at how all of the features relate to each other.
 
 The notebook with the code that accompanies the concepts discussed below can be found in the [Entry 7 notebook](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/07_nb_collinearity.ipynb).
 
@@ -28,7 +28,7 @@ Effects on predictions aside, the problems I address at work require interpretab
 
 My coworker [Sabber](https://medium.com/@sabber) and I originally just looked at the correlation matrix of the features. However, having read more about multicollinearity, a method called VIF (variance inflation factor) is recommended.
 
-The correlation matrix is basically what I did in [Entry 6](https://julielinx.github.io/blog/EDA_correlation/), but instead of limiting the relationship to just one target variable, I look at every how every variable is related to every other variable.
+The correlation matrix is basically what I did in [Entry 6](https://julielinx.github.io/blog/06_correlation/), but instead of limiting the relationship to just one target variable, I look at every how every variable is related to every other variable.
 
 [VIF](https://www.statisticshowto.datasciencecentral.com/variance-inflation-factor/) uses the [r squared](https://www.statisticshowto.datasciencecentral.com/adjusted-r2/) value to give a kind of scaled result that can be compared across disparate values and ranges. It starts at 1 and goes up from there with no maximum limit.
 - 1 = not correlated
@@ -107,9 +107,4 @@ Based on these results, the correlation matrix catches the necessary relationshi
 
 ## Next Up
 
-Scale and center the values.
-
-
-```python
-
-```
+[Scale and center the values](https://julielinx.github.io/blog/08_center_scale_and_latex)
