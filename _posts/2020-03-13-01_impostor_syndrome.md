@@ -74,7 +74,7 @@ The first problem to solve naturally becomes **how do I pick what to work on fir
 
 ## Up Next
 
-[Pick a problem and define the process](https://julielinx.github.io/blog/define_process/)
+[Pick a problem and define the process](https://julielinx.github.io/blog/02_define_process/)
 
 ### Resources
 

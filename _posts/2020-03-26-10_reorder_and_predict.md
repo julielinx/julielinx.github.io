@@ -87,4 +87,4 @@ However, this entry resulted in a working pipeline to go from loading data to ma
 
 ## Up Next
 
-[Consolidate process to date](https://julielinx.github.io/blog/consolidate_preprocess/)
+[Consolidate process to date](https://julielinx.github.io/blog/01_consolidate_preprocess/)
