@@ -68,4 +68,4 @@ I thought about reverting the correlation function to pulling the X most correla
 
 # Up Next
 
-[Missing values](https://julielinx.github.io/blog/12_missing_values))
+[Missing values](https://julielinx.github.io/blog/12_missing_values)
