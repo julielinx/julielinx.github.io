@@ -12,7 +12,7 @@ Most machine learning algorithms require features to be numeric. Per usual, deci
 
 My tool of choice, Scikit-Learn, [doesn't allow for categoricals](https://scikit-learn.org/stable/faq.html#why-do-categorical-variables-need-preprocessing-in-scikit-learn-compared-to-other-tools). All features must be encoded as numeric values. The reasons for this have to do with the [extensive amount of work](https://scikit-learn.org/stable/faq.html#why-does-scikit-learn-not-directly-work-with-for-example-pandas-dataframe) needed to support categorical types.
 
-The notebook where I did my code for this entry can be found on my github page in the [Entry 14 notebook](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/14_nb_encoding_cats.ipynb)
+The notebook where I did my code for this entry can be found on my github page in the [Entry 14 notebook](https://github.com/julielinx/datascience_diaries/blob/master/01_ml_process/14_nb_encoding_cats.ipynb).
 
 ## The Options
 
@@ -43,9 +43,9 @@ The notebook where I did my code for this entry can be found on my github page i
   - Target Encoding
   - Weight of Evidence
 - pandas
-  - .astype('category') method + .cat.codes method
-  - .get_dummies()
-  - .replace() method + dictionary mapper
+  - `.astype('category')` method + `.cat.codes` method
+  - `.get_dummies()`
+  - `.replace()` method + dictionary mapper
 
 ## The Proposed Solution
 
@@ -63,7 +63,7 @@ Compared with **Scikit-Learn** where:
 - Each encoding method has to be individually imported by name from the `preprocessing` module.
 - No explicit configuration of which columns to encode (it assumes all columns passed to it are categorical).
 
-The **pandas** options are rather limited - only three methods. I used the .astype() method way back in [Entry 5](https://julielinx.github.io/blog/05_EDA/). From that experience these methods of transformation seem to require more code than the other options.
+The **pandas** options are rather limited - only three methods. I used the `.astype()` method way back in [Entry 5](https://julielinx.github.io/blog/05_EDA/). From that experience these methods of transformation seem to require more code than the other options.
 
 ## The Fail
 
@@ -87,7 +87,7 @@ I suppose my only fail with this package is that I didn't write a function to ju
 
 ## Up Next
 
-Encoding categoricals - implementation
+[Encoding categoricals - implementation](https://julielinx.github.io/blog/15_cat_corr/)
 
 ## Resources
 - [Category Encoders](http://contrib.scikit-learn.org/categorical-encoding/index.html)

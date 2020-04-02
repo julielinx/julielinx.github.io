@@ -115,7 +115,7 @@ This also emphasizes the importance of the write up. If I hadn't done the write 
 
 I didn't realize this until I was trying to transform the 'test' data, but the same parameters used to transform the training data need to be used on the test data. Academically, I knew I'd need to transform the test data, but the practical task of actually retaining the parameters completely slipped my mind.
 
-The transformation parameters as applied to the training data can be saved to be applied to the test set. Since I didn't notice the problem until I needed to transform the test data and this entry was already complete, I'm going to leave this entry the way it is and change the code to the functions that retain the transformation information in the notebook where I noticed this was a problem. See <font color='red'>Entry 10</font> for the corrected functions.
+The transformation parameters as applied to the training data can be saved to be applied to the test set. Since I didn't notice the problem until I needed to transform the test data and this entry was already complete, I'm going to leave this entry the way it is and change the code to the functions that retain the transformation information in the notebook where I noticed this was a problem. See [Entry 10](https://julielinx.github.io/blog/10_reorder_and_predict/) for the corrected functions.
 
 ## Up Next
 
