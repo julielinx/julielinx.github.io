@@ -107,8 +107,23 @@ While I plan on working on visualizing the effects of training size and hyperpar
 
 ## The Fail
 
+### The problem
+
 At first I tried to jump right into the evaluation steps. However, I found myself flailing around, having to explain where each step fell in the process and why I was doing it at *this* point, then changing around the order all over again. This outline entry allowed me to consolidate my thoughts, record background and context, and create a clear outline to follow for the series.S
+
+### The post
+
+Originally, this post didn't display correctly because Jekyll doesn't automatically interpret LaTeX, which I use pretty extensively for mathematical equations in later posts. I had to pause to integrate MathJax into my site.
+
+It didn't end up being all that hard, finding time to sit down and figure it out was the hardest part.
 
 ## Next Up
 
 [Data splitting and resampling](https://julielinx.github.io/blog/17_resampling/)
+
+### Resources
+
+- [How to use MathJax in Jekyll generated Github pages](https://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/)
+- [Use MathJax to write Equations in Jekyll blogs](http://zjuwhw.github.io/2017/06/04/MathJax.html)
+- [Math on GitHub Pages](https://g14n.info/2014/09/math-on-github-pages/)
+- 
