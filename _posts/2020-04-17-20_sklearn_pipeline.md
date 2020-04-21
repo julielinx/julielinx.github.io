@@ -87,7 +87,7 @@ Also, the classification dataset I used had three classes instead of two. The lo
 
 ## Up Next
 
-Regression metrics - theory
+[Regression metrics - theory](https://julielinx.github.io/blog/21_reg_score_theory/)
 
 ### Resources
 
