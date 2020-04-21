@@ -31,7 +31,17 @@ author_profile: true
 - [Plotly](https://plot.ly/python/)
 
 ## Books
-- [Hands on Machine Learning with Scikit-Learn & TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291) by Aurelien Geron
+- [Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413) by Andreas Muller and Sarah Guido
+  - [Andreas' github page](https://github.com/amueller)
+- [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn-ebook/dp/B00K15TZU0) by Max Kuhn and Kjell Johnson
+- [Hands-On Machine Learning with Scikit-Learn & TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291) by Aurelien Geron
+- [Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646) by Aurelien Geron
+- [Machine Learning with Python Cookbook](https://www.amazon.com/Machine-Learning-Python-Cookbook-Preprocessing/dp/1491989386) by Chris Albon
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) by Jake VanderPlas
+- [Data Science for Business](https://www.amazon.com/_/dp/1449361323?tag=oreilly20-20) by Foster Provost and Tom Fawcett
+- [Data Smart](https://www.amazon.com/Data-Smart-Science-Transform-Information/dp/111866146X) by John Foreman
+- [An Introduction to Statistical Learning](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf) by Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani
+- [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/Papers/ESLII.pdf) by Trevor Hastie, Robert Tibshirani, and Jerome Friedman
 
 ## Blogs
 
@@ -55,10 +65,10 @@ author_profile: true
 
 ## Datasets
 
-- [data.world](https://data.world/datasets/open-data)
-- [Earthdata](https://earthdata.nasa.gov/)
+- [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets.php)
 - [Kaggle](https://www.kaggle.com/datasets)
 - [openml](https://www.openml.org/)
 - [Scikit-learn datasets](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.datasets)
-- [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets.php)
+- [data.world](https://data.world/datasets/open-data)
+- [Earthdata](https://earthdata.nasa.gov/)
 - [US government](https://www.data.gov/)
