@@ -12,7 +12,7 @@ I need a way to measure a model's performance. To do that, first I need to break
 
 ## The Problem
 
-Supervised learning wherein predictions are made tend to come in two flavors. The first is to predict a continuous number (like the price of a house - the predictions would be things like 104,684.54). The second is a class (like whether a customer is likely to purchase a product - yes or no). The prediction depends on the target values. When the target is continuous so is the prediction. When the target is a class, so is the prediction.
+Supervised learning, wherein predictions are made with the help of labelled data, tend to come in two flavors. The first is to predict a continuous number (like the price of a house - the predictions would be things like 104,684.54). The second is a class (like whether a customer is likely to purchase a product - yes or no). The prediction depends on the target values. When the target is continuous so is the prediction. When the target is a class, so is the prediction.
 
 I'm going to look at measures for continuous targets first.
 
@@ -28,19 +28,24 @@ There are quite a few terms and concepts that the solutions to this problem rely
 - $\mu$ is also the mean value
 - $n$ is the number of observations
 - $\sum$ means to sum (add) things together
-- | | is to take the absolute value
+- $\lvert \rvert$ is to take the absolute value
 - The rest should be basic mathematical symbols
 
 **Bias and Variance**
 
 *[Hands-On Machine Learning](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291)* has a very succinct sidebar with information on bias, variance, and irreducible error. These are the three components that make up a model's generalization error.
 
-> *Bias*</br>
-This part of the generalization error is due to wrong assumptions, such as assuming that the data is linear when it is actually quadratic. A high-bias model is most likely to underfit the training data.</br></br>
-*Variance*</br>
-This part is due to the model's excessive sensitivity to small variations in the training data. A model with many degrees of freedom (such as a high-degree polynomial model) is likely to have high variance, and thus to overfit the training data.</br></br>
-*Irreducible error*</br>
-This part is due to the noisiness of the data itself. The only way to reduce this part of the error is to clean up the data (e.g., fix the data sources, such as broken sensors, or detect and remove outliers).
+> *Bias*
+
+> This part of the generalization error is due to wrong assumptions, such as assuming that the data is linear when it is actually quadratic. A high-bias model is most likely to underfit the training data.
+
+> *Variance*
+
+> This part is due to the model's excessive sensitivity to small variations in the training data. A model with many degrees of freedom (such as a high-degree polynomial model) is likely to have high variance, and thus to overfit the training data.
+
+> *Irreducible error*
+
+> This part is due to the noisiness of the data itself. The only way to reduce this part of the error is to clean up the data (e.g., fix the data sources, such as broken sensors, or detect and remove outliers).
 
 **Bias**
 
@@ -60,7 +65,7 @@ The formula is the observed value minus the predicted value:
 
 $e = y_{i} - \hat{y_{i}}$
 
-Keep in mind that the impact of how large this number is depends on the variance of the underlying data. For house prices that range from \$100,000 to \$10,000,000 a residual of 10,000 would be considered good. However, for a bottle of soap where the prices range from \$0.99 to \$20.49, a residual of 10,000 would be a really bad prediction.
+Keep in mind that the impact of how large this number is depends on the variance of the underlying data. For house prices that range from 100,000 to 10,000,000 a residual of 10,000 would be considered good. However, for a bottle of soap where the prices range from 0.99 to 20.49, a residual of 10,000 would be a really bad prediction.
 
 **Absolute Error**
 
@@ -70,7 +75,7 @@ According to one of the answers on StackExchange: "Error term is a theoretical c
 
 The practical use of the absolute error in machine learning is:
 
-$absolute\text{ }error = | y_{i} - \hat{y_{i}} |$
+$absolute\text{ }error = \lvert y_{i} - \hat{y_{i}}\rvert$
 
 **Squared Error**
 
@@ -84,7 +89,7 @@ While the three definitions above (residuals, absolute error, and squared error)
 
 This sums the absolute errors of all predictions and divides by the number of observations (or multiplies by the reciprocal of the number of observations). Ie, it gets the mean of the absolute errors.
 
-$MAE = \frac{\sum | y_{i} - \hat{y_{i}} |}{n} = \frac{1}{n} \sum | y_{i} - \hat{y_{i}} |$
+$MAE = \frac{\sum \lvert y_{i} - \hat{y_{i}} |}{n} = \frac{1}{n} \sum | y_{i} - \hat{y_{i}}\rvert$
 
 ### Sum of Squared Errors (SSE)
 
@@ -106,7 +111,7 @@ $RMSE = \sqrt{\frac{1}{n} \sum (y_{i} - \hat{y_{i}})^2}$
 
 ### $R^2$ or coefficient of determination
 
-*Applied Predictive Modeling* page 95:
+Per *Applied Predictive Modeling* page 95:
 
 > Proportion of the information in the data explained by the model
 
