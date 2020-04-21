@@ -28,7 +28,7 @@ There are quite a few terms and concepts that the solutions to this problem rely
 - $\mu$ is also the mean value
 - $n$ is the number of observations
 - $\sum$ means to sum (add) things together
-- $\lvert \rvert$ is to take the absolute value
+- $\lvert x\rvert$ is to take the absolute value (of `x` in this case)
 - The rest should be basic mathematical symbols
 
 **Bias and Variance**
@@ -89,7 +89,7 @@ While the three definitions above (residuals, absolute error, and squared error)
 
 This sums the absolute errors of all predictions and divides by the number of observations (or multiplies by the reciprocal of the number of observations). Ie, it gets the mean of the absolute errors.
 
-$MAE = \frac{\sum \lvert y_{i} - \hat{y_{i}} |}{n} = \frac{1}{n} \sum | y_{i} - \hat{y_{i}}\rvert$
+$MAE = \frac{\sum \| y_{i} - \hat{y_{i}} |}{n} = \frac{1}{n} \sum | y_{i} - \hat{y_{i}} \|$
 
 ### Sum of Squared Errors (SSE)
 
