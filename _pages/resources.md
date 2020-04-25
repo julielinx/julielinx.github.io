@@ -34,9 +34,14 @@ author_profile: true
 - [Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413) by Andreas Muller and Sarah Guido
   - [Andreas' github page](https://github.com/amueller)
 - [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn-ebook/dp/B00K15TZU0) by Max Kuhn and Kjell Johnson
-- [Hands-On Machine Learning with Scikit-Learn & TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291) by Aurelien Geron
-- [Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646) by Aurelien Geron
-- [Machine Learning with Python Cookbook](https://www.amazon.com/Machine-Learning-Python-Cookbook-Preprocessing/dp/1491989386) by Chris Albon
+- Aurelien Geron
+  - [Hands-On Machine Learning with Scikit-Learn & TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291) 
+  - [Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646)
+  - [](https://github.com/ageron)
+- Chris Albon
+  - [Machine Learning with Python Cookbook](https://www.amazon.com/Machine-Learning-Python-Cookbook-Preprocessing/dp/1491989386) 
+  - [Chris' website](https://chrisalbon.com/)
+  - He was also part of the podcast *Partially Derivative* (see Podcast section)
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) by Jake VanderPlas
 - [Data Science for Business](https://www.amazon.com/_/dp/1449361323?tag=oreilly20-20) by Foster Provost and Tom Fawcett
 - [Data Smart](https://www.amazon.com/Data-Smart-Science-Transform-Information/dp/111866146X) by John Foreman

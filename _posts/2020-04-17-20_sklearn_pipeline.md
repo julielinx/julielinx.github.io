@@ -9,6 +9,8 @@ tags:
 
 There are quite a few steps between pulling data and having a trained model. I need a good way to string it all together.
 
+The notebook where I did my code for this entry can be found on my github page in the [Entry 20 notebook](https://github.com/julielinx/datascience_diaries/blob/master/02_model_eval/20a_nb_sklearn_pipeline.ipynb).
+
 ## The Problem
 
  As discussed in [Entry 17](https://julielinx.github.io/blog/17_resampling/), pre-processing and training steps need to be performed on each split when running cross-validation.

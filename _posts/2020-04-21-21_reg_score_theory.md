@@ -154,7 +154,7 @@ Getting better at reading math equations is a hurdle I'm going to have to tackle
 
 ## Up Next
 
-Regression metrics - implementation
+[Regression metrics - implementation](https://julielinx.github.io/blog/22_reg_score_implement/)
 
 ### Resources
 
