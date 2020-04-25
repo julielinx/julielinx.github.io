@@ -53,13 +53,13 @@ From the list of options above, I covered explained variance, $R^2$, mean absolu
 
 [This metric](https://scikit-learn.org/stable/modules/model_evaluation.html#max-error) is on the Scikit-Learn page. It's the maximum value of the absolute errors.
 
-$\text{max error} = max(| y_{i} - \hat{y_{i}} |)$
+$\text{max error} = max(\lvert y_{i} - \hat{y_{i}}\rvert)$
 
 #### Median absolute error
 
 This is the same as MAE (mean absolute error), but uses the median instead of the mean. The benefit of using this instead of MAE is the same as the benefit of using median instead of mean: it's robust to outliers.
 
-$median\text{ }squared\text{ }error = median(\sum | y_{i} - \hat{y_{i}} |)$
+$median\text{ }squared\text{ }error = median(\sum \lvert y_{i} - \hat{y_{i}}\rvert)$
 
 #### Mean squared logarithmic error
 
