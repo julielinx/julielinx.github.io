@@ -61,7 +61,7 @@ For the purposes of organization, I'm going to break the metrics into four categ
 
 The categories are based on the population they pull from (ie the denominator - the number on the bottom of a fraction if it's been a minute since your last math course), which can be seen in the Wikipedia chart.
 
--  Based on the total population - the two boxes in the upper right corner of the Wikipedia chart and some extras
+- Based on the total population - the two boxes in the upper right corner of the Wikipedia chart and some extras
   - Prevalence
   - Accuracy (ACC)
   - Balanced accuracy (BA)
