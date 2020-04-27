@@ -7,19 +7,15 @@ tags:
   - classification models
 ---
 
+Classification models present a different challenge than regression models. Because a numeric value isn't returned, another way of measuring goodness of fit has to be used.
+
 ## The Problem
 
-Classification models present a different challenge than regression models do. With regression, a number is returned. That number can then be compared to the observed numerical value and math done on the two. When the prediction is a class however, math can't be done on the direct results (if the classes are green, red, and purple, what's green minus red?). This results in a completely different set of metrics. These metrics revolve around the confusion matrix.
+ Regression models return a numeric prediction. The predicted value can then be compared to the observed value and math done on the two. When the prediction is a class however, math can't be done on the direct results (if the classes are green, red, and purple, what's green minus red?). This results in a completely different set of metrics. These metrics revolve around counting things and storing them in a confusion matrix.
 
 ## Concepts
 
 The datasets I work with are generally binary classification problems. As such, I'm going to focus on binary metrics, not multi-class.
-
-One of the issues to watch out for with classification problems is **imbalanced classes**. This happens when one class is much more prevalent than the other.
-
-When classifing the result of a [chess game](http://archive.ics.uci.edu/ml/datasets/Chess+%28King-Rook+vs.+King-Pawn%29) there will always be 1 winner and 1 loser, which results in a 50/50 mix of classes. When diagnosing [colic in horses](http://archive.ics.uci.edu/ml/datasets/Horse+Colic) however, there is the chance for a much lower positive rate (depending on the population of horses evaluated. If only horses suspected of having colic are included then the ratio will be more likely to be even or skewed toward positive. If the population includes all horses evaluated for any kind of medical problem then the ratio will be much more skewed toward negative).
-
-The rate of occurance of the target value is called the **prevalence**. Knowing the prevalence is important in classification to help address class imbalance issues and gauge a baseline rate to improve upon over random guessing.
 
 The **confusion matrix** counts how many predictions are correct or incorrect and lumps that information into four categories:
 
@@ -31,14 +27,7 @@ negative and the observation was positive
 
 *[Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413)* provides the following diagram:
 
-
-```python
-mglearn.plots.plot_binary_confusion_matrix()
-```
-
-
-![png](output_4_0.png)
-
+![Basic confustion matrix](https://julielinx.github.io/assets/images/23_1_simple_confusion_matrix.png)
 
 This can be thought of as:
 
@@ -50,21 +39,27 @@ Incorrect predictions each have their own label.
 - **Type I error**: False positive
 - **Type II error**: False negative
 
-Being able to differentiate between these types of errors is important for determining what metric to optimize for. The business objective will dictate which error type is more imporantant.
+Being able to differentiate between these types of errors is important for determining what metric to optimize for. The business objective will dictate which error type is more important.
 
-For example, with the [breast cancer dataset](http://archive.ics.uci.edu/ml/datasets/Breast+Cancer) a false positive would mean that someone without cancer tested positive whereas a false negative would be someone with brest cancer who tested negative. In this situation the reprecrussions of not diagnosing someone with breast cancer are more severe than misdiagnosing someone without breast cancer. The metric chosen to evaluate the machine learning model should be biased toward finding more cancer than letting cancer go undiagnosed.
+For example, with the [breast cancer dataset](http://archive.ics.uci.edu/ml/datasets/Breast+Cancer) a false positive would mean that someone without cancer tested positive whereas a false negative would be someone with brest cancer who tested negative. In this situation the repercussions of not diagnosing someone with breast cancer are more severe than misdiagnosing someone without breast cancer. The metric chosen to evaluate a machine learning model that predicts cancer vs not cancer should be biased toward finding more cancer than letting cancer go undetected.
 
-[Email spam detection](http://archive.ics.uci.edu/ml/datasets/Spambase) on the other hand, is the opposite. While a false positive still means that non-spam was identified as spam and a false negative means that spam was not identified as spam, the consequences are different. Here including a good email in the spam folder has higher reprecussions than letting some spam through. The metric here should be biased toward ensuring most or all good emails are retained instead of catching all spam.
+[Email spam detection](http://archive.ics.uci.edu/ml/datasets/Spambase) on the other hand, is the opposite. While a false positive still means that non-spam was identified as spam and a false negative means that spam was incorrectly classified as not spam, the consequences are different. Here including a good email in the spam folder has higher repercussions than letting some spam through. The metric here should be biased toward ensuring most or all good emails are retained instead of catching all spam.
+
+One of the issues to watch out for with classification problems is **imbalanced classes**. This happens when one class is much more prevalent than the other.
+
+When classifying the result of a [chess game](http://archive.ics.uci.edu/ml/datasets/Chess+%28King-Rook+vs.+King-Pawn%29) there will always be 1 winner and 1 loser, which results in a 50/50 mix of classes. In the spam example above, it is highly likely that the amount of spam will be much lower than the amount of good spam. If only 5 spam emails are received for every 100 emails, then spam only makes up 5% of the data and thus has imbalanced classes.
+
+The rate of occurrence of the target value (ex: 5 spam emails for every 100 emails) is called **prevalence**. Knowing the prevalence is important in classification to help address class imbalance issues as well as gauge a baseline rate to improve upon over random guessing.
 
 ## The Options
 
-The confusion matrix, and most of the metrics that can be calculated from it, can be found on the [Confusion Matrix](https://en.wikipedia.org/wiki/Confusion_matrix) Wikipedia page. Keep it handy to see how each metric fits with the four confusion matrix values.
+The confusion matrix, and most of the metrics that are calculated from it, can be found on the [Confusion Matrix](https://en.wikipedia.org/wiki/Confusion_matrix) Wikipedia page. Keep it handy to see how each metric fits with the four confusion matrix values.
 
 ![Confusion Matrix](https://raw.githubusercontent.com/julielinx/datascience_diaries/master/img/metric_explanatory_chart.PNG)
 
 For the purposes of organization, I'm going to break the metrics into four categories. I haven't seen anyone else break them up this way, but I have to have some kind of structure to list them out.
 
-The categories are based on the population they pull from (ie the denominator - the number on the bottom if it's been a minute since your last math course), which can be seen in the Wikipedia chart.
+The categories are based on the population they pull from (ie the denominator - the number on the bottom of a fraction if it's been a minute since your last math course), which can be seen in the Wikipedia chart.
 
 -  Based on the total population - the two boxes in the upper right corner of the Wikipedia chart and some extras
   - Prevalence
@@ -93,7 +88,7 @@ The categories are based on the population they pull from (ie the denominator - 
   - Matthews correlation coefficient (MCC)
   - Threat score (TS) / Critical success index (CSI)
 - Bonus
-  - Precision / recall tradeoff
+  - Precision / recall trade-off
 
 ###  Based on the total population
 
@@ -109,7 +104,7 @@ This is a measure of how often the prediction was correct regardless of whether 
 
 $ACC = \frac{TP+TN}{TP+TN+FP+FN}$
 
-Accuracy doesn't differentiate between the two types of errors, just that an error was made. This can be a good generic metric for balanced classes. However, when classes are imbalanced the usefullness declines, which is illustrated below in the second method of the no information rate.
+Accuracy doesn't differentiate between the two types of errors, just that an error was made. This can be a good generic metric for balanced classes. However, when classes are imbalanced the usefulness declines, which is illustrated below in the second method of the no information rate.
 
 #### Balanced accuracy
 
@@ -121,18 +116,17 @@ Per [Wikipedia](https://en.wikipedia.org/wiki/Jaccard_index), Jaccard index "is 
 
 In practicality, it is the same as accuracy for the purposes of binary classification. The equation provided in [Scikit-Learn's documentation](https://scikit-learn.org/stable/modules/model_evaluation.html#jaccard-similarity-score) is:
 
-$J(y_{i}, \hat{y_{i}}) = \frac{| y_{i} \bigcap \hat{y_{i}} |}{| y_{i} \bigcup \hat{y_{i}} |}$
+$J(y_{i}, \hat{y_{i}}) = \frac{\lvert y_{i} \bigcap \hat{y_{i}} \rvert}{\lvert y_{i} \bigcup \hat{y_{i}}\rvert}$
 
 As a reminder $\bigcap$ is the intersection of two sets. I needed a picture to remember what this meant, so here is the graphic from the Wikipedia page:
 
 ![intersection of two sets](https://upload.wikimedia.org/wikipedia/commons/1/1f/Intersection_of_sets_A_and_B.svg)
 
-$\bigcup$ is the union of two sets. Here is the graphic explanation commplimentary of Wikipedia:
+$\bigcup$ is the union of two sets. Here is the graphic explanation complimentary of Wikipedia:
 
 ![union of two sets](https://upload.wikimedia.org/wikipedia/commons/e/ee/Union_of_sets_A_and_B.svg)
 
-
-For the purposes of binary classification, $| y_{i} \bigcap \hat{y_{i}} |$ is the same as the true condition (TP+TN) and $| y_{i} \bigcup \hat{y_{i}} |$ is the same as the total population (TP+TN+FP+FN). As such, the Jaccard index equation turns into $\frac{TP+TN}{TP+TN+FP+FN}$, which is the same as the equation for accuracy.
+For the purposes of binary classification, $\lvert y_{i} \bigcap \hat{y_{i}}\rvert$ is the same as the true condition (TP+TN) and $\lvert y_{i} \bigcup \hat{y_{i}}\rvert$ is the same as the total population (TP+TN+FP+FN). As such, the Jaccard index equation turns into $\frac{TP+TN}{TP+TN+FP+FN}$, which is the same as the equation for accuracy.
 
 #### No information rate
 
@@ -144,11 +138,11 @@ However, just like accuracy, this doesn't account for the frequency of the class
 
 *no information rate* $= max(\frac{count(c)}{n})$
 
-For the die example, this alternative no information rate would be $\frac{1}{2}$ for the 4 it's rigged to roll.
+For the die example, the alternative no information rate for rolling a 4 would be $\frac{1}{2}$ since it's been rigged to roll a 4 half the time.
 
 #### Zero one loss count
 
-This is the count of observations that were misclassified regardless of whether it was a type I or type II error. Based on my catagorization system, this metric by itself would probably go under cross metrics. However, it's companion metric, zero one loss ratio, is firmly in this category.
+This is the count of observations that were misclassified regardless of whether it was a type I or type II error. Based on my categorization system, this metric by itself would probably go under cross metrics. However, it's companion metric, zero one loss ratio, is firmly in this category.
 
 $zero \text{ } one \text{ } loss \text{ } count = FP + FN$
 
@@ -160,7 +154,7 @@ $zero \text{ } one \text{ } loss \text{ } ratio = \frac{FP + FN}{TP+TN+FP+FN}$
 
 #### Cohen's Kappa / Kappa statistic
 
-Instead of calculating accuracy and no information rate then comparing them, I could just take into account the class distrubutions.
+Instead of calculating accuracy and no information rate then comparing them, I could just take into account the class distributions.
 
 Cohen's Kappa measures the inter-rater agreement (agreement between two raters) for categorical items. It's generally thought to be a more robust measure than simple percent agreement calculation, because it takes into account the possibility of the agreement occurring by chance. However, it's use is controversial due to difficulty interpreting indices of agreement.
 
@@ -173,7 +167,7 @@ Where
 - $O$ = observed accuracy
 - $E$ = expected accuracy based on the confusion matrix's marginal totals
 
-According to *Applied Predictive Modeling*, reasonable levels of agreement range between 0.3 and 0.5, depending on context.
+According to [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn-ebook/dp/B00K15TZU0), reasonable levels of agreement range between 0.3 and 0.5, depending on context.
 
 ### Based on the prediction population
 
@@ -185,7 +179,7 @@ $precision = \frac{TP}{TP+FP} = 1 - FPR$
 
 According to *Introduction to Machine Learning with Python*, I should use this metric to optimize for limiting false positives. From the examples earlier, I'd use this with the spam dataset.
 
-*Applied Predictive Modeling* argues that predictive values, like PPV and the next metric NPV, aren't used to characterize a model very often. The reason for this is that prevalence (how often the true condition shows up in the dataset) tends to be dynamic in real world data. The example given in *Applied Predictive Modeling* is spam: "[...] the rate of spam emails increases when new schemes are invented but later fall off to baseline levels."
+*Applied Predictive Modeling* argues that predictive values, like PPV and NPV (see below), aren't used to characterize a model very often. The reason for this is that prevalence (how often the true condition shows up in the dataset) tends to be dynamic in real world data. The example given in *Applied Predictive Modeling* is spam: "[...] the rate of spam emails increases when new schemes are invented but later fall off to baseline levels."
 
 A dynamic nature of prevalence has also been my experience with real world data over moderate to longer periods of time. This is one of the reasons that models go stale: new patterns emerge.
 
@@ -193,7 +187,7 @@ Instead of precision, *Applied Predictive Modeling* recommends using specificity
 
 #### Markedness (MK)
 
-As can be seen in the equation for precision, negatives aren't considered as part of the evaluation. Markedness takes precision and then includes a component to account for negatives. It is a measure of trustworthiness of positive *and* negative predictions.
+As can be seen in the equation for precision, negatives aren't considered in the evaluation. Markedness takes precision and then includes a component to account for negatives. It is a measure of trustworthiness of positive *and* negative predictions.
 
 $MK = \frac{TP}{TP+FP} - \frac{FN}{FN+TN} = PPV + NPV - 1$
 
@@ -219,7 +213,7 @@ $recall = \frac{TP}{TP + FN} = 1-FNR$
 
 According to *Introduction to Machine Learning with Python* page 289, I should use this metric to optimize for identifying all positive observations and limiting false negatives. From the examples earlier, I'd use this with the breast cancer dataset.
 
-Recall and precision can be easy to mix up - their equations are only one letter different afterall. The way to keep them straight is to remember that precision is looking at the rate of correct answers within the population of predictions, whereas recall is looking at the rate of correct answers within the population of observations.
+Recall and precision can be easy to mix up - their equations are only one letter different after all. The way to keep them straight is to remember that precision is looking at the rate of correct answers within the population of predictions, whereas recall is looking at the rate of correct answers within the population of observations.
 
 #### Informedness / Bookmaker Informedness (BM)
 
@@ -229,19 +223,19 @@ $BM = \frac{TP}{TP+FN} - \frac{FN}{TN+FP} = TPR + TRN - 1$
 
 #### Youden's J index
 
-Like the F1-score, this metric provides a single value that takes into consideration two other metrics. Youden's J reflects both false-positve and false-negative rates.
+Like the F1-score, this metric provides a single value that takes into consideration two other metrics. Youden's J reflects both false-positive and false-negative rates.
 
-It gives equal weight to false positive and false negative values. Often used in conjunction with the receiver operating characteric (ROC) analysis, which will be covered in <font color='red'>Entry 24</font>.
+It gives equal weight to false positive and false negative values. Often used in conjunction with the receiver operating characteristic (ROC) analysis, which will be covered in <font color='red'>Entry 24</font>.
 
-Value range from 0 through 1 (inclusive). 0 gives the same proportion of positive results for groups with and without the condition, i.e the test is useless. A value of 1 indicates that there are no false positives or false negatives, i.e. the test is perfect.
+Values range from 0 through 1 (inclusive). 0 gives the same proportion of positive results for groups with and without the condition, i.e the test is useless. A value of 1 indicates that there are no false positives or false negatives, i.e. the test is perfect.
 
-$J = sensitivity + specificity - 1$
+$J = sensitivity + specificity - 1 = TPR + TRN - 1$
 
 *Note*, this is the same as informedness.
 
 #### Specificity (SPC) / True negative rate (TNR)
 
-A kind of opposite of recall is specificity. This metric measures the rate that negative observations are correctly identified (of all negative observations, how often were they correctly identified by the prediction)
+A kind of opposite of recall is specificity. This metric measures the rate that negative observations are correctly identified (of all negative observations, how often were they correctly identified by the prediction).
 
 $specificity = \frac{TN}{TN + FP} = 1 - FPR$
 
@@ -269,13 +263,13 @@ According to *Introduction to Machine Learning with Python* page 290, this metri
 
 Score ranges between 0 and 1 where 0 is the worst performance and 1 is perfect precision and sensitivity.
 
-The major drawback of the F1-score is that it's harder to intrepret and explain than the other metrics.
+The major drawback of the F1-score is that it's harder to interpret and explain than the other metrics.
 
 #### Matthews correlation coefficient
 
-In essence this metric is a correlation coefficient that measures the quality of binary classifications **regardless of class imbalance**. I talked about correlation back in <font color='red'>Entry 6</font>.
+In essence this metric is a correlation coefficient that measures the quality of binary classifications **regardless of class imbalance**. I talked about correlation back in [Entry 6](https://julielinx.github.io/blog/06_correlation/).
 
-Matthews correlation coefficient returns a value between +1 and -1. A  value of 1 represents a perfect prediction, 0 no better than random prediction and −1 indicates total disagreement between prediction and observation. Based on the values, this metric seems very similar to Cohen's Kappa. It will be interesting to see how these two vary when run on actual data.
+Matthews correlation coefficient returns a value between +1 and -1. A  value of 1 represents a perfect prediction, 0 no better than random guessing and −1 indicates total disagreement between prediction and observation. Based on the values, this metric seems very similar to Cohen's Kappa. It will be interesting to see how they vary when run on actual data.
 
 $MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}$
 
@@ -285,56 +279,23 @@ $TS = \frac{TP}{TP+FN+FP}$
 
 ### Bonus
 
-#### The precision / recall tradeoff
+#### The precision / recall trade-off
 
-No discuss of classification metric is complete without discussing the precision / recall tradeoff.
+No discuss of classification metric is complete without discussing the precision / recall trade-off.
 
 I like the chart in *Hands-On Machine Learning with Scikit-Learn & TensorFlow*.
 
+![Precision and recall vs threshold](https://julielinx.github.io/assets/images/23_2_precision_and_recall.png)
 
-```python
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-from sklearn.datasets import fetch_openml
-from sklearn.model_selection import cross_val_predict
-from sklearn.linear_model import SGDClassifier
-from sklearn.metrics import precision_recall_curve
+On the far left, recall is at 100%. This means that all positive observations were identified. While recall is perfect, it's easy to see that precision is at its lowest. This is because to grab all positive observations compromises had to be made which allowed more false positives through.
 
-mnist = fetch_openml('mnist_784', version=1)
-X, y = mnist['data'], mnist['target']
-X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:60000], y[60000:]
-y_train_5 = y_train=='5'
-
-sgd_clf = SGDClassifier(random_state=42)
-sgd_clf.fit(X_train, y_train_5)
-y_scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3, method='decision_function')
-
-def plot_precision_recall_vs_threshold(precisions, recalls, thresholds):
-    plt.plot(thresholds, precisions[:-1], 'b--', label='precision')
-    plt.plot(thresholds, recalls[:-1], 'g-', label='recall')
-    plt.xlabel('Threshold')
-    plt.legend(loc='center right')
-    plt.ylim([0, 1])
-    plt.xlim([-20000, 20000])
-
-precisions, recalls, thresholds = precision_recall_curve(y_train_5, y_scores)
-plot_precision_recall_vs_threshold(precisions, recalls, thresholds)
-plt.show()
-```
-
-
-![png](output_13_0.png)
-
-
-On the far left recall is at 100%. This means that all positive observations were identified. While recall is perfect, it's easy to see that percision is at its lowest. This is because to grab all positive observations compromises had to be made which allowed more false positives through.
-
-On the far right precision is at its highest. This means that the majority of positive predictions were in fact positive observations. However, recall is at an ultimate low. This is because in order to remove all false positivies limitations had to be set which moved many positive predictions into the false negative camp.
+On the far right precision is at its highest. This means that the majority of positive predictions were in fact positive observations. However, recall is at an ultimate low. This is because in order to remove all false positives limitations had to be set which moved many positive predictions into the false negative camp.
 
 The precision and recall vs threshold chart won't always be so pretty. For example, the one I showed above from *Hands-On Machine Learning* gets really bumpy on precision out past 20,000. But this is how the concept works.
 
 For more detail, see *Hands-On Machine Learning* (edition 1 or 2).
 
-**Side note**: in the precision section I noted that *Applied Predictive Modeling* recommended using recall (sensitivity) and specificity. As he noted that there is a tradeoff between sensitivity and specificity, I assume plotting the two agaist each other would result in around the same chart as that for precision and recall. Sounds like an interesting exercise to try once I start playing with real data.
+**Side note**: in the precision section I noted that *Applied Predictive Modeling* recommended using recall (sensitivity) and specificity. As he noted that there is a trade-off between sensitivity and specificity, I assume plotting the two against each other would result in around the same chart as that for precision and recall. Sounds like an interesting exercise to try once I start playing with real data.
 
 ## The Proposed Solution
 
@@ -356,13 +317,11 @@ Due to the imbalanced nature of the datasets I generally work with, I pulled out
 
 ## The Fail
 
-You may be thinking to yourself "But wait Julie, you didn't cover ROC/AUC." Don't worry, that's next.
-
-
+You may be thinking to yourself "But wait Julie, you didn't cover ROC/AUC." Don't worry, I cover that in <font color='red'>Entry 26</font>.
 
 ## Up Next
 
-Chosing classification thresholds
+Choosing classification thresholds
 
 ### Resources
 
