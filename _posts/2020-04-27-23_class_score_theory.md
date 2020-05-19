@@ -225,7 +225,7 @@ $BM = \frac{TP}{TP+FN} - \frac{FN}{TN+FP} = TPR + TRN - 1$
 
 Like the F1-score, this metric provides a single value that takes into consideration two other metrics. Youden's J reflects both false-positive and false-negative rates.
 
-It gives equal weight to false positive and false negative values. Often used in conjunction with the receiver operating characteristic (ROC) analysis, which will be covered in <font color='red'>Entry 24</font>.
+It gives equal weight to false positive and false negative values. Often used in conjunction with the receiver operating characteristic (ROC) analysis, which will be covered in <font color='red'>Entry 26</font>.
 
 Values range from 0 through 1 (inclusive). 0 gives the same proportion of positive results for groups with and without the condition, i.e the test is useless. A value of 1 indicates that there are no false positives or false negatives, i.e. the test is perfect.
 
@@ -321,7 +321,7 @@ You may be thinking to yourself "But wait Julie, you didn't cover ROC/AUC." Don'
 
 ## Up Next
 
-Choosing classification thresholds
+[Classification metrics - Implementation](https://julielinx.github.io/blog/24_class_score_implement/)
 
 ### Resources
 

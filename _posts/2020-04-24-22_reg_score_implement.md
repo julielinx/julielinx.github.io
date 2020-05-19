@@ -117,7 +117,7 @@ I had to break these two entries into separate posts due to the sheer amount of 
 
 ## Up Next
 
-Classification metrics - theory
+[Classification metrics - theory](https://julielinx.github.io/blog/23_class_score_theory/)
 
 ### Resources
 
