@@ -230,11 +230,11 @@ There were a few additional metrics that I may be interested in that were listed
 
 The most obvious fail was my inability to find a way to run three of the metrics I'm interested in (Markedness, Specificity, Critical success index). However, the goal of this series of posts is to evaluate modes, not write code from scratch. I have to draw a line somewhere to keep myself from detouring down rabbit holes.
 
-The other fail was that after a brief foray into the `imbalneced-learn` documentation, I branded it another rabbit hole at this stage. While it may be nice to have the options available in that package, I feel that once the Precision/Recall (PR) and Receiver Operator Characteristic (ROC) curves have been incorporated into the evaluation, I'll be able to establish a well rounded picture of model performance.
+The other fail was that after a brief foray into the `imbalneced-learn` documentation, I branded it another rabbit hole at this stage. While it may be nice to have the options available in that package, I feel that once the Precision/Recall (PR) and Receiver Operator Characteristic (ROC) curves have been incorporated into the evaluation, I'll be   able to establish a well rounded picture of model performance.
 
 ## Up Next
 
-Naive baseline models
+[Naive baseline models](https://julielinx.github.io/blog/25_baseline_compare/))
 
 ### Resources
 
