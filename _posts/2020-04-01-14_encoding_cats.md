@@ -4,6 +4,8 @@ categories:
   - Blog
 tags:
   - pre-process
+  - cat encoding
+  - dataset mushrooms
 ---
 
 ## The Problem

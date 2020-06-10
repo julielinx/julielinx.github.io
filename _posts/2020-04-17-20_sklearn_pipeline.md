@@ -5,6 +5,8 @@ categories:
 tags:
   - model-eval
   - pipeline
+  - dataset auto mpg
+  - dataset horse colic
 ---
 
 There are quite a few steps between pulling data and having a trained model. I need a good way to string it all together.

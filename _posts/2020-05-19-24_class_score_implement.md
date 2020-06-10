@@ -5,6 +5,7 @@ categories:
 tags:
   - model-eval
   - classification models
+  - dataset breast cancer
 ---
 
 Now that I've got a handle on the measurement options and equations for classification problems, it's time to implement those measures on actual models.

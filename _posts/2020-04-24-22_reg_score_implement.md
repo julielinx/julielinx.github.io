@@ -5,6 +5,7 @@ categories:
 tags:
   - model-eval
   - regression models
+  - dataset auto mpg
 ---
 
 Now that I've got a handle on the measurement options and equations, it's time to implement those measures on actual models.

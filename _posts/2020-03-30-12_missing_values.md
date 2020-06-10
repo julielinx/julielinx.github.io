@@ -4,6 +4,8 @@ categories:
   - Blog
 tags:
   - pre-process
+  - dataset csm (conventional and social media movies)
+  - dataset titanic
 ---
 
 [Wikipedia](https://en.wikipedia.org/wiki/Missing_data) has a succinct definition of missing values: "missing data, or missing values, occur when no data value is stored for the variable in an observation." Seems straight forward, but there are different underling reasons for missing data and those reasons can compound their effect in a model.
