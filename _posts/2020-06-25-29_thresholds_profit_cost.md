@@ -5,6 +5,7 @@ categories:
 tags:
   - model-eval
   - dataset titanic
+  - thresholds
 ---
 
 Sometimes considerations other than model performance need to be accounted for when choosing a threshold.

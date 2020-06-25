@@ -4,6 +4,7 @@ categories:
   - Blog
 tags:
   - model-eval
+  - thresholds
   - dataset breast cancer
   - dataset titanic
   - dataset horse colic
