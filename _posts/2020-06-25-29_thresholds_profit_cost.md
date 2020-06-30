@@ -107,7 +107,7 @@ But it doesn't actually say that. And it's hard to confirm that guess without co
 
 ## Up Next
 
-Learning curves
+[Learning curves](https://julielinx.github.io/blog/30_learning_curves_imp_perform/)
 
 ### Resources
 
