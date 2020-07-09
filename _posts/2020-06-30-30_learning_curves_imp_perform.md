@@ -145,9 +145,9 @@ Including a cross validation component to my implementation of the learning curv
 
 ## Up Next
 
-Training Size
+[Training Size](https://julielinx.github.io/blog/31_training_size_and_split/)
 
-### Resources
+## Resources
 
 - [Learning Curves - online appendix of the Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/06.00-figure-code.html#Learning-Curve)
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
