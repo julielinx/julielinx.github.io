@@ -156,7 +156,7 @@ The added bonus of using these steps is that each one helps pick the next mini-c
 
 ### Extras from the future
 
-- Related entries to the preprocessing questions listed in The Problem
+- Entries related to the preprocessing questions listed in The Problem section
   - Missing Values
     - [Entry 12 - Missing Values](https://julielinx.github.io/blog/12_missing_values/) 
   - Categorical variables
