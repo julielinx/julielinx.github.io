@@ -76,7 +76,7 @@ The first problem to solve naturally becomes **how do I pick what to work on fir
 
 [Pick a problem and define the process](https://julielinx.github.io/blog/02_define_process/)
 
-### Resources
+## Resources
 
 - [Kaggle](https://www.kaggle.com/datasets)
 - [How to manage impostor syndrome in data science](https://towardsdatascience.com/how-to-manage-impostor-syndrome-in-data-science-ad814809f068)

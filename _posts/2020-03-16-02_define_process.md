@@ -154,19 +154,8 @@ The 8 steps are:
 
 The added bonus of using these steps is that each one helps pick the next mini-challenge to tackle.
 
-## Next up
+### Extras from the future
 
-[Frame the Problem](https://julielinx.github.io/blog/03_frame_prob/)
-
-### Resources
-
-- References
-  - [Machine Learning Mastery](https://machinelearningmastery.com)
-  - [James Clear](https://jamesclear.com)
-  - [Art & Fear](https://www.amazon.com/gp/product/0961454733/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0961454733&linkCode=as2&tag=jamesclear-20&linkId=CYEZ57AX7IODGHWX)
-  - [ODSC](https://odsc.com/)
-  - [Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413)
-  - [Hands on Machine Learning with Scikit-Learn & TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291)
 - Related entries
   - Missing Values
     - [Entry 12 - Missing Values](https://julielinx.github.io/blog/12_missing_values/) 
@@ -185,3 +174,15 @@ The added bonus of using these steps is that each one helps pick the next mini-c
     - [Entry 28 - Gain and Lift](https://julielinx.github.io/blog/28_gain_lift/)
     - [Entry 29 - Profit and Cost](https://julielinx.github.io/blog/29_thresholds_profit_cost/)
     - [Entry 30 - Learning Curves](https://julielinx.github.io/blog/30_learning_curves_imp_perform/)
+
+## Up Next
+
+[Frame the Problem](https://julielinx.github.io/blog/03_frame_prob/)
+
+## Resources
+
+- [Machine Learning Mastery](https://machinelearningmastery.com)
+- [Art & Fear](https://www.amazon.com/gp/product/0961454733/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0961454733&linkCode=as2&tag=jamesclear-20&linkId=CYEZ57AX7IODGHWX)
+- [ODSC](https://odsc.com/)
+- [Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413)
+- [Hands on Machine Learning with Scikit-Learn & TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291)
