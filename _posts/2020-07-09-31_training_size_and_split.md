@@ -64,7 +64,7 @@ These are perfect questions to address once I get into the modeling series of en
 
 ## Up Next
 
-Model algorithms
+[Model algorithms](https://julielinx.github.io/blog/32_model_algos/)
 
 ## Resources
 
