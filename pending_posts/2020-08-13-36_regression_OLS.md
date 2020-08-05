@@ -190,6 +190,10 @@ A few notes on computational complexity. The formulas in the table above are fro
 
 It also adds that the computational complexity for the SVD implementation of the Normal Equation in `sklearn.linear_model.LinearRegression` is $O(n^{2})$. This puts it at roughly the same computational complexity as Gradient Descent. However, everything still has to fit into memory and *Hands-On Machine Learning with Scikit-Learn* purports on page 122 that Gradient Descent is much faster than Normal Equation or SVD when there are hundreds of thousands of features. Gradent Descent is still a better choice for large datasets due to these two properties.
 
+## Up Next
+
+Normal Equation
+
 ## Resources
 
 - [Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413)
