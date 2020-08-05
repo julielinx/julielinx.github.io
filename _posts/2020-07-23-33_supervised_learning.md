@@ -103,7 +103,7 @@ The book also recommends two larger, real-world datasets available in Scikit-Lea
   
 ## Up Next
 
-Datasets
+[Datasets](https://julielinx.github.io/blog/34_datasets/)
 
 ## Resources
 
