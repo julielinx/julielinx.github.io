@@ -30,7 +30,7 @@ L1 and L2 regularization are common regularization techinques. Each of the techn
 
 - $\text{L1 norm} = \lvert \lvert w \rvert \rvert_{1} = \lvert w_{1} \rvert + \lvert w_{2}\rvert + \dotsb + \lvert w_{n}\rvert$
 - $\text{L2 norm} = \lvert \lvert w\rvert \rvert_{2} = \sqrt{\lvert w_{1}\rvert ^2 + \lvert w_{2}\rvert ^2 + \dotsb + \lvert w_{n}\rvert^2}$
-- $\text{Lp norm} = \lvert \lvert w\rvert \rvert _{p} = \sqrt[p]{\lvert w_{1}\rvert ^p + \lvert w_{2}\rvert ^p + \dotsb + \lvert w_{n} \rvert ^p}$
+- $\text{Lp norm} = \lvert \lvert w\rvert \rvert_{p} = \sqrt[p]{\lvert w_{1}\rvert ^p + \lvert w_{2}\rvert ^p + \dotsb + \lvert w_{n} \rvert ^p}$
 
 They are basically all the same equation (the third one), but to different powers: 1, 2, and n.
 
