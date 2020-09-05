@@ -28,9 +28,9 @@ There are basically two strategies:
 
 L1 and L2 regularization are common regularization techinques. Each of the techniques covers one of the regularzation strategies. They are based on L1 and L2 norms. The thing that helped me understand why they're called L1 and L2 was in a [Towards Data Science article](https://towardsdatascience.com/intuitions-on-l1-and-l2-regularisation-235f2db4c261):
 
-- $\text{L1 norm} = ||w||_{1} = |w_{1}| + |w_{2}| + \dotsb + |w_{n}|$
-- $\text{L2 norm} = ||w||_{2} = \sqrt{|w_{1}|^2 + |w_{2}|^2 + \dotsb + |w_{n}|^2}$
-- $\text{Lp norm} = ||w||_{p} = \sqrt[p]{|w_{1}|^p + |w_{2}|^p + \dotsb + |w_{n}|^p}$
+- $\text{L1 norm} = \lvert \lvert w \rvert \rvert_{1} = \lvert w_{1} \rvert + \lvert w_{2}\rvert + \dotsb + \lvert w_{n}\rvert$
+- $\text{L2 norm} = \lvert \lvert w\rvert \rvert_{2} = \sqrt{\lvert w_{1}\rvert ^2 + \lvert w_{2}\rvert ^2 + \dotsb + \lvert w_{n}\rvert^2}$
+- $\text{Lp norm} = \lvert \lvert w\rvert \rvert _{p} = \sqrt[p]{\lvert w_{1}\rvert ^p + \lvert w_{2}\rvert ^p + \dotsb + \lvert w_{n} \rvert ^p}$
 
 They are basically all the same equation (the third one), but to different powers: 1, 2, and n.
 
@@ -43,7 +43,7 @@ Cost functions from [Hands-On Machine Learning with Scikit-Learn](https://www.am
 - Base cost function:
   - $J(\theta) = MSE(\theta) = \frac{1}{m} \displaystyle\sum_{i=1}^m (\theta^{T}x^{(i)} - y^{(i)})^{2}$
 - Cost function with L1 regularization:
-  - $J(\theta) = MSE(\theta) + \alpha \displaystyle\sum_{i=1}^n |\theta_{i}|$
+  - $J(\theta) = MSE(\theta) + \alpha \displaystyle\sum_{i=1}^n \lvert \theta_{i}\rvert$
 - Cost function with L2 regularization:
   - $J(\theta) = MSE(\theta) + \alpha \frac{1}{2} \displaystyle\sum_{i=1}^n \theta_{i}^{2}$
 
