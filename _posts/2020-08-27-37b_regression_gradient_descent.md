@@ -159,9 +159,9 @@ Here is a table of the name, symbol, dimensions, and data structure of the array
     </tr>
     <tr>
         <td><b>Structure pic</b></td>
-        <td><img src='../img/gd_theta_array.jpg' width="209" height="250"/></td>
-        <td><img src='../img/gd_target_array.jpg' width="201" height="250"/></td>
-        <td><img src='../img/gd_matrix.jpg' width="343" height="250"/></td>
+        <td><img src='https://github.com/julielinx/datascience_diaries/blob/master/img/gd_theta_array.jpg?raw=true' width="209" height="250"/></td>
+        <td><img src='https://github.com/julielinx/datascience_diaries/blob/master/img/gd_target_array.jpg?raw=true' width="201" height="250"/></td>
+        <td><img src='https://github.com/julielinx/datascience_diaries/blob/master/img/gd_matrix.jpg?raw=true' width="343" height="250"/></td>
     </tr>
 </table>
 
@@ -266,7 +266,7 @@ Aurelion puts it this way on page 119 of *Hands-On Machine Learning with Scikit-
 
 > [...] not all cost functions look like nice, regular bowls. There may be holes, ridges, plateaus, and all sorts of irregular terrains, making convergence to the minimum difficult. Figure 4-6 shows the two main challenges with Gradient Descent. If the random initialization starts the algorithm on the left, then it will converge to a *local minimum*, which is not as good as the *global minimum*. If it starts on the right, then it will take a very long time to cross the plateau. And if you stop too early, you will never reach the global minimum.
 
-<img src='../img/HOML_gradient_descent_pitfalls.png'>
+<img src='https://github.com/julielinx/datascience_diaries/blob/master/img/HOML_gradient_descent_pitfalls.png?raw=true'>
 
 I was getting conflicting information on whether Gradient Descent converged on the global minimum or not. Sabber finally arrived at the final answer: Gradient Descent always converges on the global minimum for Linear Regression, but this may not be the case for other types of algorithms like Neural Networks.
 
@@ -280,7 +280,7 @@ My takeaway questions on the challenges of Gradient Descent are:
 
 These are addressed via hyperparameter optimization, which will be covered in another entry.
 
-![linear chart](https://julielinx.github.io/assets/images/37d_linear_chart.png)
+![linear chart](https://julielinx.github.io/assets/images/37d_3d_linear_chart.png)
 
 ## Strengths and Weaknesses
 
@@ -290,6 +290,10 @@ These are addressed via hyperparameter optimization, which will be covered in an
   - If features vary widely in range (i.e., -1 to 1 and -100 to 100; -1 to 1 and -0.0001 to 0.0001) they will effect convergence
   - Seems like features should probably be scaled if they're more than an order of magnitude different (multiple of 10), but otherwise can probably be left alone
 - While it is pointed out that it would seem there would be a problem of getting stuck at a local optimization (instead of the best global solution), Gradient Descent is a convex function, which means it will always find the global minimum for Linear Regression
+
+## Up Next
+
+[L1 and L2 Regularization](https://julielinx.github.io/blog/38_l1_l2_regularization/)
 
 ## Resources
 

@@ -52,6 +52,10 @@ The important takeaways I get from that are:
 - SVD is more efficient than the straight Normal Equation
 - The pseudoinverse can always be defined (unlike the inverse, which may not have a solution)
 
+## Up Next
+
+[Gradient Descent](https://julielinx.github.io/blog/37b_regression_gradient_descent/)
+
 ## Resources
 
 Andrew Ng does a fantastic job of covering the theory and practicalities of gradient descent in weeks 1 and 2 of his [Machine Learning course](https://www.coursera.org/learn/machine-learning) on coursera. For more details, watch the videos, read the notes, and (most telling) take the quizes for those two weeks.
@@ -59,7 +63,3 @@ Andrew Ng does a fantastic job of covering the theory and practicalities of grad
 - [Hands-On Machine Learning with Scikit-Learn](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646)
 - [sklearn.linear_model.LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
 - [Machine Learning course](https://www.coursera.org/learn/machine-learning)
-
-## Up Next
-
-[Gradient Descent](https://julielinx.github.io/blog/37b_regression_gradient_descent/)

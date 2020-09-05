@@ -4,6 +4,7 @@ categories:
   - Blog
 tags:
   - regression
+  - regularization
   - overfitting
   - supervised learning
 ---
@@ -101,6 +102,11 @@ Information from Medium article [L1 and L2 Regularization](https://medium.com/da
         <td>Can learn complex data patterns</td>
     </tr>
 </table>
+
+## Up Next
+
+Lasso Regression
+Lasso Regression
 
 ## Resources
 
