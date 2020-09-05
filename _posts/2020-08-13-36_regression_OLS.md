@@ -1,4 +1,15 @@
-# Entry 36 - Ordinary Least Squares (OLS)
+---
+title: "Entry 36: Ordinary Least Squares (OLS)"
+categories:
+  - Blog
+tags:
+  - regression
+  - supervised learning
+---
+
+Ordinary Leas Squares is usually the default method of Linear Regression and is the method used in the `sklearn.linear_model.LinearRegression` function. On page 49, [Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413) calls this "the simplest and most classic linear method for regression." 
+
+The notebook where I did my code for this entry can be found on my github page in the [Entry 36 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/36a_nb_regression.ipynb).
 
 ## Learning Style
 
@@ -14,8 +25,6 @@
 </table>
 
 ## Description
-
-On page 49, [Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413) calls this "the simplest and most classic linear method for regression." It is usually the default method of Linear Regression and is the method used in the `sklearn.linear_model.LinearRegression` function.
 
 This method uses mean squared error (MSE) to find the best fit line.
 
