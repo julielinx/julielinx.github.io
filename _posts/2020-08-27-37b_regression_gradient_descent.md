@@ -76,7 +76,6 @@ In the example below, I use an initial theta array with a slope of 0 (a horizont
 
 ![Linear steps](https://julielinx.github.io/assets/images/37c_linear_steps.png)
 
-
 ## The Math
 
 The basic idea of Gradient Descent is the easy part. Time to move into the actual math.

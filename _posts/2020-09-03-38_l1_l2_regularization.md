@@ -106,7 +106,6 @@ Information from Medium article [L1 and L2 Regularization](https://medium.com/da
 ## Up Next
 
 Lasso Regression
-Lasso Regression
 
 ## Resources
 
