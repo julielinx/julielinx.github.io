@@ -201,7 +201,7 @@ It also adds that the computational complexity for the SVD implementation of the
 
 ## Up Next
 
-Normal Equation
+[Normal Equation](https://julielinx.github.io/blog/37a_regression_normal_equation/)
 
 ## Resources
 
