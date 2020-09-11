@@ -173,7 +173,7 @@ There are no tuning parameters.
   - Ex: it takes twice as long to predict on twice as many instances (or twice as many features)
 - Easily scales to very large datasets
 - Works well with sparse data
-- Easy to intrepret / easy to see feature importance
+- Easy to interpret / easy to see feature importance
 - Performs well when the number of features is large compared to the number of observations (ex, 104 features but only 5 observations)
 - Minimizes bias
 

@@ -105,7 +105,7 @@ Information from Medium article [L1 and L2 Regularization](https://medium.com/da
 
 ## Up Next
 
-Lasso Regression
+[Lasso Regression](https://julielinx.github.io/blog/39_regression_lasso/)
 
 ## Resources
 
