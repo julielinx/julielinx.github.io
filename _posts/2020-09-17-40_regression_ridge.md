@@ -70,7 +70,7 @@ As seen in the chart below from *Introduction to Machine Learning with Python*'s
 
 Ridge Regression can also be used on smaller sample sizes than Linear Regression. However, the scores for Ridge Regression and Linear Regression converge once the training dataset reaches a certain size (the convergence point will vary from dataset to dataset).
 
-![Ridge vs Linear]((https://julielinx.github.io/assets/images/40a_ridge_vs_linear.png))
+![Ridge vs Linear]((https://github.com/julielinx/julielinx.github.io/blob/master/assets/images/40a_ridge_vs_linear.png?raw=true))
 
 ## Parameters
 
