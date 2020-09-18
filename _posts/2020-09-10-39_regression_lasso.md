@@ -5,6 +5,7 @@ categories:
 tags:
   - regression
   - supervised learning
+  - regularization
 ---
 
 Least Absolute Shrinkage and Selection Operator (LASSO) Regression is a form of regression regularization using L1 regularization.
@@ -91,7 +92,7 @@ Minimizes variance.
 
 ## Up Next
 
-Ridge Regression
+[Ridge Regression](https://julielinx.github.io/blog/40_regression_ridge/)
 
 ## Resources
 
