@@ -43,11 +43,12 @@ The addition of the sigmoid function turns the output into a number between 0 an
 
 *Hands-On Machine Learning* spells out the importance of this on page 143. The output is "the probability $\hat{p} = h_{\theta}(x)$ that an instance $x$ belongs to the positive class." From there, it's easy to turn into a classification prediction:
 
-$\hat{y} = 
-\begin{cases}
-    0 \text{ if } \hat{p} < 0.5 
+$\[ \hat{y} = 
+  \begin{cases}
+    0 \text{ if } \hat{p} < 0.5 \\
     1 \text{ if } \hat{p} \geq 0.5
-  \end{cases}$
+  \end{cases}
+\]$
   
 The above assumes that the desired threshold is 0.5. I covered choosing thresholds in [Entry 26](https://julielinx.github.io/blog/26_thresholds_pr_roc/). In Logistic Regression, the threshold is also called the "decision boundary" because the threshold marks the boundary between a "yes" or "no" decision.
 
