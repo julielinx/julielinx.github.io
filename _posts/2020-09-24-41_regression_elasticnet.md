@@ -40,22 +40,22 @@ Where
 - MSE: mean squared error
 - $r$: mix ratio
   - The range of values is 0 to 1
-  - *Note*, at the extremes (0 or 1) one or the other of the terms cancels out (i.e., it's 0)
+  - *Note*, at the extremes (0 or 1) one or the other of the terms cancels out (i.e. it's 0)
   - When r = 0, Elastic Net is the same as Ridge Regression
     - $r \alpha \displaystyle\sum_{i=1}^n \lvert \theta_{i}\rvert$ cancels to 0
   - When r = 1, Elastic Net is the same as Lasso Regression
     - $\frac{1 - r}{2} \alpha \displaystyle\sum_{i=1}^n \theta_{i}^{2}$ cancels to 0
 - $\alpha$: regularization term
-  - i.e., how much the model is regularized
-  - A value of 0 is no regularization (i.e., regular linear regression)
-  - As the value approaches infinity, the weights approach zero (i.e., no features contribute and results in a flat line through the data's mean)
+  - i.e. how much the model is regularized
+  - A value of 0 is no regularization (i.e. regular linear regression)
+  - As the value approaches infinity, the weights approach zero (i.e. no features contribute and results in a flat line through the data's mean)
 - $\theta$: the theta array
 
 ## Behavior
 
 In `scikit-learn`, the ratio of how the Lasso (L1) and Ridge (L2) terms are applied is controlled by the `l1_ratio` parameter. In other words, the `l1_ratio` parameter specifies how much Lasso is used. A value of 0 would mean the Elastic Net would be the same as Ridge Regression, a value of 0.5 would be half Lasso and half Ridge, and a value of 1 would be the same as Lasso Regression.
 
-The outcome of keeping the coefficients as small as possible helps reduce the complexity of the model (i.e., makes it more generalized and reduces overfitting). The complexity of the model is controlled through the parameter `alpha`. Larger `alpha` values force the coefficients closer to 0 (reducing complexity), smaller values are less restricting (allowing for more complexity).
+The outcome of keeping the coefficients as small as possible helps reduce the complexity of the model (i.e. makes it more generalized and reduces overfitting). The complexity of the model is controlled through the parameter `alpha`. Larger `alpha` values force the coefficients closer to 0 (reducing complexity), smaller values are less restricting (allowing for more complexity).
 
 ## Parameters
 

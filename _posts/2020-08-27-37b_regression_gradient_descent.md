@@ -259,7 +259,7 @@ Gradient descent: $\theta^{\text{next step}} = \theta - \eta \nabla_{\theta} MSE
 
 ## Caveats
 
-As additional dimensions (i.e., features) are added, the situation becomes more complicated and the limitations of gradient descent become apparent.
+As additional dimensions (i.e. features) are added, the situation becomes more complicated and the limitations of gradient descent become apparent.
 
 Aurelion puts it this way on page 119 of *Hands-On Machine Learning with Scikit-Learn*:
 
@@ -285,8 +285,8 @@ These are addressed via hyperparameter optimization, which will be covered in an
 
 - By using the mean in the cost function, the full training dataset is used at every step. As such, this implementation is called "Batch" Gradient Descent
 - Scaling the features allows Gradient Descent to converge on a solution faster
-  - If features are close in range (i.e., -1 to 1 or -3 to 3) it shouldn't really effect convergence
-  - If features vary widely in range (i.e., -1 to 1 and -100 to 100; -1 to 1 and -0.0001 to 0.0001) they will effect convergence
+  - If features are close in range (i.e. -1 to 1 or -3 to 3) it shouldn't really effect convergence
+  - If features vary widely in range (i.e. -1 to 1 and -100 to 100; -1 to 1 and -0.0001 to 0.0001) they will effect convergence
   - Seems like features should probably be scaled if they're more than an order of magnitude different (multiple of 10), but otherwise can probably be left alone
 - While it is pointed out that it would seem there would be a problem of getting stuck at a local optimization (instead of the best global solution), Gradient Descent is a convex function, which means it will always find the global minimum for Linear Regression
 

@@ -57,7 +57,7 @@ $PCF = \frac{P \times C(fn)}{P \times C(fp) + (1 - P) \times C(fn)}$
 Where:
 
 - *P* is the (prior) probability of the event (all positives)
-  + I.E., *P* is the proportion of positives in the data
+  + I.e., *P* is the proportion of positives in the data
   + As such, 1 - *P* is the probability of a non-event, or the proportion of all negatives in the data
 - *C(fn)* is the cost of a false negative (positive observation predicted as a negative)
 - *C(fp)* is the cost of a false positive (negative observation predicted as a positive)

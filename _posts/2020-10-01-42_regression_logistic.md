@@ -34,8 +34,8 @@ $\hat{y} = h_{0}(x) = \theta_{0} + \theta_{1}x_{1} + \theta_{2}x_{2} + \dotsb + 
 Where
 
 - $h_{\theta}$: prediction function, also called a *hypothesis*; $h_{\theta} = \theta^{T}x^{(i)}$
-- $\theta$: vector (I.E., list) of weights, with the first value being the y-intercept type value (represented by *b* in *Introduction to Machine Learning*)
-- $x$: the matrix of feature values (I.E., the DataFrame) with the first column ($x_{0}$, not listed in the equation) being all 1s so that $\theta_{0}$ is always evaluated as the same value
+- $\theta$: vector (i.e. list) of weights, with the first value being the y-intercept type value (represented by *b* in *Introduction to Machine Learning*)
+- $x$: the matrix of feature values (i.e. the DataFrame) with the first column ($x_{0}$, not listed in the equation) being all 1s so that $\theta_{0}$ is always evaluated as the same value
 
 The addition of the sigmoid function turns the output into a number between 0 and 1, where the predictions form an S-shape.
 
@@ -62,7 +62,7 @@ $h_{0}(x) = g(\theta^{T}x) = g(z) = \frac{1}{1+e^{-z}} = \frac{1}{1+e^{-\theta^{
 Where:
 - $z = X \theta = \theta^{T}x$
   - (m x n) x (n x 1 ) = (m x 1)
-- e = Euler's number (i.e., the base of natural logarithm)
+- e = Euler's number (i.e. the base of natural logarithm)
   - The exact value is in the `math` library: `math.e`
   - To use it in this equation, `math.exp(-z)`
 - g = sigmoid function
@@ -88,7 +88,7 @@ On page 144 of *Hands-On Machine Learning with Scikit Learn*, Aurelien points ou
 
 ### Multiple Classes
 
-On page 148 of *Hands-On Machine Learning with Scikit Learn*, Aurelien discusses using Logistic Regression to predict on multiple classes (I.E. more than binary "yes"/"no" decisions) using Softmax Regression.
+On page 148 of *Hands-On Machine Learning with Scikit Learn*, Aurelien discusses using Logistic Regression to predict on multiple classes (i.e. more than binary "yes"/"no" decisions) using Softmax Regression.
 
 As I don't work with multi-class predictions, I'll be skipping Softmax. 
 

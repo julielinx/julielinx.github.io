@@ -46,7 +46,7 @@ Where:
 
 ## Purpose
 
-OLS is basically the starting point for linear regression. It calculates the theta array (I.E., the list of weights) used to calculate the output (I.E., the predicted value) from an array of inputs.
+OLS is basically the starting point for linear regression. It calculates the theta array (i.e. the list of weights) used to calculate the output (i.e. the predicted value) from an array of inputs.
 
 There are two options when calculating the theta array:
 

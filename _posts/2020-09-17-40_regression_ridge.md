@@ -46,9 +46,9 @@ On pages 135 and 137, [Hands-On Machine Learning with Scikit-Learn](https://www.
   - Where
     - MSE: mean squared error
     - $\alpha$: regularization term
-      - i.e., how much the model is regularized
-      - A value of 0 is no regularization (i.e., regular linear regression)
-      - As the value approaches infinity, the weights approach zero (i.e., no features contribute and results in a flat line through the data's mean)
+      - i.e. how much the model is regularized
+      - A value of 0 is no regularization (i.e. regular linear regression)
+      - As the value approaches infinity, the weights approach zero (i.e. no features contribute and results in a flat line through the data's mean)
     - $\theta$: the theta array
 - Vectorized ridge regression: $\hat{\theta} = (X^{T} X + \alpha A)^{-1} X^{T}y$
   - Where
@@ -56,15 +56,15 @@ On pages 135 and 137, [Hands-On Machine Learning with Scikit-Learn](https://www.
     - $X$: the feature matrix
     - $X$: the transpose of the feature matrix
     - $\alpha$: the regularization term
-      - i.e., how much the model is regularized
-      - A value of 0 is no regularization (i.e., regular linear regression)
-      - As the value approaches infinity, the weights approach zero (i.e., no features contribute and results in a flat line through the data's mean)
-    - $A$: the identify matrix, except with the top-left cell being 0 (i.e., the bias term)
+      - i.e. how much the model is regularized
+      - A value of 0 is no regularization (i.e. regular linear regression)
+      - As the value approaches infinity, the weights approach zero (i.e. no features contribute and results in a flat line through the data's mean)
+    - $A$: the identify matrix, except with the top-left cell being 0 (i.e. the bias term)
     - $y$: the target array
 
 ## Behavior
 
-The outcome of keeping the coefficients as small as possible helps reduce the complexity of the model (i.e., makes it more generalized and reduces overfitting). The complexity of the model is controlled through the parameter `alpha`. Larger values of `alpha` force the coefficients closer to 0 (reducing complexity), smaller values of `alpha` are less restricting (allowing for more complexity).
+The outcome of keeping the coefficients as small as possible helps reduce the complexity of the model (i.e. makes it more generalized and reduces overfitting). The complexity of the model is controlled through the parameter `alpha`. Larger values of `alpha` force the coefficients closer to 0 (reducing complexity), smaller values of `alpha` are less restricting (allowing for more complexity).
 
 As seen in the chart below from *Introduction to Machine Learning with Python*'s `mglearn` package, Ridge Regression gets lower scores than Linear Regression on training data, but higher scores on the test data.
 

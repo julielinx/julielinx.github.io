@@ -120,7 +120,7 @@ Notice in Jason's example, that there are only 50 samples. This gives a strong i
 
 > This indicates that the model is capable of further learning and possible further improvements and that the training process was halted prematurely.
 
-I.E., when you encounter this, get more data.
+I.e. when you encounter this, get more data.
 
 <img src='https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2018/12/Example-of-Training-Learning-Curve-Showing-An-Underfit-Model-That-Requires-Further-Training.png'>
 
@@ -137,7 +137,7 @@ Jason lists the two criteria of overfitting on a learning curve as:
 
 In Jason's High Variance example, I find it interesting how much more variation there is in the curves (the lines are squiggly instead of smooth). I noticed this because of the high variability in the learning "curve" for the Boston dataset in my accompanying notebook. There is a spike in RMSE in the examples from around 70 to around 110. This "curve" is very atypical compared to the theory and examples in all of my resources.
 
-In attempting to reconcile this phenomenon with high bias vs high variance, it occurred to me that there is a different most likely explanation. Drastic changes in the score of a model can be due to the subsample of examples it's trained on. I talk about this in the Stratification section of [Entry 17](https://julielinx.github.io/blog/17_resampling/).
+In attempting to reconcile this phenomenon with high bias vs high variance, it occurred to me that there is a different explanation that is more likely. Drastic changes in the score of a model can be due to the subsample of examples it's trained on. I talk about this in the Stratification section of [Entry 17](https://julielinx.github.io/blog/17_resampling/).
 
 A possible culprit on the Boston dataset would be if there was a section of outlier prices. The model would train well at the start when there was a mixture of prices. Then when it hit the subset of outliers, let's say all super expensive houses, that would significantly change the model's predictions - in an undesirable way. Once the training examples return to the normal mixture, the predictions return to their former performance.
 

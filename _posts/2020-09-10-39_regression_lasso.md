@@ -39,9 +39,9 @@ On pages 137 and 140, [Hands-On Machine Learning with Scikit-Learn](https://www.
   - Where
     - MSE: mean squared error
     - $\alpha$: regularization term
-      - i.e., how much the model is regularized
-      - A value of 0 is no regularization (i.e., regular linear regression)
-      - As the value approaches infinity, the weights approach zero (i.e., no features contribute and results in a flat line through the data's mean)
+      - i.e. how much the model is regularized
+      - A value of 0 is no regularization (i.e. regular linear regression)
+      - As the value approaches infinity, the weights approach zero (i.e. no features contribute and results in a flat line through the data's mean)
     - $\theta$: the theta array
 - Lasso regression subgradient vector: $g(\theta, J) = \nabla_{0} \mathrm{MSE}(\theta) + \alpha 
   \begin{pmatrix}
@@ -55,9 +55,9 @@ On pages 137 and 140, [Hands-On Machine Learning with Scikit-Learn](https://www.
     - $ \nabla_{0}$: differential operator (the symbol is called "nabla")
     - $\mathrm{MSE}$: mean squared error
     - $\alpha$: the regularization term
-      - i.e., how much the model is regularized
-      - A value of 0 is no regularization (i.e., regular linear regression)
-      - As the value approaches infinity, the weights approach zero (i.e., no features contribute and results in a flat line through the data's mean)
+      - i.e. how much the model is regularized
+      - A value of 0 is no regularization (i.e. regular linear regression)
+      - As the value approaches infinity, the weights approach zero (i.e. no features contribute and results in a flat line through the data's mean)
     - $\mathrm{sign}(\theta_{i}) = 
   \begin{cases}
     -1   & \mathrm{if } \; \theta_{i} < 0 \\
@@ -67,7 +67,7 @@ On pages 137 and 140, [Hands-On Machine Learning with Scikit-Learn](https://www.
 
 ## Behavior
 
-The outcome of keeping the coefficients as small as possible helps reduce the complexity of the model (i.e., makes it more generalized and reduces overfitting). The complexity of the model is controlled through the parameter `alpha`. Larger `alpha` values force the coefficients closer to 0 (reducing complexity), smaller values are less restricting (allowing for more complexity).
+The outcome of keeping the coefficients as small as possible helps reduce the complexity of the model (i.e. makes it more generalized and reduces overfitting). The complexity of the model is controlled through the parameter `alpha`. Larger `alpha` values force the coefficients closer to 0 (reducing complexity), smaller values are less restricting (allowing for more complexity).
 
 [Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413) puts it succinctly on page 55:
 

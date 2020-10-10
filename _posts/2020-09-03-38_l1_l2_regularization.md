@@ -53,12 +53,12 @@ At first I was like "Why are you *adding* the penalty? Won't that make the weigh
 
 Here's how I think about it:
 
-- The weights (i.e., the theta array) show which features contribute most strongly to the prediction; The larger the weight, the more important that feature.
+- The weights (i.e. the theta array) show which features contribute most strongly to the prediction; The larger the weight, the more important that feature.
   - This concept is exemplified in [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn-ebook/dp/B00K15TZU0) on page 101, during the discussion on intrepretability:
       > [...] if the estimated coefficient of a predictor is 2.5, then a 1 unit increase in that predictor's value would, on average, increate the response by 2.5 units.
       - Where the estimate coefficient is the same as what I've been referring to as a weight in the theta array.
-- Features are more important (i.e., higher weights) when the predicted value is closer to the observed value ($\frac{1}{n} \sum (y_{i} - \hat{y_{i}})^2$ (i.e. mean squared error) is small.
-- Features that are less important (i.e., lower weights) when the predicted value is farther from the observed value ($\frac{1}{n} \sum (y_{i} - \hat{y_{i}})^2$ (i.e. mean squared error)  is large).
+- Features are more important (i.e. higher weights) when the predicted value is closer to the observed value ($\frac{1}{n} \sum (y_{i} - \hat{y_{i}})^2$ (i.e. mean squared error) is small.
+- Features that are less important (i.e. lower weights) when the predicted value is farther from the observed value ($\frac{1}{n} \sum (y_{i} - \hat{y_{i}})^2$ (i.e. mean squared error)  is large).
 
 #### "These aren't the droids you're looking for."
 

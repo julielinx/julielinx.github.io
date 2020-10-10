@@ -46,7 +46,7 @@ The only place I saw learning curves explicitly called out as a method to assess
 
 ## The Proposed Solution
 
-The shape formed by the training and test learning curves provide information about the sufficiency of the training dataset. Once the algorithm has learned all it can from the data, the two curve flattens out and proceed in parallel. If the curve doesn't flatten out, that generally means the model doesn't have enough data.
+The shape formed by the training and test learning curves provide information about the sufficiency of the training dataset. Once the algorithm has learned all it can from the data, the two curves flattens out and proceed in parallel. If the curve doesn't flatten out, that generally means the model doesn't have enough data.
 
 ![Training sample](https://github.com/julielinx/datascience_diaries/blob/master/img/learning_curve_ex.png?raw=true)
 
