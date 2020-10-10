@@ -99,7 +99,7 @@ Where:
 - $p(a)$: the probability of a given example being in class $a$
 - $C(a \vert b)$: the cost incurred if an example in class $b$ is misclassified as being in class $a$
 
-I'm okay with the first portion of the equation, it's just the rise over the run where the points are ($FP_{1}, TP_{1}$) and ($FP_{2}, TP_{2}$). However, in the second part of the equation there is no $p(a)$ or $C(a|b)$. Now, I can guess than $a$ and $b$ are the positive and negative classes, in which case the second part of the equation translates to:
+I'm okay with the first portion of the equation, it's just the rise over the run where the points are ($FP_{1}, TP_{1}$) and ($FP_{2}, TP_{2}$). However, in the second part of the equation there is no $p(a)$ or $C(a \vert b)$. Now, I can guess than $a$ and $b$ are the positive and negative classes, in which case the second part of the equation translates to:
 
 $\frac{p(a)C(b \vert a)}{p(b)C(a \vert b)}$
 
