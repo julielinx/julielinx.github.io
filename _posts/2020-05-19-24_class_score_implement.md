@@ -117,7 +117,7 @@ The values range from 0 to 1. As the [brier_score_loss](https://scikit-learn.org
 
 ### `metrics` module
 
-The list of classification metrics available in the `metrics` module is more extensive that what's available by default for the `scoring` parameter. The list of functions is:
+The second option is the list of classification metrics available in the `metrics` module. This list is more extensive than what's available by default for the `scoring` parameter. The list of functions is:
 
 - `accuracy_score`
 - `balanced_accuracy_score`
@@ -179,7 +179,7 @@ Based on the equation, it looks like this translates to loss functions by taking
 
 ### `scoring` parameter
 
-Since I'm focused on binary problems, I can ignore the micro/macro/etc variations. As discussed earlier I'm not interested in the accuracy scores due to the imbalanced classes I work with, so those are out too. I'll be addressing ROC/AUC and thresholds in <font color='red'>Entry 26</font>, so they'll be dealt with there.
+Since I'm focused on binary problems, I can ignore the micro/macro/etc variations. As discussed earlier I'm not interested in the accuracy scores due to the imbalanced classes I work with, so those are out too. I'll be addressing ROC/AUC and thresholds in [Entry 26](https://julielinx.github.io/blog/26_thresholds_pr_roc/), so they'll be dealt with there.
 
 This leaves me with the following options:
 
@@ -190,7 +190,7 @@ This leaves me with the following options:
 - `recall`
 - `f1`
 
-Considering the overall number of classification metrics I'm interested in, I find it a little ironic that I'm left with fewer classification metrics that I was for regression metrics. This really just means I get to figure out how to use the `make_scorer` function.
+Considering the overall number of classification metrics I'm interested in, I find it a little ironic that I'm left with fewer classification metrics than I was for regression metrics. This really just means I get to figure out how to use the `make_scorer` function.
 
 ### `metrics` module
 
@@ -203,7 +203,7 @@ Using the same criteria as for the `scoring` parameter option, and removing what
 
 ### Overview
 
-The metrics I decided I'm interested in while completing [Entry 23](https://julielinx.github.io/blog/23_class_score_theory/), along with where they're available is recapped below:
+The metrics I decided I'm interested in while completing [Entry 23](https://julielinx.github.io/blog/23_class_score_theory/), along with where they're available are recapped below:
 
 - No information rate: easily obtained using the dummy classifiers
 - Cohen’s Kappa: `metrics` module
@@ -229,7 +229,7 @@ There were a few additional metrics that I may be interested in that were listed
 
 ## The Fail
 
-The most obvious fail was my inability to find a way to run three of the metrics I'm interested in (Markedness, Specificity, Critical success index). However, the goal of this series of posts is to evaluate modes, not write code from scratch. I have to draw a line somewhere to keep myself from detouring down rabbit holes.
+The most obvious fail was my inability to find a way to run three of the metrics I'm interested in (markedness, specificity, critical success index). However, the goal of this series of posts is to evaluate modes, not write code from scratch. I have to draw a line somewhere to keep myself from detouring down rabbit holes.
 
 The other fail was that after a brief foray into the `imbalneced-learn` documentation, I branded it another rabbit hole at this stage. While it may be nice to have the options available in that package, I feel that once the Precision/Recall (PR) and Receiver Operator Characteristic (ROC) curves have been incorporated into the evaluation, I'll be   able to establish a well rounded picture of model performance.
 
@@ -249,3 +249,5 @@ The other fail was that after a brief foray into the `imbalneced-learn` document
 - [Hinge Loss Explained with a Table Instead of a Graph](https://jamesmccaffrey.wordpress.com/2018/10/04/hinge-loss-explained-with-a-table-instead-of-a-graph/)
 - [How do you minimize “hinge-loss”?](https://math.stackexchange.com/questions/782586/how-do-you-minimize-hinge-loss)
 - [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance)
+- [Entry 23: Scoring Classification Models - Theory](https://julielinx.github.io/blog/23_class_score_theory/)
+- [Entry 26: Setting thresholds - precision, recall, and ROC](https://julielinx.github.io/blog/26_thresholds_pr_roc/)

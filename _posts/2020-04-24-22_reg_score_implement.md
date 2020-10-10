@@ -48,7 +48,7 @@ The metrics that can be used with this method are limited to those that don't re
 
 ### Context
 
-From the list of options above, I covered explained variance, $R^2$, mean absolute error, mean squared error, and root mean squared error in [Entry 21](https://julielinx.github.io/blog/21_reg_score_theory/). I'll cover the additional options here.
+From the list of options above, I covered $R^2$, explained variance, mean absolute error, mean squared error, and root mean squared error in [Entry 21](https://julielinx.github.io/blog/21_reg_score_theory/). I'll cover the additional options here.
 
 #### Max error
 
@@ -80,7 +80,7 @@ $mean\text{ }gamma\text{ }deviance = 2(log(\frac{\hat{y_{i}}}{y_{i}}) + \frac{y_
 
 ### `metrics` module
 
-The functions in the `metrics` module allow for more flexibility than the predefined options in the `scoring` parameter due to being able to take additional parameters. The `mean_squared_error`, `mean_absolute_error`, `explained_variance_score`, and `r2_score functions` can handle multiouput cases. Multiouput cases aren't something I work on very often, so I'm going to leave coverage of this topic at that. See the [Scikit-Learn documentation](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics) for more information.
+The functions in the `metrics` module allow for more flexibility than the predefined options in the `scoring` parameter due to being able to take additional parameters. The `mean_squared_error`, `mean_absolute_error`, `explained_variance_score`, and `r2_score functions` can handle multi-output cases. Multi-output cases aren't something I work on very often, so I'm going to leave coverage of this topic at that. See the [Scikit-Learn documentation](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics) for more information.
 
 The only additional function available is the full tweedie deviance, which accepts different power inputs. Other than that, the only difference is that the names of the functions are slightly altered. 
 

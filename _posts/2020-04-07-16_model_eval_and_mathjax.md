@@ -27,7 +27,7 @@ I do not plan on addressing other issues that can hinder model effectiveness in 
 2.) Unreliable ground truth
   - **Ground truth** is the labelling of the feature to be predicted.
   - The accuracy of this labelling can be affected by many factors. These include:
-    - **Undetected**. My grandfather loved to garden. He kept these elaborate diagrams of what plants were in his yard. If I turned that diagram into a dataset and Gramps got some volunteer plants or weeds he didn't notice (volunteers are when an existing plant sprouts baby plants, ie you don't have to go buy and plant them) then the new plants would be undetected. They wouldn't end up in my dataset because we didn't know about them.
+    - **Undetected**. My grandfather loved to garden. He kept these elaborate diagrams of what plants were in his yard. If I turned that diagram into a dataset and Gramps got some volunteer plants or weeds he didn't notice (volunteers are when an existing plant sprouts baby plants, i.e. you don't have to go buy and plant them) then the new plants would be undetected. They wouldn't end up in my dataset because we didn't know about them.
     - **Mislabelling**. Medical conditions are a good example of this. I have a medical condition called Postural Orthostatic Tachycardia Syndrome (POTS). Due to the most prevalent symptom, high heart rate, this condition is commonly misdiagnosed as anxiety. Whenever someone with POTS is diagnosed with anxiety instead of the underlying condition of POTS, that is mislabelling. (Of course medical conditions aren't always that easy, both POTS and anxiety can exist in the same person. If that's the case and only a diagnosis of anxiety is given, then POTS would qualify as undetected.)
     - **Inconsistent reporting**. Surveys or individual responses are a good example of this. I read scripts for the Nashville Film Festival's script writing contest a few times. Many readers sign up to help with this event. Each reader brings their own perception of whether a script is good or bad. Even after attempting to correct for differences in perspectives by focusing on specific areas like character development, originality, dialogue, and the like, readers tend to rate on different scales. One reader may rarely give out the highest rating while another gives them out frequently. This results in the same script receiving multiple classifications. The fact that the same script can be rated differently is an example of how inconsistent reporting would work across a dataset.
     
@@ -101,7 +101,7 @@ I'll tackle each of these issues one at a time like I did with the series of ent
 
 Several of these items are processing/pipeline challenges. Once I've worked out how to do cross-validation, what kinds of stratification are available, and the best way to put them (plus pre-processing) into a pipeline, those items will be complete.
 
-The other items, ie the evaluation metrics, I plan to run on multiple datasets to help develop a more intuitive understanding of the metric, when it's helpful, and exactly what it's telling me.
+The other items, i.e. the evaluation metrics, I plan to run on multiple datasets to help develop a more intuitive understanding of the metric, when it's helpful, and exactly what it's telling me.
 
 While I plan on working on visualizing the effects of training size and hyperparameters, I don't plan on addressing changing those parameters or doing any parameter fine turning / re-evaluation of the results. Improving the effectiveness of model predictions will be it's own series of entries. I anticipate deep dives into different algorithms will be part of this process, which will be too extensive to include in this series of entries.
 
@@ -109,7 +109,7 @@ While I plan on working on visualizing the effects of training size and hyperpar
 
 ### The problem
 
-At first I tried to jump right into the evaluation steps. However, I found myself flailing around, having to explain where each step fell in the process and why I was doing it at *this* point, then changing around the order all over again. This outline entry allowed me to consolidate my thoughts, record background and context, and create a clear outline to follow for the series.S
+At first I tried to jump right into the evaluation steps. However, I found myself flailing around, having to explain where each step fell in the process and why I was doing it at *this* point, then changing around the order all over again. This outline entry allowed me to consolidate my thoughts, record background and context, and create a clear outline to follow for the series.
 
 ### The post
 
@@ -126,4 +126,3 @@ It didn't end up being all that hard, finding time to sit down and figure it out
 - [How to use MathJax in Jekyll generated Github pages](https://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/)
 - [Use MathJax to write Equations in Jekyll blogs](http://zjuwhw.github.io/2017/06/04/MathJax.html)
 - [Math on GitHub Pages](https://g14n.info/2014/09/math-on-github-pages/)
-- 

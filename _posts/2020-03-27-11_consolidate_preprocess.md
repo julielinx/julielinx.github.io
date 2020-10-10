@@ -50,7 +50,7 @@ Evaluating model performance will be the next big area to tackle (after I finish
 
 2 - The correlation and collinearity feature reduction step is really useful when there are a lot of features. However, three of the datasets I used have less than 10 features. Separating out the correlation/collinearity reduction step gave me the option of skipping it when there are a small number of features.
 
-3 - At some point, I'll probably split this into multiple pre-processing steps/functions. For example, some categories will probably warrant different encoding methods (binary vs ordinal vs one-hot, etc). I'll address missing values in [Entry 12](https://julielinx.github.io/blog/12_missing_values) and categorical encoding in <font color='red'>Entry 14</font>. However, these types of pre-processing start to involve assessing whether the transformation improves model performance. For now, I just need a skeleton process so that I can get to the evaluation portion.
+3 - At some point, I'll probably split this into multiple pre-processing steps/functions. For example, some categories will probably warrant different encoding methods (binary vs ordinal vs one-hot, etc). I'll address missing values in [Entry 12](https://julielinx.github.io/blog/12_missing_values) and categorical encoding in [Entry 14](https://julielinx.github.io/blog/14_encoding_cats/). However, these types of pre-processing start to involve assessing whether the transformation improves model performance. For now, I just need a skeleton process so that I can get to the evaluation portion.
 
 Once I've developed a set of diagnostics to assess model effectiveness, I can play with determining the best types of advanced pre-processing for specific types of input and which transformations are preferred by which algorithms.
 
@@ -62,7 +62,7 @@ Once I've developed a set of diagnostics to assess model effectiveness, I can pl
 
 Okay, so I forgot that my pre-processing functions only take 2 datasets - training and test. This means that the reserve set wouldn't get pre-processed. Regardless of how many validation datasets I have, they all have to be pre-processed according to the parameters determined by the training dataset. As such, I just moved the second split to after the pre-processing has been complete, but before the predictions take place.
 
-*Note from the future*, I ended up just doing train and test sets. The way I ended up setting up my process, the test set functions as a reserve set. I do cross-validation on the training set, which allows the training set to act as though it's been broken into further train and test sets. I don't get to that stage until around <font color='red'>Entry 18</font> though.
+*Note from the future*, I ended up just doing train and test sets. The way I ended up setting up my process, the test set functions as a reserve set. I do cross-validation on the training set, which allows the training set to act as though it's been broken into further train and test sets. I don't get to that stage until around [Entry 18](https://julielinx.github.io/blog/18_crossval/) though.
 
 ### Low correlation
 
@@ -73,3 +73,12 @@ I thought about reverting the correlation function to pulling the X most correla
 # Up Next
 
 [Missing values](https://julielinx.github.io/blog/12_missing_values)
+
+## Resources
+
+- [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/index.php)
+- [Machine Learning course](https://www.coursera.org/learn/machine-learning/)
+- [Entry 10: Reorder Pre-processing and Make Predictions](https://julielinx.github.io/blog/10_reorder_and_predict/)
+- [Entry 12: Missing Values](https://julielinx.github.io/blog/12_missing_values)
+- [Entry 14: Encoding Categorical Variables](https://julielinx.github.io/blog/14_encoding_cats/)
+- [Entry 18: Cross-validation](https://julielinx.github.io/blog/18_crossval/)

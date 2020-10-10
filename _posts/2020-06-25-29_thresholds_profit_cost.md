@@ -93,15 +93,15 @@ And what's the purpose of (1-TP)? Based on previous definitions of TP in the boo
 
 I went searching for more information online. Chris Drummond and Robert Holte appear to be the experts on NEC, as the four papers I found on it were all written by the two of them. However, the papers are all written in mathematical notation without clarifying examples and include things like:
 
-$\frac{TP_{1} - TP_{2}}{FP_{1} - FP_{2}} = \frac{p(-)C(+|-)}{p(+)C(-|+)}$
+$\frac{TP_{1} - TP_{2}} {FP_{1} - FP_{2}} = \frac{p(-)C(+ \vert -)} {p(+)C(- \vert +)}$
 
 Where:
 - $p(a)$: the probability of a given example being in class $a$
-- $C(a|b)$: the cost incurred if an example in class $b$ is misclassified as being in class $a$
+- $C(a \vert b)$: the cost incurred if an example in class $b$ is misclassified as being in class $a$
 
 I'm okay with the first portion of the equation, it's just the rise over the run where the points are ($FP_{1}, TP_{1}$) and ($FP_{2}, TP_{2}$). However, in the second part of the equation there is no $p(a)$ or $C(a|b)$. Now, I can guess than $a$ and $b$ are the positive and negative classes, in which case the second part of the equation translates to:
 
-$\frac{p(a)C(b|a)}{p(b)C(a|b)}$
+$\frac{p(a)C(b \vert a)}{p(b)C(a \vert b)}$
 
 But it doesn't actually say that. And it's hard to confirm that guess without concrete examples or digging into the math myself. So, I'm going to shelf NEC until I have time for (and feel like) reading 10 - 36 page academic mathematics papers. After all, the goal of these entries is to break things down into 1-2 hour bite size pieces.
 

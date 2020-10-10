@@ -87,7 +87,7 @@ While the three definitions above (residuals, absolute error, and squared error)
 
 ### Mean Absolute Error (MAE)
 
-This sums the absolute errors of all predictions and divides by the number of observations (or multiplies by the reciprocal of the number of observations). Ie, it gets the mean of the absolute errors.
+This sums the absolute errors of all predictions and divides by the number of observations (or multiplies by the reciprocal of the number of observations). I.e., it gets the mean of the absolute errors.
 
 $MAE = \frac{\sum \lvert y_{i} - \hat{y_{i}}\rvert}{n} = \frac{1}{n} \sum \lvert y_{i} - \hat{y_{i}}\rvert$
 
@@ -136,9 +136,9 @@ $R^2$ is dependent on the variation in the outcome
 
 ### Explained variance
 
-$explained\text{ }variance = 1 - \frac{Var(y - \hat{y})}{Var(y)}$
+$explained\text{ }variance = 1 - \frac{Var(y - \hat{y} )}{Var(y)}$
 
-Where $Var(y-\hat{y}) = \frac{\sum{(error^2)} - mean(error)}{n}$
+Where $Var(y-\hat{y} ) = \frac{\sum{(error^2)} - mean(error)}{n}$
 
 According to [this StackExchange answer](https://stats.stackexchange.com/questions/210168/what-is-the-difference-between-r2-and-variance-score-in-scikit-learn) the only difference between $R^2$ and explained variance is the mean(error). So if the mean(error) is 0, explained variance and $R^2$ will be the same. A more thorough answer can also be found on [StackOverflow](https://stackoverflow.com/questions/24378176/python-sci-kit-learn-metrics-difference-between-r2-score-and-explained-varian).
 

@@ -14,7 +14,7 @@ The notebook where I did my code for this entry can be found on my github page i
 
 ## The Problem
 
-Most models are unable to run missing values. Tree-based models are an exception to this rule, but many of the others are intolerant of missingness. Unless I want to be confined to tree-based models (I don't, neural nets are basically a bunch of regression models strung together, and they build some of the most robust and accurate models currently possible) I need to be able to account for missing information.
+Most models are unable to run missing values. Tree-based models are an exception to this rule, but many of the others are intolerant of missingness. Unless I want to be confined to tree-based models (I don't. Neural nets are basically a bunch of regression models strung together, and they build some of the most robust and accurate models currently possible) I need to be able to account for missing information.
 
 The major hurdle with this issue, as stated above, is that a missing value can mean different things in different contexts. There are various ways to indicate missingness in a dataset, some more appropriate than others in certain contexts.
 
@@ -28,7 +28,7 @@ There are [two general ways](http://www.stat.cmu.edu/~hseltman/726/Missing%20Dat
   - Most every model type except tree-based models evaluate missingness on this criteria. If the value is empty, it needs to be addressed one way or another before the model can be run.
 - Definitions based on *context*: Missing data is lack of a recorded answer where we “expected” to find one.
   - In the second example above with the internet customer interaction, I wouldn't expect to record the phone number they're calling from - the value would be missing, but it's not expected in the context.
-  - Context can be addressed through modeling choices - ie only model for phone interactions or web interactions (separating these two interaction types immediately reduces the number of missing values because it considers context)
+  - Context can be addressed through modeling choices - i.e. only model for phone interactions or web interactions (separating these two interaction types immediately reduces the number of missing values because it considers context)
 
 Within these two definition types we can see the following types of missingness as defined in section 3.4 of [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn/dp/1461468485) by Max Kuhn and Kjell Johnson:
 
@@ -39,7 +39,7 @@ Within these two definition types we can see the following types of missingness 
 
 ### Categories
 
-[According to Andrew Gelman](http://www.stat.columbia.edu/~gelman/arm/missing.pdf), a statistics professor at Columbia University, in his book [Data Analysis Using Regression and Multilevel/Hierarchical Models](http://www.stat.columbia.edu/~gelman/arm/) misisng data is generally grouped into four categories:
+[According to Andrew Gelman](http://www.stat.columbia.edu/~gelman/arm/missing.pdf), a statistics professor at Columbia University, in his book [Data Analysis Using Regression and Multilevel/Hierarchical Models](http://www.stat.columbia.edu/~gelman/arm/) missing data is generally grouped into four categories:
 
 - **Missing completely at random** (MCAR)
   - The probability of missingness is the same for all units
@@ -76,10 +76,10 @@ The first three options are pretty straight forward, but the fourth has a variet
 There are quite a few options when it comes to imputation. 
 
 - Pandas' [.fillna()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html) method allows the following [strategies](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#filling-missing-values-fillna):
-  - scalar (ie: a constant)
+  - scalar (i.e.: a constant)
   - forward fill
   - backward fill
-  - pandas object (ie: the mean, median, etc)
+  - pandas object (i.e.: the mean, median, etc)
 - Scikit Learn's [SimpleImputer](https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html) has the following options:
   - mean
   - median

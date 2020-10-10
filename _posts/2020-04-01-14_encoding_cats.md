@@ -77,7 +77,7 @@ I had to resort to for loops to apply the pandas methods to multiple columns. Fo
 
 I couldn't figure out how to return the `LabelBinarize` results as a dataframe. I finally gave up because there's an easier way to do it using the `category-encoders` package. Scikit-Learn tends to return things as arrays and the categorical encoding is no exception.
 
-These methods also tend to assume you'll be doing a single column or every column. In my experience, most datasets are a combination of numerical and categorical features. It seems like Scikit-Learn would have solved for this issue in a more intuitive way.
+These methods also tend to assume you'll be doing a single column or every column. In my experience, most datasets are a combination of numerical and categorical features. It seems like Scikit-Learn would have solved this issue in a more intuitive way.
 
 #### Category Encoders
 

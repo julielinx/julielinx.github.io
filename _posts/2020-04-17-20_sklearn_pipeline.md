@@ -34,6 +34,8 @@ To prevent data leakage, the order of these steps matters. Without the proper pr
 
 The correct way implement cross-validation with pre-processing is to do the pre-processing on only the training folds of each split. This can be seen in the chart below, also courtesy of the `mglearn` package.
 
+The difference is subtle: you can see it in the top portion of the charts in how much data `scaler fit` uses.
+
 ![CV done right](https://julielinx.github.io/assets/images/20_2_cv_right.png)
 
 ## The Options
@@ -61,7 +63,7 @@ The `ColumnTransformer` capability was added in 2018. This function takes defini
 
 #### Selecting numeric vs categorical columns
 
-The way I select columns by type (ie: categorical, numeric, object, etc) with pandas is to use the `.select_dtypes` method. This has worked well in the past. It allows for inclusion or exclusion of column types.
+The way I select columns by type (i.e.: categorical, numeric, object, etc) with pandas is to use the `.select_dtypes` method. This has worked well in the past. It allows for inclusion or exclusion of column types.
 
 Scikit-Learn's `compose` module has a function called `make_column_selector`. This option is even more flexible than `.select_dtypes`. It does inclusion/exclusion of column types just like `.select_dtypes` and also allows for the specification of a [regex](https://en.wikipedia.org/wiki/Regular_expression) pattern. I can see this being useful in a situation in which a group of features is named something similar (ex: `word_count_all`, `word_count_vowels`, `word_count_consonants`, etc) and I want to apply a transformation to that similarly named group.
 

@@ -20,7 +20,7 @@ The notebooks where I did my code for this entry can be found on my github page 
 
 ## The Options
 
-Retaining the pre-processing transformations is the easy point to address, as there's basically only one option: retain the information so you can apply it again later. This is easily accomplished with Scikit-Learn's `preprocessing` module. I just have to return the information as part of my function.
+Retaining the pre-processing transformations is the easy point to address, as there's basically only one option: retain the information so you can apply it again later. This is easily accomplished with [Scikit-Learn's](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing) `preprocessing` module. I just have to return the information as part of my function.
 
 Addressing the second point requires more thought. The target value being scaled is making me reconsider the order in which the pre-processing occurs. I could just separate the target value and features at the scaling step, but I think I should address several other concerns at this point so that the process is easier to apply to other datasets.
 
@@ -42,9 +42,9 @@ The target value doesn't need to be pre-processed (except maybe for missing valu
 
 ### Determine collinearity
 
-Correlation doesn't care about scaling (I checked - the values I got when running correlation on the unscaled features matched the values Sabber and I got when running it on standardized values). It might only make a miniscule difference on most datasets but to speed up pre-processing, I'm going to remove collinear features before applying transformations.
+Correlation doesn't care about scaling (I checked - the values I got when running correlation on the unscaled features matched the values [Sabber](https://medium.com/@sabber) and I got when running it on standardized values). It might only make a minuscule difference on most datasets but to speed up pre-processing, I'm going to remove collinear features before applying transformations.
 
-Correlation only works on numeric values. I'm going to explore determining collinearity of categorical-categorical and categorical-numeric features in <font color='red'>Entry 15</font>. For now, I'm going to run collinearity on just the numeric features (due to the transformation issues listed in the 'Apply transformations' section).
+Correlation only works on numeric values. I'm going to explore determining collinearity of categorical-categorical and categorical-numeric features in [Entry 15](https://julielinx.github.io/blog/15_cat_corr/). For now, I'm going to run collinearity on just the numeric features (due to the transformation issues listed in the 'Apply transformations' section).
 
 ### Apply transformations
 
@@ -52,7 +52,7 @@ This is where I encode categorical features and scale numeric features. To ensur
 
 When scaling the numeric features, one of the books/tutorials/blogs recommended scaling when the values were different by an order of magnitude (power of 10). In [Entry 8](https://julielinx.github.io/blog/08_center_scale_and_latex/) I delved into centering and scaling. The two most common options in scaling are normalization (centering and dividing by range) and standardization (centering and dividing by standard deviation). Normalization brings the mean to 0 and the range of values between 0 and 1. Standardization brings the mean to 0 and the standard deviation to 1. There is no set range on the standardized value, but because of [the way standard deviation works](https://en.wikipedia.org/wiki/Standard_deviation#Rules_for_normally_distributed_data), for normally distributed data 68.3% of values should be within 1 standard deviation, 95.4% within 2 standard deviations, and 99.7% within 3 standard deviations. As such, values an order of magnitude larger between features should be rare.
 
-If there are more than 100 categories in a categorical feature, that could present a problem. However, I plan to delve further into categorical features and the options for encoding then in <font color='red'>Entry 14</font>.
+If there are more than 100 categories in a categorical feature, that could present a problem. However, I plan to delve further into categorical features and the options for encoding then in [Entry 14](https://julielinx.github.io/blog/14_encoding_cats/).
 
 ### Make predictions
 
@@ -72,7 +72,7 @@ Also, there's a statistical principle that I forgot in generating my dataset. Ge
 
 The data I'm using is a major violation of the independent assumption (the values of some features are literally derived by using other variables in an equation).
 
-My non-sense results support the adage '[garbage in garbage out](https://en.wikipedia.org/wiki/Garbage_in,_garbage_out).' I totally earned this unusable result by being lazy in changing only one value while making up my own test data and being lazy about dependent features.
+My nonsense results support the adage '[garbage in garbage out](https://en.wikipedia.org/wiki/Garbage_in,_garbage_out).' I totally earned this unusable result by being lazy in changing only one value while making up my own test data and being lazy about dependent features.
  
  I could address the first problem by entering the mathematical equations so that when one value changes, the others update accordingly. However, that still won't address my IID problem.
  
@@ -89,3 +89,18 @@ However, this entry resulted in a working pipeline to go from loading data to ma
 ## Up Next
 
 [Consolidate process to date](https://julielinx.github.io/blog/11_consolidate_preprocess/)
+
+## Resources
+
+- [skearn.preprocessing](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing)
+- [Scikit Learn User Guide 6.3. Preprocessing data](https://scikit-learn.org/stable/modules/preprocessing.html)
+- [centering and scaling dummy variables](https://stats.stackexchange.com/questions/169350/centering-and-scaling-dummy-variables)
+- [Categorical variable](https://en.wikipedia.org/wiki/Categorical_variable)
+- [Standard deviation: Rules for normally distributed data](https://en.wikipedia.org/wiki/Standard_deviation#Rules_for_normally_distributed_data)
+- [Independent and identically distributed random variables](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables)
+- [garbage in garbage out](https://en.wikipedia.org/wiki/Garbage_in,_garbage_out)
+- [Entry 7: Collinearity](https://julielinx.github.io/blog/07_collinearity/)
+- [Entry 8: Centering and Scaling](https://julielinx.github.io/blog/08_center_scale_and_latex/)
+- [Entry 14: Encoding Categorical Variables](https://julielinx.github.io/blog/14_encoding_cats/)
+- [Entry 15: Categorical Correlation/Collinearity](https://julielinx.github.io/blog/15_cat_corr/)
+- [Sabber](https://medium.com/@sabber)

@@ -59,7 +59,7 @@ The confusion matrix, and most of the metrics that are calculated from it, can b
 
 For the purposes of organization, I'm going to break the metrics into four categories. I haven't seen anyone else break them up this way, but I have to have some kind of structure to list them out.
 
-The categories are based on the population they pull from (ie the denominator - the number on the bottom of a fraction if it's been a minute since your last math course), which can be seen in the Wikipedia chart.
+The categories are based on the population they pull from (i.e. the denominator - the number on the bottom of a fraction if it's been a minute since your last math course), which can be seen in the Wikipedia chart.
 
 - Based on the total population - the two boxes in the upper right corner of the Wikipedia chart and some extras
   - Prevalence
@@ -317,7 +317,7 @@ Due to the imbalanced nature of the datasets I generally work with, I pulled out
 
 ## The Fail
 
-You may be thinking to yourself "But wait Julie, you didn't cover ROC/AUC." Don't worry, I cover that in <font color='red'>Entry 26</font>.
+You may be thinking to yourself "But wait Julie, you didn't cover ROC/AUC." Don't worry, I cover that in [Entry 26](https://julielinx.github.io/blog/26_thresholds_pr_roc/).
 
 ## Up Next
 

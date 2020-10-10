@@ -54,7 +54,7 @@ This function addresses one of the major failings of `cross_val_score`, it will 
 
 ### `cross_val_predict`
 
-This function returns the prediction for each observation. Because it's part of a cross-validation function, this means that each prediction is from when that particular observation was assigned to the test set (ie, the predictions aren't all made from the same train set values). Due to this unique return, it can only be used with cross-validation methods that assign an observation to the test set exactly once (ie k-fold. Not repeated, bootstrap, or shuffle).
+This function returns the prediction for each observation. Because it's part of a cross-validation function, this means that each prediction is from when that particular observation was assigned to the test set (i.e., the predictions aren't all made from the same train set values). Due to this unique return, it can only be used with cross-validation methods that assign an observation to the test set exactly once (i.e. k-fold. Not repeated, bootstrap, or shuffle).
 
 Scikit-Learn includes a warning concerning the use of this function: "`cross_val_predict` simply returns the labels (or probabilities) from several distinct models undistinguished. Thus, `cross_val_predict` is not an appropriate measure of generalisation error."
 
@@ -91,11 +91,11 @@ The last piece will be to incorporate a pipeline to allow pre-processing transfo
 
 ## The Fail
 
-For some reason the `cross_validate` function requires the estimator to be a variable, not the actual algorithm function.
+For some reason the `cross_validate` function requires the estimator to be a variable, not the actual algorithm function. That's strange, but not hard to overcome. Just assign the value to a variable, then drop that in.
 
 ## Up Next
 
-Pipelines
+[Pipelines](https://julielinx.github.io/blog/20_sklearn_pipeline/)
 
 ## Resources
 

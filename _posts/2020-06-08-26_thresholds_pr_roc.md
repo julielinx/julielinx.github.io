@@ -109,7 +109,7 @@ I ran all of the metrics and made graphs for all the options listed above. Ultim
 
 *Applied Predictive Modeling* and *Introduction to Machine Learning with Python* both make a point of stating that choosing a threshold should be done on a separate validation set - not the training set or the test set used to evaluate performance.
 
-I'm not exactly sure what this means or how to go about it. When using cross-validation, the test set within the cross-validation splits would be the test set used to evaluate performance. But I don't really want to use my hold-out test set to set the threshold, I'd be out of test sets that the model hadn't seen and thus wouldn't have a way to verify the results.
+I'm not exactly sure what this means or how to go about it. When using cross-validation, the test set within the cross-validation splits would be the test set used to evaluate performance. But I don't really want to use my hold-out test set to define the threshold, I'd be out of test sets that the model hadn't seen and thus wouldn't have a way to verify the results.
 
 ### Pulling data
 
@@ -158,5 +158,5 @@ While running the MNIST dataset (much larger than the others that I'd run) I got
 - [Predicting Good Probabilities With Supervised Learning](http://www.cs.cornell.edu/~alexn/papers/calibration.icml05.crc.rev3.pdf)
 - [What is the difference between decision_function, predict_proba, and predict function for logistic regression problem?](https://stats.stackexchange.com/questions/329857/what-is-the-difference-between-decision-function-predict-proba-and-predict-fun)
 - [What's the difference between predict_proba and decision_function in scikit-learn?](https://stackoverflow.com/questions/36543137/whats-the-difference-between-predict-proba-and-decision-function-in-scikit-lear)
-- [1.4.1.2. Scores and probabilities](https://scikit-learn.org/stable/modules/svm.html#scores-and-probabilities)
+- [Sklearn User Guide: 1.4.1.2. Scores and probabilities](https://scikit-learn.org/stable/modules/svm.html#scores-and-probabilities)
 - [ConvergenceWarning: Liblinear failed to converge, increase the number of iterations](https://stackoverflow.com/questions/52670012/convergencewarning-liblinear-failed-to-converge-increase-the-number-of-iterati)
