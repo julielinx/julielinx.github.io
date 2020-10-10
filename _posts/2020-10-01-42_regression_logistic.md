@@ -45,7 +45,7 @@ The addition of the sigmoid function turns the output into a number between 0 an
 
 $\hat{y} = 
 \begin{cases}
-    0 \text{ if } \hat{p} < 0.5\\
+    0 \text{ if } \hat{p} < 0.5 \\
     1 \text{ if } \hat{p} \geq 0.5
   \end{cases}$
   
@@ -140,7 +140,7 @@ The second parameter is `C`. Both *Hands-On Machine Learning with Scikit Learn* 
 
 ## Up Next
 
-Graph Conference Talk
+[NODES2020 Graph Visualization Talk](https://julielinx.github.io/blog/43_NODES2020_talk/)
 
 ## Resources
 
