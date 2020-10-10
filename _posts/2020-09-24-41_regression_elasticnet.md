@@ -75,7 +75,7 @@ The outcome of keeping the coefficients as small as possible helps reduce the co
 
 ## Up Next
 
-Logistic Regression
+[Logistic Regression](https://julielinx.github.io/blog/42_regression_logistic/)
 
 ## Resources
 

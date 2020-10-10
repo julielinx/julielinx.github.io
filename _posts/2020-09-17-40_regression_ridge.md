@@ -88,7 +88,7 @@ Ridge Regression can also be used on smaller sample sizes than Linear Regression
 
 ## Up Next
 
-ElasticNet Regression
+[ElasticNet Regression](https://julielinx.github.io/blog/41_regression_elasticnet/)
 
 ## Resources
 
