@@ -13,8 +13,8 @@ Scikit-Learn has parameters that allow several of the subcategories of regressio
 
 The notebooks where I did my code for this entry can be found on my github page:
 
-- [Entry 35a notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/01_regression/35a_nb_regression.ipynb)
-- [Entry 35b notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/01_regression/35b_nb_regression.ipynb)
+- [Entry 35a notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/35a_nb_regression.ipynb)
+- [Entry 35b notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/35b_nb_regression.ipynb)
 
 ## Learning Style
 

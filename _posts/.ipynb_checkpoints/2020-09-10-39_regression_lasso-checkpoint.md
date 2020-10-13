@@ -10,7 +10,7 @@ tags:
 
 Least Absolute Shrinkage and Selection Operator (LASSO) Regression is a form of regression regularization using L1 regularization.
 
-The notebook where I did my code for this entry can be found on my github page in the [Entry 39 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/01_regression/39a_lasso_regression.ipynb).
+The notebook where I did my code for this entry can be found on my github page in the [Entry 39 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/39a_lasso_regression.ipynb).
 
 ## Learning Style
 

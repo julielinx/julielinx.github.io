@@ -10,7 +10,7 @@ tags:
 
 Ridge Regression is a form of regression regularization using L2 regularization.
 
-The notebook where I did my code for this entry can be found on my github page in the [Entry 40 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/01_regression/40a_ridge_regression.ipynb).
+The notebook where I did my code for this entry can be found on my github page in the [Entry 40 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/40a_ridge_regression.pynb).
 
 ## Learning Style
 
