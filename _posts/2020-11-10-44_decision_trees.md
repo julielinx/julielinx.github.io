@@ -42,7 +42,7 @@ A simple example would be figuring out what type of fruit someone is thinking of
 
 Andreas and Sarah use animal classification as their example in *Introduction to Machine Learning with Python* and provide a nice visualization in the `mglearn` package.
 
-![mglearn tree](https://julielinx.github.io/assets/images/44a_mglearn_tree.png)
+![mglearn tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/mglearn_tree.png?raw=true)
 
 ## Terminology
 
@@ -78,11 +78,11 @@ A *child node* is any node that has a *parent node*.
 
 The root node, "Has feathers?", would be an obvious parent node. The children of "Has feathers?" are "Can fly?" and "Has fins?". As there is no node that "Has feathers?" comes from, it has no parent.
 
-![parent child 2](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/parent_child2.png)
+![parent child 2](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/parent_child2.png?raw=true)
 
 If we follow the "Can fly?" node, we'll reach it's children "Hawk" and "Penguin", which are also leaf nodes.
 
-![parent child 1](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/parent_child1.png)
+![parent child 1](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/parent_child1.png?raw=true)
 
 ### Split, Branch, and Test
 
@@ -104,7 +104,7 @@ The splits are represented by *edges*, which are the lines that lead to the next
 
 *Depth* refers to how far down the tree a node is located. The root node "Has feathers?" is at depth 0, while the node "Hawk" is at depth 2. In programmer language, this means that the depth of the tree is 0 indexed. 
 
-![mglearn tree](https://julielinx.github.io/assets/images/44a_mglearn_tree.png)
+![mglearn tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/mglearn_tree.png?raw=true)
 
 Depth is used to control how many splits a decision tree can have. This is usually done by *pruning* a tree and comes in handy when limiting the complexity of the model.
 
@@ -116,7 +116,7 @@ To *prune* a tree is to either stop the splitting based on specific criteria or 
 
 A *stump* is a tree that's been pruned to a depth of 1 where it has only one split. 
 
-![parent child 1](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/parent_child1.png)
+![parent child 1](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/parent_child1.png?raw=true)
 
 ## Purpose
 
@@ -140,7 +140,7 @@ Due to this freedom, each feature fed to the tree algorithm can be thought of as
 
 For example, in the Titanic dataset the feature "fare" is used multiple times as the test in different splits. Even at a depth of 4, we can see "fare" used at depths 1, 2, and 3.
 
-<img src='images/titanic_tree_d4.png'>
+![Titanic Tree Depth 4](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/titanic_tree_d4.png?raw=true)
 
 ### Interpretability
 
@@ -148,7 +148,7 @@ This is one of the major benefits of Decision Trees. One piece of this is being 
 
 I used the highly simplified example from the `mglearn` package in the Terminology section, but wanted to include a more realistic preview here along with an explanation of what information it holds.
 
-<img src='images/iris_tree_min_impur_decr_04.png'>
+![Iris tree minimum impurity decrease](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/iris_tree_min_impur_decr_04.png?raw=true)
 
 - The top, unlabeled line is the threshold used to split the node into the next set of children nodes. However, notice that this line is only included for nodes with children nodes. This makes sense because leaf nodes don't have any splits, thus they don't have any split criteria.
   - In the root node of the above example `petal_length <= 2.45` is the criteria for splitting out the children nodes.
