@@ -10,7 +10,7 @@ tags:
 
 Page 143 of [Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646) states that Logistic Regression is "just like a Linear Regression model" except that "instead of outputting the result directly like the Linear Regression model does, it outputs the *logistic* of this result."
 
-The notebook where I did my code for this entry can be found on my github page in the [Entry 42 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/01_regression/42a_nb_regression_logistic.ipynb).
+The notebook where I did my code for this entry can be found on my github page in the [Entry 42 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/42a_nb_regression_logistic.ipynb).
 
 ## Learning Style
 
