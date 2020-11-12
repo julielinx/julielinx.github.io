@@ -68,7 +68,7 @@ There are two metrics in the above list that weren't in my review of my machine 
 
 This metric returns the negative log-likelihood of the classifier given the true label.
 
-$L_{log}(y,p) = -\text{logPr}(y | p) = -(y\text{log}(p) + (1-y)(\text{log}(1-p))$
+$L_{log}(y,p) = -\text{logPr}(y \lvert p) = -(y\text{log}(p) + (1-y)(\text{log}(1-p))$
 
 It's easiest to see in the last equation that one side or the other of the equation cancels out.
 
@@ -86,7 +86,7 @@ For a given class label of 0 and a predicted probability of .25:
 
 - $-{(0\log(.25) + (1 - 0)\log(0 - .25))}$
 - $-{(1\log(-.25))}$
-- $-{\log(-.25)}$</br>
+- $-{\log(-.25)}$
 
 The metric is designed to penalize both type I and type II errors, but more so to discriminate against predictions that are confident about their wrong prediction. Wiki fast provides the following visualization of this concept:
 
@@ -146,7 +146,7 @@ There are a few metrics on the list that I haven't defined yet.
 
 Based on the Scikit-Learn documentation [3.3.2.10. Hinge loss](https://scikit-learn.org/stable/modules/model_evaluation.html#hinge-loss) and [sklearn.metrics.hinge_loss](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.hinge_loss.html#sklearn.metrics.hinge_loss) as well as this [medium.com article](https://medium.com/analytics-vidhya/understanding-loss-functions-hinge-loss-a0ff112b40a1), this [towardsdatascience.com article](https://towardsdatascience.com/support-vector-machines-intuitive-understanding-part-1-3fb049df4ba1), and [this blog](https://jamesmccaffrey.wordpress.com/2018/10/04/hinge-loss-explained-with-a-table-instead-of-a-graph/) hinge loss is generally used with Support Vector Machines (SVMs). The examples are all for values of +1 and -1. The purpose of hinge loss is for "maximum-margin" classification (to place the plane of separation where there is the most space) and considers only prediction errors.
 
-$L_{Hinge}(y, w) = max(1 - wy, 0) = | 1 - wy |_{+}$
+$L_{Hinge}(y, w) = max(1 - wy, 0) = \lvert 1 - wy \rvert_{+}$
 
 Where:
 - *y* = true value
