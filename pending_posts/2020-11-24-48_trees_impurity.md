@@ -5,23 +5,34 @@ categories:
 tags:
   - trees
   - supervised learning
+  - n-grams
 ---
-
-## The Problem
 
 Impurity seems like it should be a simple calculation. However, depending on prevalence of classes and quirks in the data, it's usually not as straight forward as it sounds.
 
-To demonstrate the challenge, let's pretend we're trying to identify twitter posts that were written by a bot. During an analysis of the data, we noticed that bots tend to use specific words or groups of words that humans don't. As such, we want to use n-grams to pull out these individual and grouped words.
+## The Problem
+
+To demonstrate the challenges in separating classes, let's pretend we're trying to identify twitter posts that were written by a bot. So we're trying to split the twitter posts into "bot" and "human" classes.
+ 
+During an analysis of the data, we noticed that bots tend to use specific words or groups of words that humans don't. As such, we want to use n-grams to pull out these individual and grouped words.
 
 ### Example
 
 #### Context
 
-To create an *n-gram* you break a sentence, paragraph, or text document into managable chunks where common words, punctuation, and capitalization have been removed. For example, if we start with the sentence "The quick, brown fox jumped over the fence.", first we'd strip out "the", replace any uppercase letters with lowercase, and get rid of the punctuation to end up with  "quick brown fox jumped over fence".
+To create an *n-gram* you break a sentence, paragraph, or text document into manageable chunks where punctuation, common words, and capitalization have been removed.
 
-Next we'd break it into chucks, which gives us a list, the length of which depends on how many words are included in a chunk:
+Let's start with the following sentence:
 
-  - *unigram*: Treating each word as it's own chunk
+> "The quick, brown fox jumped over the fence."
+
+First, we strip out "the", replace any uppercase letters with lowercase, and get rid of the punctuation to end up with:
+
+> "quick brown fox jumped over fence"
+
+Next we break it into chucks, which gives us a list, the length of which depends on how many words are included in a chunk:
+
+  - *unigram*: Treating each word as its own chunk
     - Example: ["quick", "brown", "fox", "jumped", "over", "fence"]
   - *bigram*: Grouping sets of two words together as a chunk
     - Example: ["quick brown", "brown fox", "fox jumped", "jumped over", "over fence"]
@@ -31,27 +42,29 @@ Next we'd break it into chucks, which gives us a list, the length of which depen
 
 #### Results
 
-Let's say we want to identify the unigrams that are most likely written by a bot, but only want to record the *most* bot-like word for any single tweet. Our pretend analysis returned 3 good candidates for one tweet:
+Let's say we want to identify the unigrams that are most likely written by a bot, but only want to record the single *most* bot-like word for any individual tweet. Our pretend analysis returned three good candidates for the tweet "Submit your request today to terminate your cable bill and abort unwanted charges!":
 
-- "abort"
-  - 35 total uses
-    - 29 bot uses
-    - 6 human uses
-  - 82.86% bot usage
-- "terminate"
-  - 5 total uses
-    - 5 bot uses
-    - 0 human uses
-  - 100% bot usage
 - "submit"
   - 45 total uses
     - 30 bot uses
     - 15 human uses
   - 66.66% bot usage
+- "terminate"
+  - 5 total uses
+    - 5 bot uses
+    - 0 human uses
+  - 100% bot usage
+- "abort"
+  - 35 total uses
+    - 29 bot uses
+    - 6 human uses
+  - 82.86% bot usage
 
-If we choose to use the metric of the word that is most used by bots we end up with "submit", but that word has the worst ratio of bot to human usage. If we pick the word with the higest percentage of bot usage we end up with "terminate", which is used least frequently in our overall dataset and is less likely to be useful.
+If we choose to use the metric of the word that is most used by bots we end up with "submit", but that word has the worst ratio of bot to human usage.
 
-What we'd really want for our metric is something that balances the percentage with the frequency of use and would return "abort" as our most bot-like result.
+If we pick the word with the highest percentage of bot usage we end up with "terminate", which is used least frequently in our overall dataset and is less likely to be useful.
+
+What we really want for our metric is something that balances the percentage with the frequency of use and would return "abort" as our most bot-like result.
 
 ## The Options
 
@@ -60,14 +73,14 @@ There are several different impurity measures for each type of decision tree:
 ### `DecisionTreeClassifier`
 
 - **Default**: gini impurity
-  - From page 234 of *Machine Learning with Python Cookbook*
+  - From page 234 of [Machine Learning with Python Cookbook](https://www.amazon.com/Machine-Learning-Python-Cookbook-Preprocessing/dp/1491989386)
     - $G(t) = 1 - \displaystyle\sum_{i=1}^{c} P_{i}^2$
     - Where
       - $G(t)$: gini impurity at node $t$
       - $t$: a specific node
       - $c$: class
       - $P_{i}$: proportion of observations of class $c$ at node $t$
-  - From page 177 of *Hands-On Machine Learning*
+  - From page 177 of [Hands-On Machine Learning](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646)
     - $G_{i} = 1 - \displaystyle\sum_{k=1}^{n} P_{i,k}^2$
     - Where
       - $G_{i}$: gini impurity at node $i$
@@ -101,7 +114,7 @@ There are several different impurity measures for each type of decision tree:
 
 ## The Proposed Solution
 
-This part is easy, default values have already been provided for both the Classifier and Regressor versions of Decision Trees in Scikit Learn.
+The solution part is easy, default values have already been provided for both the Classifier and Regressor versions of Decision Trees in Scikit Learn.
 
 *Hands-On Machine Learning* provides some context on the differences for Classification Trees on page 181: 
   - Using Gini or Entropy usually leads to similar trees
@@ -110,7 +123,7 @@ This part is easy, default values have already been provided for both the Classi
     - Gini impurity tends to isolate the most frequent class in its own branch
     - Entropy produces slightly more balanced trees
 
-For nuanced comparisons between the different regression metrics, check out Entries [21](https://julielinx.github.io/blog/21_reg_score_theory/) and [22](https://julielinx.github.io/blog/22_reg_score_implement/) which both talk about scoring regression models.
+For nuanced comparisons between the different regression metrics, check out Entries [21](https://julielinx.github.io/blog/21_reg_score_theory/) and [22](https://julielinx.github.io/blog/22_reg_score_implement/) which both talk about scoring regression models, which includes MSE and MAE.
 
 ## Up Next
 
@@ -125,8 +138,3 @@ Analyzing Trees
 - [1.10.7. Mathematical formulation](https://scikit-learn.org/stable/modules/tree.html#mathematical-formulation)
 - [Entry 21: Scoring Regression Models - Theory](https://julielinx.github.io/blog/21_reg_score_theory/)
 - [Entry 22: Scoring Regression models - Implementation](https://julielinx.github.io/blog/22_reg_score_implement/)
-
-
-```python
-
-```

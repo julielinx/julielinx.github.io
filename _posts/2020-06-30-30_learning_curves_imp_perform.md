@@ -6,6 +6,9 @@ tags:
   - model-eval
   - dataset house_16H
   - dataset boston housing
+  - overfitting
+  - underfitting
+  
 ---
 
 Learning curves can help determine what avenues to pursue if a model isn't up to expectations, or worse, is completely unusable. They can also be used to determine whether the training and test datasets are suitably represented.

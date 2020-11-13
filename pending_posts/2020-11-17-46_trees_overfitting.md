@@ -5,9 +5,16 @@ categories:
 tags:
   - trees
   - supervised learning
+  - overfitting
+  - data sensitivity
+  - underfitting
 ---
 
 I wanted to point a co-worker to information about overfitting the other day. While I've discussed it in entries [17](https://julielinx.github.io/blog/17_resampling/) and [30](https://julielinx.github.io/blog/30_learning_curves_imp_perform/), I realized I haven't covered it in its own entry. Since overfitting is such a big problem with Decision Trees, this feels like the perfect time to stop and remedy that oversight.
+
+## The Problem
+
+Overfitting, underfitting, and data sensitivity can cause huge headaches after you've gotten through all the hard work of pre-processing, training, and deploying a model because the accuracy of your results won't be anywhere near what you expect.
 
 ## Overfitting and Underfitting 
 
@@ -18,13 +25,13 @@ Decision trees are very prone to overfitting. As a reminder from [Entry 17](http
 
 Aurelien Geron has a great illustration of this on page 184 of [Hands-On Machine Learning](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646) using a tree-based model on a regression dataset. The code for this chart can be found in Geron's GitHub [notebook for Chapter 6](https://github.com/ageron/handson-ml2/blob/master/06_decision_trees.ipynb).
 
-<img src='images/ml2_overfitting.png'>
+![HOML overfit](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/ml2_overfitting.png?raw=true)
 
 The tree represented on the left is clearly overfit and wouldn't generalize well to data it hasn't seen before. The tree on the right will generalize to unseen data much better.
 
-Jake VanderPlas has a great example of the propensity of classification tree-based models to overfit in his book [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) on page 424. Using a synthetic dataset created using the `make_blots()` function, he trained two models using different subsets of half the data. His full explaination and the code can be found in his accompanying [Github notebook](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.08-Random-Forests.ipynb).
+Jake VanderPlas has a great example of the propensity of classification tree-based models to overfit in his book [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) on page 424. Using a synthetic dataset created using the `make_blots()` function, he trained two models using different subsets of half the data. His full explanation and the code can be found in his accompanying [Github notebook](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.08-Random-Forests.ipynb).
 
-<img src='images/DSHandbook_tree_overfit.png'>
+![DSHandbook overfit](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/DSHandbook_tree_overfit.png?raw=true)
 
 As you can see, there are areas where the models have the same results; the top and two lower regions. But the areas where the different groups overlap provide very different results.
 
@@ -36,7 +43,7 @@ Another challenge when using tree-based models is that they like decision bounda
 
 *Hands-On Machine Learning* has a great illustration of this on page 185, with the accompanying code in his [Chapter 6 notebook](https://github.com/ageron/handson-ml2/blob/master/06_decision_trees.ipynb) on GitHub.
 
-<img src='images/ml2_data_sensitivity.png'>
+![HOML data sensitivity](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/ml2_data_sensitivity.png?raw=true)
 
 While both models split the data with the same accuracy, the one on the right will most likely have trouble generalizing to new data. Aurelien Geron recommends using Principal Component Analysis (PCA) to help overcome this challenge. He covers PCA in chapter 8, I'll get to it eventually in this blog.
 

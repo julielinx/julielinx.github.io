@@ -5,26 +5,29 @@ categories:
 tags:
   - trees
   - supervised learning
+  - dataset iris
+  - dataset titanic
+  - dataset breast cancer
 ---
-
-The notebook where I did my code for this entry can be found on my github page in the [Entry 47 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/47a_nb_trees_pruning.ipynb).
-
-## The Problem
 
 If allowed to continue, a Decision Tree will continue to split the data until each leaf is pure. This causes two problems:
 
 - Overfitting
 - High complexity
 
-I already covered the overfitting problem in [Entry 46](https://julielinx.github.io/blog/46_trees_overfitting/).
+I already covered overfitting in [Entry 46](https://julielinx.github.io/blog/46_trees_overfitting/), so in this entry I'll go over how to deal with controlling complexity.
 
-As to the problem of becoming overly complex, as a model gets deeper it becomes harder to intrepret, negating one of the major benefits of using a Decision Tree. This becomes readily apparent when trees become arbitrarily large as can be seen in this model trained on the titanic dataset:
+The notebook where I did my code for this entry can be found on my github page in the [Entry 47 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/47a_nb_trees_pruning.ipynb).
 
-<img src='images/titanic_tree.png'>
+## The Problem
+
+As a model gets deeper it becomes harder to interpret, negating one of the major benefits of using a Decision Tree. This becomes readily apparent when trees become arbitrarily large as can be seen in this model trained on the titanic dataset:
+
+![Titanic tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/titanic_tree.png?raw=true)
 
 ## The Options
 
-The solution for this problem is to limit depth, called *pruning*. Pruning may also be referred to as setting a *cut-off*. There are several ways to prune a decision tree.
+The solution for this problem is to limit depth through a process called *pruning*. Pruning may also be referred to as setting a *cut-off*. There are several ways to prune a decision tree.
 
 - Pre-pruning: Where the depth of the tree is limited before training the model; i.e. stop splitting before all leaves are pure
   - There are several ways to limit splitting and can be done easily using parameters within `sklearn.tree.DecisionTreeClassifier` and `sklearn.tree.DecisionTreeRegressor`
@@ -51,12 +54,11 @@ The unpruned tree I created from the Iris Dataset is below. It has the following
 - Minimum Gini impurity at leaf = 0.0
 - Minimum Gini impurity at split = 0.051
 
-
-<img src='images/iris_tree.png'>
+![Full Iris tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/iris_tree.png?raw=true)
 
 ### Limit Depth
 
-The most straight fowarded method of limiting a tree is to only take it to a specific depth.
+The most straight forwarded method of limiting a tree is to only take it to a specific depth.
 
 In looking at the full Iris tree, we can see that the majority of observations are correctly classified by a depth of three. When we limit the tree to this depth it has the following characteristics:
 
@@ -67,7 +69,7 @@ In looking at the full Iris tree, we can see that the majority of observations a
 - Minimum Gini impurity at leaf = 0.0
 - Minimum Gini impurity at split = 0.054
 
-<img src='images/iris_tree_d3.png'>
+![Depth 3 Iris tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/iris_tree_d3.png?raw=true)
 
 ### Require a Minimum Number of Samples to Split
 
@@ -80,7 +82,7 @@ Another way to limit tree growth is to require a minimum number of samples in a 
 - Minimum Gini impurity at leaf = 0.0
 - Minimum Gini impurity at split = 0.051
 
-<img src='images/iris_tree_split5.png'>
+![5 samples per split Iris tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/iris_tree_split5.png?raw=true)
 
 ### Require a Minimum Number of Samples in a Leaf
 
@@ -93,7 +95,7 @@ Tree growth can also be limited by requiring a minimum number of samples in a le
 - Minimum Gini impurity at leaf = 0.0
 - Minimum Gini impurity at split = 0.051
 
-<img src='images/iris_tree_leaf5.png'>
+![5 samples per leaf Iris tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/iris_tree_leaf5.png?raw=true)
 
 ### Limit the Number of Leaves
 
@@ -106,9 +108,9 @@ Another option to limit tree growth is to specify the maximum number of leaf nod
 - Minimum Gini impurity at leaf = 0.0
 - Minimum Gini impurity at split = 0.051
 
-<img src='images/iris_tree_5leaves.png'>
+![5 leaf Iris tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/iris_tree_5leaves.png?raw=true)
 
-### Mimimum Impurity Decrease
+### Minimum Impurity Decrease
 
 The next pruning method is to set a required minimum on the decrease in the impurity measure. Remember that decreasing the impurity measure means that the purity of the node increases. So basically by setting a minimum for the decrease, you're requiring a minimum improvement.
 
@@ -121,11 +123,11 @@ When a value of 0.04 is set for the minimum impurity decrease on the Iris data, 
 - Minimum Gini impurity at leaf = 0.0
 - Minimum Gini impurity at split = 0.5
 
-<img src='images/iris_tree_min_impur_decr_04.png'>
+![Min impurity decrease Iris tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/iris_tree_min_impur_decr_04.png?raw=true)
 
 ### Minimum Impurity at Split
 
-The last pruning method is similar to the previous one. We're still working with the impurity measure, but this time we look at aa minimum requirement to split a node. These two methods are similar to the pruning methods above where we limited the number of samples required in a node in order to split it vs the number required in a leaf. 
+The last pruning method is similar to the previous one. We're still working with the impurity measure, but this time we look at a minimum requirement to split a node. These two methods are similar to the pruning methods above where we limited the number of samples required in a parent node in order to split it vs the number required in a leaf. 
 
 When a value of 0.02 is set for the minimum impurity at a split on the Iris data, we get a tree with the following characteristics:
 
@@ -136,7 +138,7 @@ When a value of 0.02 is set for the minimum impurity at a split on the Iris data
 - Minimum Gini impurity at leaf = 0.0
 - Minimum Gini impurity at split = 0.201
 
-<img src='images/iris_tree_min_impur_split_02.png'>
+![Min split impority Iris tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/iris_tree_min_impur_split_02.png?raw=true)
 
 ## The Proposed Solution
 
@@ -144,27 +146,31 @@ After examining the results of specific changes to three datasets (Iris, Breast 
 
 ### Limit Depth
 
-Limiting depth appears rather arbitrary and manual. I wasn't comfortable limiting depth until I had a fully trained tree, then deciding once I could see where nodes started appearing with insignificantly small number of samples. Also, some branch splits continued to appear useful after others had isolated extremely small sample groups (1-5 samples). Here are some specific observations:
+Limiting depth appears rather arbitrary and manual. I wasn't comfortable limiting depth until I had a fully trained tree. I'd look at the tree to determine where nodes started appearing with insignificantly small number of samples or decreased purity improvements, then deciding where to set the depth.
+
+Also, some branch splits continued to appear useful after others had isolated extremely small sample groups (1-5 samples). So I'd want to limit one branch at depth X but wouldn't want to limit a different branch until a lower depth of Y.
+ 
+ Here are some specific observations:
 
 - Iris dataset: the splits produce samples that don't appear useful after a depth of 2; there are only 6 misclassifications at that level, but the tree continues down another 3 levels to a depth of 5
-- Breast Cancer dataset: the splits start producing nodes that don't appear useful after a depth of 2; at a depth of 3 there are 6 of the 8 nodes have between 2 and 14 samples in a population of 455
+- Breast Cancer dataset: the splits start producing nodes that don't appear useful after a depth of 2; at a depth of 3, 6 of the 8 nodes have between 2 and 14 samples in a population of 455
 - Titanic dataset: has a depth of 22 for a population of 712. Nodes that don't appear useful start appearing at a depth of 3
 
-While all of the datasets started having unuseful nodes starting pretty high up in the tree (depth 2 and 3), there are other nodes that continue to have useful splits at deeper levels.
+While all of the datasets started having useless nodes starting pretty high up in the tree (depth 2 and 3), there are other nodes that continue to have useful splits at deeper levels.
 
 We can see this phenomena in the Iris dataset. At depth 1 all of the virginica samples are split out, as seen in the orange node. The setosa (green node) and versicolor (purple node) are then mostly separated at depth 2.
 
-<img src='images/iris_tree_min_impur_decr_04.png'>
+![Min impurity decrease Iris tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/iris_tree_min_impur_decr_04.png?raw=true)
 
 ### Minimum Samples per Split or Leaf
 
 Setting a minimum requirement on the number of samples needed to either split a node or to create a leaf helps addresses the problem of arbitrarily small samples in a leaf. A good example is the Titanic dataset with 15 samples required in a leaf node.
 
-<img src='images/titanic_tree_leaf15.png'>
+![15 samples per leaf Titanic tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/titanic_tree_leaf15.png?raw=true)
 
 We can also see how setting the limitation on the split is less restricting than setting it on the leaf node. This tree was created with a 15 sample minimum on the split instead of the leaf:
 
-<img src='images/titanic_tree_split15.png'>
+![15 samples per split Titanic tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/titanic_tree_split15.png?raw=true)
 
 This feels like a good option to include in a solution, but perhaps not a standalone solution.
 
@@ -176,15 +182,15 @@ This one is fun to play with, but seems impractical at scale. Depending on the s
 
 Setting a minimum for the impurity to stop tree growth doesn't address the problem of an arbitrarily small number of samples in a leaf. This problem can be seen in a section of the tree trained on the Titanic data with a `min_impurity_split` parameter of 0.02 where there are still leaves with sample sizes of 2 and 3:
 
-<img src='images/titanic_tree_min_split_sm_samp.png'>
+![Minimum impurity sample Titanic tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/titanic_tree_min_split_sm_samp.png?raw=true)
 
 Setting limitations around a required decrease in impurity appears to be the most scalable. This prevents continued splits with little to no improvement. A tree trained on the Titanic data with a `min_impurity_decrease` parameter of 0.02 results in this little depth 3 tree with 4 leaf nodes:
 
-<img src='images/titanic_tree_min_impur_decr_02.png'>
+![Min impurity decrease 0.02 Titanic tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/titanic_tree_min_impur_decr_02.png?raw=true)
 
 Even halving the parameter to 0.01 (now only requiring a 1% improvement in purity) results in this reasonably sized tree with the same depth of 3 and only 1 additional leaf node for a total of 5 leaves.
 
-<img src='images/titanic_tree_min_impur_decr_01.png'>
+![Min impurity decrease 0.01 Titanic tree](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/02_tree_based/images/titanic_tree_min_impur_decr_01.png?raw=true)
 
 I'm excited to start playing with these types of limitations once I move to real world types of datasets. One of the things I'd like to try is combining minimum impurity to split with a minimum number of samples per leaf. These two parameters together should help limit overfitting while still being scalable across different datasets. It will be interesting to see whether this combination or the minimum impurity decrease will provide more consistent and accurate results.
 
@@ -202,8 +208,3 @@ Impurity Measures
 - [1.10. Decision Trees](https://scikit-learn.org/stable/modules/tree.html)
 - [sklearn.tree.DecisionTreeClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
 - [sklearn.tree.DecisionTreeRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html#sklearn.tree.DecisionTreeRegressor)
-
-
-```python
-
-```

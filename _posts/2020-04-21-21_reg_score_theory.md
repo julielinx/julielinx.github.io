@@ -6,6 +6,8 @@ tags:
   - model-eval
   - regression models
   - latex
+  - bias
+  - variance
 ---
 
 I need a way to measure a model's performance. To do that, first I need to break it down by the type of prediction.
