@@ -49,7 +49,7 @@ While both models split the data with the same accuracy, the one on the right wi
 
 ## Up Next
 
-Pruning Trees
+[Pruning Trees](https://julielinx.github.io/blog/47_trees_pruning/)
 
 ## Resources
 

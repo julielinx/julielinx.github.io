@@ -45,7 +45,7 @@ The solution for this problem is to limit depth through a process called *prunin
 
 ### Unlimited Tree
 
-The unpruned tree I created from the Iris Dataset is below. It has the following characteristics:
+The unpruned tree I created from the Iris dataset is below. It has the following characteristics:
 
 - Depth = 5
 - Leaves = 8
@@ -196,7 +196,7 @@ I'm excited to start playing with these types of limitations once I move to real
 
 ## Up Next
 
-Impurity Measures
+[Impurity Measures](https://julielinx.github.io/blog/48_trees_impurity/)
 
 ## Resources
 
