@@ -127,7 +127,7 @@ For nuanced comparisons between the different regression metrics, check out Entr
 
 ## Up Next
 
-Analyzing Trees
+[Analyzing Trees](https://julielinx.github.io/blog/49_trees_analysis_interpt/)
 
 ## Resources
 

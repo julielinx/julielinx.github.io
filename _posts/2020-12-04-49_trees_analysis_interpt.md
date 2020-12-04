@@ -53,9 +53,9 @@ As discussed in [Entry 44](https://julielinx.github.io/blog/44_decision_trees/) 
 
 ### Tree and Node Metrics
 
-While working on [Entry 47](), I looked at a series of metrics around the depth, number of leaves, and the impurity and sample size at the split and leaf levels. The `tree.tree_` method holds several of these full tree metrics including depth, number of nodes, number of leaves, number of classes, and number of features. It also includes several arrays of information on the impurity, sample size, and thresholds.
+While working on [Entry 47](https://julielinx.github.io/blog/47_trees_pruning/), I looked at a series of metrics around the depth, number of leaves, and the impurity and sample size at the split and leaf levels. The `tree.tree_` method holds several of these full tree metrics including depth, number of nodes, number of leaves, number of classes, and number of features. It also includes several arrays of information on the impurity, sample size, and thresholds.
 
-Combining this information with some edited code from Scikit Learn's [Understanding the decision tree structure](https://scikit-learn.org/stable/auto_examples/tree/plot_unveil_tree_structure.html#), I was able to grab the min, max, mean, median, and standard deviation of the basic metrics I'd looked at in [Entry 47]().
+Combining this information with some edited code from Scikit Learn's [Understanding the decision tree structure](https://scikit-learn.org/stable/auto_examples/tree/plot_unveil_tree_structure.html#), I was able to grab the min, max, mean, median, and standard deviation of the basic metrics I'd looked at in [Entry 47](https://julielinx.github.io/blog/47_trees_pruning/).
 
 Using these metrics I can see if the tree trained until all nodes were pure (all leaves have a Gini value of 0), how deep the tree goes, and what features are important in the Decision Tree.
 
@@ -83,4 +83,4 @@ Decision Tree subtypes
 - [Entry 24: Scoring Classification Models - Implementation](https://julielinx.github.io/blog/24_class_score_implement/)
 - [Entry 24 notebook - Scoring Classification Models - Implementation](https://github.com/julielinx/datascience_diaries/blob/master/02_model_eval/24_nb_class_score_implement.ipynb)
 - [Entry 44](https://julielinx.github.io/blog/44_decision_trees/)
-- [Entry 47]()
+- [Entry 47](https://julielinx.github.io/blog/47_trees_pruning/)
