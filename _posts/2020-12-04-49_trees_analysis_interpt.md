@@ -73,7 +73,7 @@ To do this in Scikit Learn, use the `predict_proba` method on the trained tree.
 
 ## Up Next
 
-Decision Tree subtypes
+[Decision Tree subtypes](https://julielinx.github.io/blog/50_trees_subtypes/)
 
 ## Resources
 
