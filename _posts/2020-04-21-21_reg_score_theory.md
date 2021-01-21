@@ -49,15 +49,23 @@ There are quite a few terms and concepts that the solutions to this problem rely
 
 > This part is due to the noisiness of the data itself. The only way to reduce this part of the error is to clean up the data (e.g., fix the data sources, such as broken sensors, or detect and remove outliers).
 
+A visual reference for bias and variance from Scott Fortmann-Roe's [Understanding the Bias-Variance Tradeoff](http://scott.fortmann-roe.com/docs/BiasVariance.html).
+
+![bias and variance](https://julielinx.github.io/assets/images/21_bias_variance.png)
+
 **Bias**
 
 Bias is the difference between the expected value and the true value.
+
+In the picture above, this means how close (low bias) or far (high bias) the values are to the bulls eye.
 
 **Variance**
 
 Variance measures how far a set of numbers are spread out from their average value. The formal definition is: the average of the squared differences from the mean.
 
 $Var = \frac{\sum{(x - \mu)}^2}{n}$
+
+In the picture above, this means how close (grouped together) or far apart (scattered around) the points are from each other.
 
 **Residuals**
 
@@ -68,6 +76,10 @@ The formula is the observed value minus the predicted value:
 $e = y_{i} - \hat{y_{i}}$
 
 Keep in mind that the impact of how large this number is depends on the variance of the underlying data. For house prices that range from 100,000 to 10,000,000 a residual of 10,000 would be considered good. However, for a bottle of soap where the prices range from 0.99 to 20.49, a residual of 10,000 would be a really bad prediction.
+
+Example of residuals from Wikimedia Commons [Residuals for Linear Regression Fit](https://commons.wikimedia.org/wiki/File:Residuals_for_Linear_Regression_Fit.png). The black lines show the residual of the prediction (the red linear fit line) to the observed value (the dark blue dots)
+
+<img src='https://upload.wikimedia.org/wikipedia/commons/e/ed/Residuals_for_Linear_Regression_Fit.png'>
 
 **Absolute Error**
 
@@ -162,6 +174,8 @@ Getting better at reading math equations is a hurdle I'm going to have to tackle
 
 - [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn-ebook/dp/B00K15TZU0)
 - [Hands-On Machine Learning with Scikit-Learn & TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291)
+- [Understanding the Bias-Variance Tradeoff](http://scott.fortmann-roe.com/docs/BiasVariance.html)
+- [Residuals for Linear Regression Fit](https://commons.wikimedia.org/wiki/File:Residuals_for_Linear_Regression_Fit.png)
 - [The Elements of Statistical Learning](https://www.amazon.com/Elements-Statistical-Learning-Prediction-Statistics/dp/0387848576)
 - [Errors and residuals](https://en.wikipedia.org/wiki/Errors_and_residuals)
 - [What is the difference between errors and residuals?](https://stats.stackexchange.com/questions/133389/what-is-the-difference-between-errors-and-residuals)
