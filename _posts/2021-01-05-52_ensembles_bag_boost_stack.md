@@ -1,5 +1,5 @@
 ---
-title: "Entry 51: Ensemble Methods: Bagging, Boosting, Stacking"
+title: "Entry 52: Ensemble Methods: Bagging, Boosting, Stacking"
 categories:
   - Blog
 tags:
