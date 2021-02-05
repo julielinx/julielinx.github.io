@@ -8,6 +8,7 @@ tags:
   - overfitting
   - data sensitivity
   - underfitting
+  - machine learning
 ---
 
 I wanted to point a co-worker to information about overfitting the other day. While I've discussed it in entries [17](https://julielinx.github.io/blog/17_resampling/) and [30](https://julielinx.github.io/blog/30_learning_curves_imp_perform/), I realized I haven't covered it in its own entry. Since overfitting is such a big problem with Decision Trees, this feels like the perfect time to stop and remedy that oversight.

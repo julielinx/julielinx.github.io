@@ -6,6 +6,7 @@ tags:
   - process
   - pre-process
   - dataset planets
+  - machine learning
 ---
 
 In [Entry 6](https://julielinx.github.io/blog/06_correlation/) I looked at the correlation between the prediction features and the feature of interest (well, kinda. This problem question is a little weird in that I'll be predicting `mass_1024kg`, but am interested in how the other features relate to `atmospheric_mass_kg`).

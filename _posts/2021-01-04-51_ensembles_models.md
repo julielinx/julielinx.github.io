@@ -6,6 +6,7 @@ tags:
   - ensembles
   - trees
   - supervised learning
+  - machine learning
 ---
 
 Ensemble techniques began to appear in the 1990s according to page 192 of [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn-ebook/dp/B00K15TZU0). Most people think of Random Forests (basically a bunch of Decision Trees that vote on the right answer) when they think of ensemble learning, but I wanted to discuss the concept of Ensemble Learning first, then go into different implementations.

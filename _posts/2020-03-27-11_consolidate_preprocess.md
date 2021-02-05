@@ -9,6 +9,7 @@ tags:
   - dataset qsar fish toxicity
   - dataset qsar aquatic toxicity
   - dataset online news popularity
+  - machine learning
 ---
 
 Working on the machine learning process over 10 entries left my code fragmented with different versions of key functions scattered across multiple notebooks.

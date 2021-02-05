@@ -5,6 +5,7 @@ categories:
 tags:
   - model-eval
   - dataset auto mpg
+  - machine learning
 ---
 
 In [Entry 18](https://julielinx.github.io/blog/18_crossval/) I finalized the decision to use a hybrid approach to validating models. Now I have to implement it.

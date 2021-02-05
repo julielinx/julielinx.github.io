@@ -9,6 +9,7 @@ tags:
   - dataset titanic
   - dataset horse colic
   - dataset mnist
+  - machine learning
 ---
 
 I don't always want the default threshold for determining the classification (negative or positive) the way I did in [Entry 24](https://julielinx.github.io/blog/24_class_score_implement/). As discussed in the precision / recall trade-off section of [Entry 23](https://julielinx.github.io/blog/23_class_score_theory/) sometimes there will be a better threshold.

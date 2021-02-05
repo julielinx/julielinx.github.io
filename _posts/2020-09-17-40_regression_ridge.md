@@ -6,6 +6,7 @@ tags:
   - regression
   - supervised learning
   - regularization
+  - machine learning
 ---
 
 Ridge Regression is a form of regression regularization using L2 regularization.

@@ -5,6 +5,7 @@ categories:
 tags:
   - regression
   - supervised learning
+  - machine learning
 ---
 
 The notebook where I did my code for this entry can be found on my github page in the [Entry 41 notebook](https://github.com/julielinx/datascience_diaries/blob/master/03_supervised_learning/01_regression/41a_elasticnet_regression.ipynb).

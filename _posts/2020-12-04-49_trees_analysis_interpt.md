@@ -7,6 +7,7 @@ tags:
   - supervised learning
   - dataset titanic
   - dataset breast cancer
+  - machine learning
 ---
 
 One of the major benefits of using Decision Trees is their interpretability. To take advantage of this benefit, you need to know how to pull out the information in a usable way.

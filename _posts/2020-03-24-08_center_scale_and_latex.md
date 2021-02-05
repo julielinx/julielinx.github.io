@@ -6,6 +6,7 @@ tags:
   - pre-process
   - latex
   - dataset planets
+  - machine learning
 ---
 
 By the end of [Entry 7](https://julielinx.github.io/blog/07_collinearity/) I'd finalized the feature set to train a model and make predictions. One last step is needed before a prediction can be made.

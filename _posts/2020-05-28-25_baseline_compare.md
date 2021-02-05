@@ -6,6 +6,7 @@ tags:
   - model-eval
   - dataset auto mpg
   - dataset breast cancer
+  - machine learning
 ---
 
 As discussed in [Entry 16](https://julielinx.github.io/blog/16_model_eval_and_mathjax/), certain characteristics in the data can make a model look like it's performing better than it is. One of these characteristics is class imbalance, wherein one class is much more prevalent. By always predicting the majority class, the model can seem like it's performing very well.

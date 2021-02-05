@@ -6,6 +6,7 @@ tags:
   - pre-process
   - cat encoding
   - dataset mushrooms
+  - machine learning
 ---
 
 ## The Problem

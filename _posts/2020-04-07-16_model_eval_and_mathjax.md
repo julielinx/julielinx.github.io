@@ -4,6 +4,7 @@ categories:
   - Blog
 tags:
   - model-eval
+  - machine learning
 ---
 
 Max Kuhn and Kjell Johnson make the case in *[Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn-ebook/dp/B00K15TZU0)* that models can easily overemphasize patterns that are not reproducible.

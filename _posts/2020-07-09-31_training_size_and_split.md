@@ -5,6 +5,7 @@ categories:
 tags:
   - model-eval
   - data size
+  - machine learning
 ---
 
 At the very end of [Entry 30](https://julielinx.github.io/blog/30_learning_curves_imp_perform/) I mentioned that learning curves can be used to diagnose problems other than just high bias and high variance. Another easy problem to check for is the appropriateness of the training data.

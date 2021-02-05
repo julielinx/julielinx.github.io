@@ -6,6 +6,7 @@ tags:
   - regression
   - regression calculation
   - supervised learning
+  - machine learning
 ---
 
 The Normal Equation generates the weights that are used in Linear Regression. It calculates the theta array directly without having to iterate through different solutions (the way Gradient Descent does).

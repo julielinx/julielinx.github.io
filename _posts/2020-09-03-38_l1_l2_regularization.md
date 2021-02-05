@@ -7,6 +7,7 @@ tags:
   - regularization
   - overfitting
   - supervised learning
+  - machine learning
 ---
 
 Regularization is used to help address overfitting.

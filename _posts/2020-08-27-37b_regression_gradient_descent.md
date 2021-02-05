@@ -6,6 +6,7 @@ tags:
   - regression
   - regression calculation
   - supervised learning
+  - machine learning
 ---
 
 The general idea of Gradient Descent is to iteratively minimize the errors (usually using the mean squared error) to arrive at better and better solutions. Kind of like trial and error, where the new trial relies on the results of the last one.

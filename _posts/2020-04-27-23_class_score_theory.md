@@ -5,6 +5,7 @@ categories:
 tags:
   - model-eval
   - classification models
+  - machine learning
 ---
 
 Classification models present a different challenge than regression models. Because a numeric value isn't returned, another way of measuring goodness of fit has to be used.

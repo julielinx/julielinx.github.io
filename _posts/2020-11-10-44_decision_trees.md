@@ -8,6 +8,7 @@ tags:
   - dataset iris
   - dataset titanic
   - dataset breast cancer
+  - machine learning
 ---
 
 In entries 35 through 42 we learned how to find linear patterns using Regression algorithms. But what if the patterns in the data aren't linear? This is where Decision Trees come in. Decision Trees are the foundation for Random Forests, which [Hands-On Machine Learning](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646) points out on page 175 "are among the most powerful Machine Learning algorithms available today."

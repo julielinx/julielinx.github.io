@@ -5,6 +5,7 @@ categories:
 tags:
   - trees
   - supervised learning
+  - machine learning
 ---
 
 [The Complete Guide to Decision Trees](https://towardsdatascience.com/the-complete-guide-to-decision-trees-28a4e3c7be14) sums up the similarities between Decision Tree Algorithms very succinctly:

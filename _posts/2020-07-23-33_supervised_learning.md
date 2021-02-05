@@ -11,6 +11,7 @@ tags:
   - dataset boston housing
   - dataset california housing
   - dataset mnist
+  - machine learning
 ---
 
 ## Description

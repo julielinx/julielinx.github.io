@@ -7,6 +7,7 @@ tags:
   - pipeline
   - dataset auto mpg
   - dataset horse colic
+  - machine learning
 ---
 
 There are quite a few steps between pulling data and having a trained model. I need a good way to string it all together.

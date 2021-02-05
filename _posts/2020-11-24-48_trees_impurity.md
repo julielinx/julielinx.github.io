@@ -6,6 +6,7 @@ tags:
   - trees
   - supervised learning
   - n-grams
+  - machine learning
 ---
 
 Impurity seems like it should be a simple calculation. However, depending on prevalence of classes and quirks in the data, it's usually not as straight forward as it sounds.

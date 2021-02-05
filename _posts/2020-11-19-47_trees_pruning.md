@@ -8,6 +8,7 @@ tags:
   - dataset iris
   - dataset titanic
   - dataset breast cancer
+  - machine learning
 ---
 
 If allowed to continue, a Decision Tree will continue to split the data until each leaf is pure. This causes two problems:

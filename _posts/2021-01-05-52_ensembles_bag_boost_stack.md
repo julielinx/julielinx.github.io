@@ -6,6 +6,7 @@ tags:
   - ensembles
   - trees
   - supervised learning
+  - machine learning
 ---
 
 There are multiple ways to reduce the bias and variance of Ensemble Learning, the three most common are bagging, boosting, and stacking. For more on bias and variance, see [Entry 21](https://julielinx.github.io/blog/21_reg_score_theory/).

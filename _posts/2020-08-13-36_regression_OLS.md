@@ -5,6 +5,7 @@ categories:
 tags:
   - regression
   - supervised learning
+  - machine learning
 ---
 
 Ordinary Leas Squares is usually the default method of Linear Regression and is the method used in the `sklearn.linear_model.LinearRegression` function. On page 49, [Introduction to Machine Learning with Python](https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists/dp/1449369413) calls this "the simplest and most classic linear method for regression." 

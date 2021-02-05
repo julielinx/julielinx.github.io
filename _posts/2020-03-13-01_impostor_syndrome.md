@@ -4,6 +4,7 @@ categories:
   - Blog
 tags:
   - process
+  - machine learning
 ---
 
 I am qualified. Quantitatively, I know this is true:
