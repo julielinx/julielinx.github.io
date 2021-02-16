@@ -81,7 +81,7 @@ So, if the predictions of the underlying ensemble models are "yes", "no", "yes",
 
 ## Up Next
 
-Social Networks
+[Social Networks](https://julielinx.github.io/blog/g01_connected_entities/)
 
 ## Resources
 

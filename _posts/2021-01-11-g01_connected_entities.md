@@ -92,7 +92,7 @@ In the Graph series of entries, I'll work my way through this challenge and tack
 
 ## Up Next
 
-Creating a graph database
+[Create a Neo4j database](https://julielinx.github.io/blog/g02_create_graphdb_desktop/)
 
 ## Resources
 
