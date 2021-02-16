@@ -10,7 +10,7 @@ tags:
 
 To begin any data science project, I need a data to play with. For the graph project I'm going to start with the [Marvel Universe Social Network](https://www.kaggle.com/csanhueza/the-marvel-universe-social-network) available on Kaggle. I picked this because it's publicly available, stored as .csv files, and easily fits into both bimodal and unimodal graph models.
 
-### Get Database software
+## Get Database software
 
 I work with Neoj4 databases at work, so that's what I'll use here too. This decision was based on my familiarity with the product as well as the fact that Neo4j has an open source [Community Edition](https://neo4j.com/download-center/?ref=web-product-database/#community) and free [Desktop edition](https://neo4j.com/download-center/?ref=web-product-database/#desktop).
 
@@ -20,7 +20,7 @@ When you've got it loaded and fired up, you should have a page like this, but wi
 
 <img src='https://github.com/julielinx/datascience_diaries/blob/master/graph/images/neo4j_desktop.png?raw=true'>
 
-### Create an Empty Database
+## Create an Empty Database
 
 Now we need a new, empty graph that we can load the Marvel data into. This is easy and straight forward:
 
@@ -44,7 +44,7 @@ Now we need a new, empty graph that we can load the Marvel data into. This is ea
 
 <img src='https://github.com/julielinx/datascience_diaries/blob/master/graph/images/create_directions.png?raw=true'>
 
-### Setup the database
+## Setup the database
 
 Next we need to prepare the database for data.
 
@@ -74,7 +74,7 @@ I generally use the APOC library and Graph Data Science Library
 
 *Side note* You can add/remove/change the options at any time (now or after loading the data). However, if the database is running it takes longer to add plugins because the database has to restart for every library you install.
 
-### Import data
+## Import data
 
 Now that our database is ready, we can import data.
 
