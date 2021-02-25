@@ -137,7 +137,7 @@ MERGE (h)-[:APPEARS_IN]->(c);
 
 ## Up Next
 
-Choosing a Graph Model (schema)
+[Choosing a Graph Model (schema)](https://julielinx.github.io/blog/g03_graph_model/)
 
 ## Resources
 

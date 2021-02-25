@@ -1,0 +1,91 @@
+---
+title: "Entry G4: Modeling Relationships"
+categories:
+  - Blog
+tags:
+  - graph
+  - neo4j
+  - create database
+---
+
+Relationships are the lines that connect nodes. [Neo4j usually describes](https://www.slideshare.net/neo4j/intro-to-neo4j-and-graph-databases) nodes as nouns (a person, place, or thing - i.e. the subject) and relationships as verbs - the things that connect the nouns.
+
+Relationships work very much like you'd expect a road to work: it can take traffic going two directions or one and it can have a variable number of lanes. In the graph world, these two properties are called *direction* and *weight*.
+
+## Direction
+
+Keeping with the road analogy, direction is the manner in which traffic is allowed to flow. There are two way streets where traffic can pass in either direction and there are one way streets where traffic all flows in the same direction.
+
+- A graph where the relationship flows both ways is called an *undirected network*, because the relationship goes both ways.
+- A graph where the relationship goes specifically from one node to another is called a *directed network*, because direction is important and explicitly listed.
+
+### Simplified Example
+
+Using the [Marvel Universe Social Network](https://www.kaggle.com/csanhueza/the-marvel-universe-social-network) as an example, we can look at some relationships for Natasha. Yes, I'm totally going to read into the relationships between the characters (or make stuff up whole-cloth) to illustrate my point.
+
+- The relationship between Nat and Wanda is one way: Natasha keeps tabs on Wanda, but Wanda isn't interested in doing the same.
+- The relationship between Nat and Clint is bidirectional: each considers the other a friend. 
+- The relationships between Nat and Steve are different: Nat keeps tabs on Steve to keep him out of trouble, Steve considers her a friend.
+
+<img src='https://github.com/julielinx/datascience_diaries/blob/master/graph/images/rel_direction.png?raw=true'>
+
+Directed relationships are generally indicated with an arrow.
+
+When looking at the relationship between Natasha and Clint, we could represent it as I did in the image above with two lines explicitly spelling out that each considers the other a friend. The other option is to use a single relationship line.
+
+<img src='https://github.com/julielinx/datascience_diaries/blob/master/graph/images/rel_directed.png?raw=true'>
+
+- The left side shows how I did it in the original example for easy reference.
+- The top example on the right shows the undirected version of this relationship, which has no arrows.
+- The bottom example on the right shows a directed relationship with an arrow at each end to show the mutual direction of the relationship.
+
+I've seen graphs represented visually any of these three ways, but when creating the graph model, you'll need to choose to either use a directed or undirected graph - you won't be able to mix and match.
+
+### Real World Example
+
+Most of the graphs that I work with are undirected. For my use cases I usually only care that two nodes are connected, there is no purpose for a direction except perhaps to indicate a time element.
+
+So where would we see this in the real world? Facebook and Twitter come to mind.
+
+- Undirected: With Facebook either both parties acknowledge the relationship or there is no connection.
+- Directed: With Twitter one person can follow someone without the other person taking any action at all.
+
+<img src='https://github.com/julielinx/datascience_diaries/blob/master/graph/images/directed_vs_undirected.png?raw=true'>
+
+## Weight
+
+The second element to relationships is whether or not to represent relationships individually or with a weight.
+
+- A graph where relationships are represented individually and can have more than one relationship between nodes is called a *multigraph*.
+- A graph with weights representing the strength of the connection is called a *weighted graph*.
+
+### Multigraph
+
+The unimodal version of the Marvel Social Network is a good example of this. If we connect heroes by the comics they're in, we could have a different relationship for each comic they're both in. This would be called a multigraph.
+
+<img src='https://github.com/julielinx/datascience_diaries/blob/master/graph/images/weight_multigraph.png?raw=true'>
+
+### Weighted graph
+
+We can take the exact same graph as above and condense the relationships between nodes into a single relationship with a weight. The weight is represented visually in this image as the thickness of the line connecting the nodes.
+
+We can easily see that the nodes with more lines between them, like the three between Natasha and Wanda, are thicker than the ones with fewer lines, like the one between Natash and Pepper.
+
+<img src='https://github.com/julielinx/datascience_diaries/blob/master/graph/images/weight_weighted.png?raw=true'>
+
+*Side note*, if you're curious, I probably did the multigraph manually in a program like PowerPoint, while the weighted graph was done with [Gephi](https://gephi.org/).
+
+## Up Next
+
+Projecting Bimodal to Unimodal
+
+## Resources
+
+For a more interactive introduction to graphs, graph visualization, and graph modeling, watch my [Not All Visualizations are Created Equal](https://neo4j.com/videos/24-not-all-visualizations-are-created-equal/) talk at NODES2020.
+
+- [Intro to Neo4j and Graph Databases](https://www.slideshare.net/neo4j/intro-to-neo4j-and-graph-databases)
+- [Intro to Graph Databases Episode #3 - Property Graph Model](https://www.youtube.com/watch?v=NH6WoJHN4UA)
+- [Marvel Universe Social Network](https://www.kaggle.com/csanhueza/the-marvel-universe-social-network)
+- [Networks](https://www.amazon.com/Networks-Mark-Newman/dp/0198805098) by Mark Newman
+- [Gephi](https://gephi.org/)
+- [Not All Visualizations are Created Equal](https://neo4j.com/videos/24-not-all-visualizations-are-created-equal/)
