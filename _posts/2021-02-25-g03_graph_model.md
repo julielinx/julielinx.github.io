@@ -113,7 +113,7 @@ I'll go into more detail on projected unimodal graphs in [Entry G5](https://juli
 
 ## Up Next
 
-Modeling Relationships
+[Modeling Relationships](https://julielinx.github.io/blog/g04_graph_model_rels/)
 
 ## Resources
 

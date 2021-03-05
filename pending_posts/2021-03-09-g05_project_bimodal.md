@@ -269,7 +269,7 @@ The `DETACH DELETE` command conveniently deletes the selected nodes (in this que
 
 ## Next Up
 
-Unimodal global metrics
+Global Graph Counts
 
 ## Resources
 
