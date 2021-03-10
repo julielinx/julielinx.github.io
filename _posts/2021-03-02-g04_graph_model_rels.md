@@ -77,7 +77,7 @@ We can easily see that the nodes with more lines between them, like the three be
 
 ## Up Next
 
-Projecting Bimodal to Unimodal
+[Projecting Bimodal to Unimodal](https://julielinx.github.io/blog/g05_project_bimodal/)
 
 ## Resources
 
