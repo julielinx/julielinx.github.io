@@ -22,9 +22,9 @@ Just like with a relational database, when you decide to put information in a gr
 
 These graph models have other other names as well, most notably k-partite. I will use the unimodal, bimodal, and multimodal terms consistently through this series of  posts, but keep in mind that in graph literature, there are other ways to refer to these same models.
 
-In addition, unimodal, bimodal, and multimodal are also used to describe distributions of data. This becomes confusing when "graph" is used instead of "chart" to describe the visual representation of these distributions. Thus, a chart of a bimodal distribution would be called a bimodal graph. These uses have very different contexts and refer to very different things.
-
-Chart of a bimodal distribution:
+In addition, unimodal, bimodal, and multimodal are also used to describe distributions of data. This becomes confusing when "graph" is used instead of "chart" to describe the visual representation of these distributions.
+ 
+As such, a chart of a bimodal distribution would be called a "bimodal graph." These uses have very different contexts and refer to very different things. For reference, here is a chart of a bimodal distribution:
 
 <img src='https://upload.wikimedia.org/wikipedia/commons/e/e2/Bimodal.png'>
 
