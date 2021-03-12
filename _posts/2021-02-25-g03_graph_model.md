@@ -18,7 +18,16 @@ Just like with a relational database, when you decide to put information in a gr
 - Bimodal
 - Multimodal
 
-*Note*, these graph models have other other names as well, most notably partite. I will use the unimodal, bimodal, multimodal terms consistently through this series of  posts, but keep in mind that in graph literature, there are other ways to refer to these same models.
+#### Caution
+
+These graph models have other other names as well, most notably k-partite. I will use the unimodal, bimodal, and multimodal terms consistently through this series of  posts, but keep in mind that in graph literature, there are other ways to refer to these same models.
+
+Also, the bimodal graph model is not to be confused with charts of bimodal distributions, which are also commonly referred to as bimodal graphs.
+
+Chart of a bimodal distribution:
+
+<img src='https://upload.wikimedia.org/wikipedia/commons/e/e2/Bimodal.png'>
+
 
 ### Unimodal
 
