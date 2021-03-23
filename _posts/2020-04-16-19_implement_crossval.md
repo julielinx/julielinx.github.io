@@ -51,7 +51,7 @@ It does allow pre-processing to be incorporated into the process via the pipelin
 
 ### `cross_validate`
 
-This function addresses one of the major failings of `cross_val_score`, it will return multiple metrics. It can also be configured to return the scores from the training data as well as the testing data and can be easily incorporated into the `pipeline` function, which will be covered in <font color='red'>Entry 20</font>.
+This function addresses one of the major failings of `cross_val_score`, it will return multiple metrics. It can also be configured to return the scores from the training data as well as the testing data and can be easily incorporated into the `pipeline` function, which will be covered in [Entry 20](https://julielinx.github.io/blog/20_sklearn_pipeline/).
 
 ### `cross_val_predict`
 

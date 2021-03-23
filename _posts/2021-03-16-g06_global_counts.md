@@ -181,7 +181,7 @@ RETURN count(distinct c) as node_count)`
 
 ## Next Up
 
-Global Density and Diameter
+[Global Density and Diameter](https://julielinx.github.io/blog/g07_global_density_diameter/)
 
 ## Resources
 
