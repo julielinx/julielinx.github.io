@@ -113,7 +113,7 @@ So another way of saying this is: what is the maximum number of relationships yo
 
 ## Next Up
 
-Components
+[Components](https://julielinx.github.io/blog/g08_components/)
 
 ## Resources
 

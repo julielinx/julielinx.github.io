@@ -120,7 +120,7 @@ For the four components of the Marvel Universe Social Network unimodal model, we
 
 ## Next Up
 
-Local Metrics
+Global Metric Measures
 
 ## Resources
 
