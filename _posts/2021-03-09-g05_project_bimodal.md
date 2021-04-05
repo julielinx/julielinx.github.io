@@ -269,7 +269,7 @@ The `DETACH DELETE` command conveniently deletes the selected nodes (in this que
 
 ## Next Up
 
-[Global Graph Counts](https://julielinx.github.io/blog/g06_global_counts/)
+[Analysis Metrics](https://julielinx.github.io/blog/g05b_analysis_metrics/)
 
 ## Resources
 
