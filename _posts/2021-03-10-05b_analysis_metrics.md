@@ -1,11 +1,10 @@
 ---
 title: "Entry G5.5: Analysis Metrics"
 categories:
-- Blog
-  tags:
-- graph
-- neo4j
-- create database
+  - Blog
+tags:
+  - graph
+  - neo4j
 ---
 
 I am 100% adding this entry retroactively. And yes, I dated it wrong so it would show up in the right order in the Post list. That's the nice thing about digital diaries: you can insert things in after the fact. It wasn't until I was working on entries G12 and G13 that I realized I hadn't posted all the analysis metrics I plan to address.
