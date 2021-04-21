@@ -1,11 +1,11 @@
 ---
 title: "Entry G10: Local Metrics"
 categories:
-- Blog
-  tags:
-- graph
-- neo4j
-- graph analytics
+  - Blog 
+tags:
+  - graph
+  - neo4j
+  - graph analytics
 ---
 
 Now that I know what the larger graph looks like, I need metrics at the node level. The reason for these metrics is to be able to locate outlier nodes within the graph for closer inspection. Pretty much all queries I'll run from here out are to identify nodes for additional inspection or exclude them from consideration.

@@ -1,4 +1,12 @@
-# Entry G11: Create the Marvel Multigraph Database
+---
+title: "Entry G11: Create the Marvel Multigraph Database"
+categories:
+  - Blog
+tags:
+  - graph
+  - neo4j
+  - graph analytics
+---
 
 Creating a multigraph database was actually way easier than I expected.
 
