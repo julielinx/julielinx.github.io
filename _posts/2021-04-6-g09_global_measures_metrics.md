@@ -95,7 +95,7 @@ That will just leave capturing the metadata for multiple runs of the query; calc
 
 ## Up Next
 
-Local Metrics
+[Local Metrics](https://julielinx.github.io/blog/g010_local_metrics/)
 
 ## Resources
 
