@@ -25,6 +25,8 @@ The notebooks where I did my code for this entry can be found on my github page.
 
 I created three notebooks, one for each graph model.
 
+(*Caution* after the updates in [Entry 12](https://julielinx.github.io/blog/g12_degree_comparison/) and [Entry 13](https://julielinx.github.io/blog/g13_weighted_degree_comparison/) I discovered that some of the queries are inadequate and others (like the `gds` functions, are wrong.) See the notebooks for G12 ([a](https://github.com/julielinx/datascience_diaries/blob/master/graph/12a_nb_degree_comparison.ipynb): results grouped by function and Graph Model, [b](https://github.com/julielinx/datascience_diaries/blob/master/graph/12b_nb_degree_comparison.ipynb): results grouped by relationship type and Graph Model, [c](https://github.com/julielinx/datascience_diaries/blob/master/graph/12c_nb_degree_comparison.ipynb): results grouped by relationship type) and [G13](https://github.com/julielinx/datascience_diaries/blob/master/graph/13a_nb_weighted_degree_comparison.ipynb) for the correct code. The text and explanations in this notebook are still valid, so Entries 12 and 13 supplement what's here, they don't replace it)
+
 - [Entry G10a: Unimodal Model Local Metrics](https://github.com/julielinx/datascience_diaries/blob/master/graph/10a_nb_uni_local_metrics.ipynb)
 - [Entry G10b: Bimodal Model Local Metrics](https://github.com/julielinx/datascience_diaries/blob/master/graph/10b_nb_bi_local_metrics.ipynb)
 - [Entry G10c: Mixed Model Local Metrics](https://github.com/julielinx/datascience_diaries/blob/master/graph/10c_nb_mix_local_metrics.ipynb)
@@ -115,3 +117,5 @@ It's time to figure out the multigraph capabilities of Neo4j version 4.
 - [Degree Centrality](https://neo4j.com/docs/graph-data-science/current/algorithms/degree-centrality/)
 - [Relationship Orientation](https://neo4j.com/docs/graph-data-science/current/management-ops/cypher-projection/#cypher-projection-relationship-orientation)
 - [How to get Degree centrality in bipartite graph by using GDS?](https://community.neo4j.com/t/how-to-get-degree-centrality-in-bipartite-graph-by-using-gds/30278)
+- [Entry 12: Degree Comparison](https://julielinx.github.io/blog/g12_degree_comparison/)
+- [Entry 13: Weighted Degree Comparison](https://julielinx.github.io/blog/g13_weighted_degree_comparison/)

@@ -5,7 +5,7 @@ categories:
 tags:
   - graph
   - neo4j
-  - graph analytics
+  - create database
 ---
 
 Creating a multigraph database was actually way easier than I expected.
@@ -232,7 +232,7 @@ That's it for creating the databases. So far I'm finding this much nicer than ha
 
 ## Up Next
 
-Cross Graph Model Degree Comparison
+[Degree Comparison](https://julielinx.github.io/blog/g12_degree_comparison/)
 
 ## Resources
 
