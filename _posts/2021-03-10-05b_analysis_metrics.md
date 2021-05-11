@@ -43,11 +43,13 @@ If I'm feeling ambitious, I might come back and put the links to the relevant en
 
 ### Local Metrics
 
-1. Degree descriptive statistics
-2. Degree distribution
-3. Weighted degree count
-4. Weighted degree descriptive statistics
-5. Weighted degree distribution
+1. Degree Descriptive Statistics and Distribution Charts
+  - [Entry 10: Local Metrics](https://julielinx.github.io/blog/g10_local_metrics/): Unweighted and weighted degrees first pass
+  - [Entry 12: Degree Comparison](https://julielinx.github.io/blog/g12_degree_comparison/): Unweighted degrees refined
+  - [Entry 13: Weighted Degree Comparison](https://julielinx.github.io/blog/g13_weighted_degree_comparison/): Weighted degrees refined
+2. Weighted degree count
+3. Weighted degree descriptive statistics
+4. Weighted degree distribution
 
 ### Density and Nearest Neighbors
 
