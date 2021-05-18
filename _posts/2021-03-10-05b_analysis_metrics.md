@@ -5,9 +5,10 @@ categories:
 tags:
   - graph
   - neo4j
+  - graph analytics
 ---
 
-I am 100% adding this entry retroactively. And yes, I dated it wrong so it would show up in the right order in the Post list. That's the nice thing about digital diaries: you can insert things in after the fact. It wasn't until I was working on entries G12 and G13 that I realized I hadn't posted all the analysis metrics I plan to address.
+I am 100% adding this entry retroactively. And yes, I dated it wrong so that it would show up in the right order in the Post list. That's the nice thing about digital diaries: you can insert things in after the fact. It wasn't until I was working on entries G12 and G13 that I realized I hadn't posted all the analysis metrics I plan to address.
 
 There is no guarantee that I'll address all metrics under a single category in one post and no guarantee I'll post them in the order listed. Although, I may update the list after the entries are live to reflect how they end up grouped.
 
@@ -28,34 +29,42 @@ If I'm feeling ambitious, I might come back and put the links to the relevant en
 
 ### Global Metrics
 
-1. [Counts: Entry G6](https://julielinx.github.io/blog/g06_global_counts/)
+1. [Entry G6: Global Counts](https://julielinx.github.io/blog/g06_global_counts/) and [Entry 14: Global Counts Comparison](https://julielinx.github.io/blog/g14_global_counts_comparison/)
   - Node count
   - Isolates count and percent
   - Relationship count
-2. [Density and Diameter: Entry G7](https://julielinx.github.io/blog/g07_global_density_diameter/)
+2. [Entry G7: Global Density and Diameter](https://julielinx.github.io/blog/g07_global_density_diameter/) and [Entry 15: Global Density Comparison](https://julielinx.github.io/blog/g15_global_density_comparison/)
   - Number of possible relationships
   - Global density
   - Diameter
-3. [Components: Entry G8](https://julielinx.github.io/blog/g08_components/)
+3. [Entry G8: Components](https://julielinx.github.io/blog/g08_components/) and [Entry 16: Components Comparison](https://julielinx.github.io/blog/g16_components_comparison/)
   - Component count
   - Component size
   - Component percent
 
 ### Local Metrics
 
-1. Degree Descriptive Statistics and Distribution Charts
-  - [Entry 10: Local Metrics](https://julielinx.github.io/blog/g10_local_metrics/): Unweighted and weighted degrees first pass
-  - [Entry 12: Degree Comparison](https://julielinx.github.io/blog/g12_degree_comparison/): Unweighted degrees refined
-  - [Entry 13: Weighted Degree Comparison](https://julielinx.github.io/blog/g13_weighted_degree_comparison/): Weighted degrees refined
-2. Weighted degree count
-3. Weighted degree descriptive statistics
-4. Weighted degree distribution
+1. [Entry 10: Local Metrics](https://julielinx.github.io/blog/g10_local_metrics/): first pass, accompanying notebooks use multiple separate graphs
+  - Degree Count
+  - Degree Descriptive Statistics
+  - Degree Distribution Charts
+  - Weighted Degree Count
+  - Weighted Degree Descriptive Statistics
+  - Weighted Degree Distribution Charts
+2. [Entry 12: Degree Comparison](https://julielinx.github.io/blog/g12_degree_comparison/): Unweighted degrees refined, accompanying notebooks use a single multi-graph database
+  - Degree Count
+  - Degree Descriptive Statistics
+  - Degree Distribution Charts
+3. [Entry 13: Weighted Degree Comparison](https://julielinx.github.io/blog/g13_weighted_degree_comparison/): Weighted degrees refined, accompanying notebook uses a single multi-graph database
+  - Weighted Degree Count
+  - Weighted Degree Descriptive Statistics
+  - Weighted Degree Distribution Charts
 
 ### Density and Nearest Neighbors
 
-1. Local density at various step levels (nearest neighbors, next nearest neighbors)
-2. Number of nearest claim neighbors
-3. Number of next nearest claim neighbors
+1. Number of nearest claim neighbors
+2. Number of next nearest claim neighbors
+3. Local density at various step levels (nearest neighbors, next nearest neighbors)
 4. Number steps to nearest fraud
 5. Count of fraud at various step levels
 6. Percent of fraud at various step levels

@@ -23,6 +23,9 @@ The notebooks where I did my code for this entry can be found on my github page.
 - [Entries G6, G7, G8: Global Metrics Unimodal Graph Model](https://github.com/julielinx/datascience_diaries/blob/master/graph/06_7_8a_nb_unimodal_global_metrics.ipynb)
 - [Entries G6, G7, G8: Global Metrics Biimodal Graph Model](https://github.com/julielinx/datascience_diaries/blob/master/graph/06_7_8b_nb_bimodal_global_metrics.ipynb)
 - [Entries G6, G7, G8: Global Metrics Mixed Graph Model](https://github.com/julielinx/datascience_diaries/blob/master/graph/06_7_8c_nb_mixed_global_metrics.ipynb)
+- A notebook with just the global graph counts can be found in the [Entry 14 notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/14_nb_global_counts_comparison.ipynb)
+
+*Note*, after I created a multigraph with all three graph models, the code changed significantly. You can read [Entry 14](https://julielinx.github.io/blog/g14_global_counts_comparison/) for the results of these changes, but that entry is a supplement to this one, not a replacement. 
 
 ## Node count
 
@@ -190,3 +193,4 @@ RETURN count(distinct c) as node_count)`
 - [Fast counts using the count store](https://neo4j.com/developer/kb/fast-counts-using-the-count-store/)
 - [Degree Centrality](https://neo4j.com/docs/graph-data-science/current/algorithms/degree-centrality/)
 - [Relationship Orientation](https://neo4j.com/docs/graph-data-science/current/management-ops/cypher-projection/#cypher-projection-relationship-orientation)
+- [Entry 14: Global Counts Comparison](https://julielinx.github.io/blog/g14_global_counts_comparison/)

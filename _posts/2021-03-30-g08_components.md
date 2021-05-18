@@ -15,6 +15,9 @@ The notebooks where I did my code for this entry can be found on my github page.
 - [Entries G6, G7, G8: Global Metrics Unimodal Graph Model](https://github.com/julielinx/datascience_diaries/blob/master/graph/06_7_8a_nb_unimodal_global_metrics.ipynb)
 - [Entries G6, G7, G8: Global Metrics Biimodal Graph Model](https://github.com/julielinx/datascience_diaries/blob/master/graph/06_7_8b_nb_bimodal_global_metrics.ipynb)
 - [Entries G6, G7, G8: Global Metrics Mixed Graph Model](https://github.com/julielinx/datascience_diaries/blob/master/graph/06_7_8c_nb_mixed_global_metrics.ipynb)
+- A notebook with just the components can be found in the [Entry 16 notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/16_nb_components_comparison.ipynb)
+
+*Note*, after I created a multigraph with all three graph models, the code changed significantly. You can read [Entry 16](https://julielinx.github.io/blog/g16_components_comparison/) for the results of these changes, but that entry is a supplement to this one, not a replacement.
 
 ## Components
 
@@ -130,3 +133,4 @@ For the four components of the Marvel Universe Social Network unimodal model, we
 - [Relationship Orientation](https://neo4j.com/docs/graph-data-science/current/management-ops/cypher-projection/#cypher-projection-relationship-orientation)
 - [Networks](https://www.amazon.com/Networks-Mark-Newman/dp/0198805098) by Mark Newman
 - [Fraud Detection slideshare](https://www.slideshare.net/maxdemarzi/fraud-detection-and-neo4j) by Max De Marzi
+- [Entry 16: Components Comparison](https://julielinx.github.io/blog/g16_components_comparison/)

@@ -62,7 +62,7 @@ I threw in the Comic to Comic weighted relationships mostly because I could. It 
 
 # Up Next
 
-Global Counts Comparison
+[Global Counts Comparison](https://julielinx.github.io/blog/g14_global_counts_comparison/)
 
 # Resources
 
