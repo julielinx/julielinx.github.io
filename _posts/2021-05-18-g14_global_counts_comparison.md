@@ -75,21 +75,7 @@ When looking at the total relationship counts, each model has a different value:
 
 Keep in mind that the Unimodal Model has weighted relationships (for information on weighted relationships see [Entry G4](https://julielinx.github.io/blog/g04_graph_model_rels/)). While we are projecting relationships based on the original Bimodal Model, we end up with a lot more connections in the projected version. If we include the weights we get a total relationship count of 579,191 for Hero to Hero relationships (which we know from the [Entry G13 notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/13a_nb_weighted_degree_comparison.ipynb)). That's around 6 times the number of connections from the original representation.
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -119,7 +105,6 @@ Keep in mind that the Unimodal Model has weighted relationships (for information
     </tr>
   </tbody>
 </table>
-</div>
 
 When we break these down by relationship type, it becomes obvious that the Unimodal and Mixed Models have the same count for `KNOWS` relationships, while the Bimodal and Mixed Models have the same count for `APPEARS_IN`. The total count for the Mixed Model is just the addition of the relationships in the Unimodal and Bimodal Models.
 
@@ -146,7 +131,7 @@ That graph has two nodes types (must be the Bimodal or Mixed Models) and relatio
 
 As noted in [Entry G6](https://julielinx.github.io/blog/g06_global_counts/) the only graph model that has isolated nodes is the Unimodal Model. Even this graph has a very small percent of isolated nodes at 0.28%.
 
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
