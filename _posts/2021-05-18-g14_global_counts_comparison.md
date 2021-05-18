@@ -32,21 +32,7 @@ With the node counts for all three graph models in the same DataFrame it's easy 
 
 The Hero nodes are the same for all three models and the Comic nodes are the same for the Bimodal Model and Mixed Model. As far as the nodes are concerned, the only different is that the Comic nodes were removed from the Unimodal Model.
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -76,7 +62,6 @@ The Hero nodes are the same for all three models and the Comic nodes are the sam
     </tr>
   </tbody>
 </table>
-</div>
 
 ## Relationship Count
 
@@ -104,7 +89,7 @@ Keep in mind that the Unimodal Model has weighted relationships (for information
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1">
   <thead>
     <tr style="text-align: right;">
       <th></th>
