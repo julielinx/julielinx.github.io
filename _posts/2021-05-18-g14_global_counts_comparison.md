@@ -161,21 +161,7 @@ That graph has two nodes types (must be the Bimodal or Mixed Models) and relatio
 
 As noted in [Entry G6](https://julielinx.github.io/blog/g06_global_counts/) the only graph model that has isolated nodes is the Unimodal Model. Even this graph has a very small percent of isolated nodes at 0.28%.
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -209,7 +195,6 @@ As noted in [Entry G6](https://julielinx.github.io/blog/g06_global_counts/) the 
     </tr>
   </tbody>
 </table>
-</div>
 
 # Up Next
 
