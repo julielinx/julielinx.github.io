@@ -30,7 +30,7 @@ This aligns with the findings of Mark Newman in [Networks](https://www.amazon.co
 
 # Up Next
 
-Number of Nearest Neighbors
+[Add Villains](https://julielinx.github.io/blog/g17_add_villains/)
 
 # Resources
 
