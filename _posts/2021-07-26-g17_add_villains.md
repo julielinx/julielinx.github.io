@@ -5,7 +5,6 @@ categories:
 tags:
   - graph
   - neo4j
-  - graph analytics
 ---
 
 The use case I'm interested in is locating fraud within a graph. This is difficult to do when all the people nodes in your data are undifferentiated.
@@ -22,7 +21,7 @@ I've had some computer problems the last couple of weeks and have used the [Entr
 
 ## Up Next
 
-Egocentric Network
+[Egocentric Networks](https://julielinx.github.io/blog/g18_egocentric_networks/)
 
 # Resources
 
