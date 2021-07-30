@@ -130,7 +130,7 @@ For the most part, I'll limit the egonets to next nearest neighbors simply becau
 
 ## Up Next
 
-Neighborhood Node Counts
+[Neighborhood Node Counts](https://julielinx.github.io/blog/g19_neighborhood_node_cts/)
 
 ## Resources
 
