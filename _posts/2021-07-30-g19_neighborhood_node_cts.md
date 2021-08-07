@@ -204,7 +204,7 @@ Looks like I have my answer on the diameter of this particular graph, which is e
 
 ## Up Next
 
-Mean Distance Between Connected Nodes
+[Shortest Path](https://julielinx.github.io/blog/g20_shortest_path/)
 
 ## Resources
 
