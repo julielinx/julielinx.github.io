@@ -9,7 +9,7 @@ tags:
 
 Recently I've been working my way through [one of the older versions](https://courses.cs.washington.edu/courses/cse140/13wi/) of [CSE 140](http://courses.cs.washington.edu/courses/cse160/) (now CSE 160) offered at the University of Washington. [Homework 8](https://courses.cs.washington.edu/courses/cse140/13wi/homework/hw8/assignment.html) is a nice exercise that requires natural language processing (NLP) and analysis.
 
-The homework as specified in the directions exlcudes specific NLP techniques that I generally include, specifically case insensitivity and punctuation removal. The example results for the solution also imply the use of tuples, whereas I prefer dataframes. Due to these alterations (my solution would receive a failing grade if submitted), I feel comfortable posting it to showcase some natural language processing techniques.
+The homework as specified in the directions excludes specific NLP techniques that I generally include, specifically case insensitivity and punctuation removal. The example results for the solution also imply the use of tuples, whereas I prefer dataframes. Due to these alterations (my solution would receive a failing grade if submitted), I feel comfortable posting it online to showcase some natural language processing techniques.
 
 The series of posts walking through this linguistic analysis example is significantly different than my other posts. I'll walk through my solution with samples of the output as I create the code.
 
@@ -35,7 +35,10 @@ Obviously, the first thing to do is read in the data. Most of the files are `.sr
 The standard and very basic way to read in a file is to use `open()`. When using this function I'll read in the file line by line. This allows me to remove lines that aren't pertinent to the analysis before having to store them in memory.
 
 ```python
-test_file = os.path.join(os.getcwd(), 'data', '1960s', 'The Twilight Zone - 3x17 - One More Pallbearer.srt')
+test_file = os.path.join(os.getcwd(),
+                        'data',
+                        '1960s',
+                        'The Twilight Zone - 3x17 - One More Pallbearer.srt')
 with open(test_file, 'r') as l:
     for line in l:
         print(line, end='')
@@ -420,7 +423,10 @@ One of the major benefits of this method is the ability to name another data str
 The first step of this is to store the lines as a single text corpus.
 
 ```python
-test_file = os.path.join(os.getcwd(), 'data', '1960s', 'The Twilight Zone - 3x17 - One More Pallbearer.srt')
+test_file = os.path.join(os.getcwd(),
+                        'data',
+                        '1960s',
+                        'The Twilight Zone - 3x17 - One More Pallbearer.srt')
 corpus = ''
 with open(test_file, 'r', encoding='latin-1') as l:
     for line in l:
