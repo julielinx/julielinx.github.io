@@ -1,19 +1,17 @@
 ---
-title: "Entry NLP1: Corpus Cleaning with RegEx"
+title: "Entry NLP3: Clean Data and Split into N-grams"
 categories:
   - Blog
 tags:
   - nlp
   - ngrams
 ---
-# Entry NLP3: Clean Data and Split into N-grams
 
 In the first entry of this series, I figured out how to process the raw files. In the second entry, I figured out how to load all files in a directory (even if it has subdirectories) and store the data.
 
 Now I'm ready to make the analysis case insensitive, remove punctuation and stopwords, and split what's left into n-grams.
 
 *Side note:* To be fair, I worked on a pretty extensive NLP problem a few years ago. I'll be reusing code and logic from that project.
-
 
 ```python
 import pandas as pd
@@ -26,19 +24,6 @@ import itertools
 import nltk
 nltk.download('stopwords')
 ```
-
-    [nltk_data] Downloading package stopwords to
-    [nltk_data]     /Users/julie.fisher/nltk_data...
-    [nltk_data]   Package stopwords is already up-to-date!
-    
-
-
-
-
-    True
-
-
-
 
 ```python
 def read_script(file_path):
@@ -86,11 +71,7 @@ Next I'll spell out the special characters I want to remove from the text. Fortu
 string.punctuation
 ```
 
-
-
-
     '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
-
 
 
 This list is pretty comprehensive. Between this and the `newline_list` I created above all the remaining characters from the "Remove" list are now addressed. For quick reference, I still had the following items to remove:
@@ -128,28 +109,17 @@ This particular strategy hinges on the text being a value in a dataframe column.
 list(unilayer_dict.keys())[:5]
 ```
 
-
-
-
     ['The Twilight Zone - 3x17 - One More Pallbearer.srt',
      'The Twilight Zone - 3x05 - A Game of Pool.srt',
      'The Twilight Zone - 2x03 - Nervous Man in a Four Dollar Room.srt',
      'The Twilight Zone - 4x05 - Mute.srt',
      'The Twilight Zone - 3x04 - The Passersby.srt']
 
-
-
-
 ```python
 unilayer_dict['The Twilight Zone - 4x05 - Mute.srt'][:500]
 ```
 
-
-
-
     ' You unlock this door\n with the key of imagination.\n Beyond it is another dimension-\n a dimension of sound,\n a dimension of sight,\n a dimension of mind.\n You\'re moving into a land\n of both shadow and substance,\n of things and ideas.\n You\'ve just crossed over\n into the twilight zone.\n So...\n "the undersigned,\n "having accepted\n the following propositions:\n "A, that prior\n to the inception of language,\n "man communicated\n by telepathic means;\n "and b, that this ability\n not only still exists\n "but'
-
-
 
 ### Convert dictionary to dataframe
 
@@ -159,9 +129,6 @@ A dictionary is easily converted into a dataframe with `pd.DataFrame.from_dict`.
 ```python
 pd.DataFrame.from_dict(unilayer_dict, orient='index').head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -210,16 +177,12 @@ pd.DataFrame.from_dict(unilayer_dict, orient='index').head()
 </div>
 
 
-
 The indexing quirk is easily fixed with `reset_index` to make all my variables accessible as columns. However, the I have terrible columns names. Then I give the column names intuitive names.
 
 
 ```python
 pd.DataFrame.from_dict(unilayer_dict, orient='index').reset_index().head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -274,7 +237,6 @@ pd.DataFrame.from_dict(unilayer_dict, orient='index').reset_index().head()
 </div>
 
 
-
 Ultimately this will all be in a single function or series of functions and the column name won't matter. However, I find it much easier to write and read the code when there are descriptive names - this goes for column names and function names. So I'm going to change the column names to be more easily understood.
 
 
@@ -282,8 +244,6 @@ Ultimately this will all be in a single function or series of functions and the 
 test = pd.DataFrame.from_dict(unilayer_dict, orient='index').reset_index().rename(columns={'index':'script_name', 0:'corpus'})
 test.head()
 ```
-
-
 
 
 <div>
@@ -339,7 +299,6 @@ test.head()
 </div>
 
 
-
 While it is a single line of code, it is a little unwieldy and I'll need to apply it to all the dictionaries, so I'll write a quick function to do it for me.
 
 
@@ -368,9 +327,6 @@ def punct_tokens(df, text_col):
 punct_test = punct_tokens(test, 'corpus')
 punct_test.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -431,7 +387,6 @@ punct_test.head()
 </div>
 
 
-
 ## Remove stopwords
 
 Now that the punctuation is out of the way, I can start thinking about the breaking the text into different sized n-grams. What has worked for me in the past is to split the string that's had punctuation removed into unigrams (called one-grams in the homework), the create different sizes of n-gram from there.
@@ -444,9 +399,6 @@ The `nltk` library has a handy list of stopwords. *Note:* Using the `nltk` libra
 ```python
 nltk.corpus.stopwords.words('english')
 ```
-
-
-
 
     ['i',
      'me',
@@ -629,7 +581,6 @@ nltk.corpus.stopwords.words('english')
      "wouldn't"]
 
 
-
 The best way I found to remove stopwords was to use list comprehension in a lambda function.
 
 All the code for this section was re-used, so I'll lump the results all together.
@@ -648,9 +599,6 @@ def create_ngrams(df):
 ```python
 create_ngrams(punct_test).head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -729,7 +677,6 @@ create_ngrams(punct_test).head()
 </div>
 
 
-
 I appreciate this data structure because if there is anything that doesn't make sense later in the analysis, I can search for it and track it back to the source, i.e. as long as I can find it in the designated n-gram column, I can see what the corpus looked like in the original form (the full concatenated string), after removal of punctuation, after removal of the stopwords, and converted to n-grams as well as being able to track it back to the script it came from because I have the script name.
 
 The code to create this dataframe is a good chunk of code that's all related, so I'll combine it into a single function for easy of use.
@@ -748,8 +695,6 @@ def create_ngram_df(script_dict, text_col):
 authentic_ngram_df = create_ngram_df(unilayer_dict, 'corpus')
 authentic_ngram_df
 ```
-
-
 
 
 <div>
@@ -884,7 +829,6 @@ authentic_ngram_df
 </div>
 
 
-
 To handle the multiple corpora of the 21st century scripts, I retained the dictionary-holding-another-data-structure set up. The name of each grouping ('Pan-Am', 'Mad_Med', 'The_Kennedys', 'X-Men_First_Class') is a key and the dataframe is the value. Using this, I can continue to reap the benefits of my functions, while keeping the groups, and their individual analyses, separate.
 
 
@@ -898,9 +842,6 @@ for script_group in list(bilayer_dict.keys()):
 ```python
 test_ngram_dict['Pan_Am']
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1058,7 +999,6 @@ test_ngram_dict['Pan_Am']
   </tbody>
 </table>
 </div>
-
 
 
 Putting it all together, the functions look like this:
