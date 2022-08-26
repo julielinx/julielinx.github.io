@@ -93,12 +93,18 @@ test_dict['The Twilight Zone - 3x17 - One More Pallbearer.srt'][:500]
 The challenge is the '21st-century' directory: it contains four subdirectories. The homework instructions say to accept a directory and just load the files within it (so I'd have to run the script four times to analyze all the 21st century corpora), but since I'm going off script on an extended detour to improve the analysis, I want to be able to run this thing once and get the analyses for all four test corpora.
 
 What I need is a nested dictionary. The goal is something like this:
->{</br>
->Mad_Men:{script_1: corpus_1, script_2: corpus_2, ..., script_n: corpus_n},</br>
->Pan_Am: {script_1: corpus_1, script_2: corpus_2, ..., script_n: corpus_n},</br>
-The_Kennedys: {script_1: corpus_1, script_2: corpus_2, ..., script_n: corpus_n},</br>
-X-Men_First_Class: {script1: corpus1}</br>
->}
+
+{
+<table align='left'>
+    <tr>
+        <td>Mad_Men:{script_1: corpus_1, script_2: corpus_2, ..., script_n: corpus_n},</td>
+        <td>Pan_Am: {script_1: corpus_1, script_2: corpus_2, ..., script_n: corpus_n},</td>
+        <td>The_Kennedys: {script_1: corpus_1, script_2: corpus_2, ..., script_n: corpus_n},</td>
+        <td>X-Men_First_Class: {script1: corpus1}</td>
+    </tr>
+
+</table>
+}
 
 In my previous solution, I used recursion to work through any subdirectories until I grabbed the file paths for all files the specified directory and its subdirectories then returned that as a list.
 
