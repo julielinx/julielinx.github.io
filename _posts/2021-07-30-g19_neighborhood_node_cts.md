@@ -12,9 +12,9 @@ Now that we've established [how to define an egocentric neighborhood](https://ju
 
 The notebooks where I did the code for this entry are:
 
-- [Entry 19a notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19a_nb_neighborhood_cts.ipynb)
-- [Entry 19b notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19b_nb_neighborhood_cts.ipynb)
-- [Entry 19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_cts.ipynb)
+- [Entry 19a notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19a_nb_neighborhood_node_cts.ipynb)
+- [Entry 19b notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19b_nb_neighborhood_node_cts.ipynb)
+- [Entry 19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_node_cts.ipynb)
 
 ## The Problem
 
@@ -30,9 +30,9 @@ These concepts are very similar. [A First Course in Network Science](https://www
 
 The easiest way to track this is to measure who is connected to who. To start this off I did simple counts: number of nearest neighbors, number of next nearest neighbors, and the percent of each that are villains.
 
-Since we're counting people nodes (everything with a "Hero" label) and we're using the same base data (there are no more or fewer people in any graph models compared to the others), the counts should be the same for all three graph models: unimodal, bimodal, and mixed. I verify that this is true in [Entry 19b notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19b_nb_neighborhood_cts.ipynb) where I charted the distributions for all neighbors, villain neighbors, and villain neighbor percentages.
+Since we're counting people nodes (everything with a "Hero" label) and we're using the same base data (there are no more or fewer people in any graph models compared to the others), the counts should be the same for all three graph models: unimodal, bimodal, and mixed. I verify that this is true in [Entry 19b notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19b_nb_neighborhood_node_cts.ipynb) where I charted the distributions for all neighbors, villain neighbors, and villain neighbor percentages.
 
-*Confession*: okay, okay, you caught me. I've been working with the relationships so much that it didn't even occur to me that the node counts would be the same across graph models. Which is why I created [Entry 19a notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19a_nb_neighborhood_cts.ipynb), where I pull and visualize each of the graph models and step levels separately for nearest neighbors and next nearest neighbors.
+*Confession*: okay, okay, you caught me. I've been working with the relationships so much that it didn't even occur to me that the node counts would be the same across graph models. Which is why I created [Entry 19a notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19a_nb_neighborhood_node_cts.ipynb), where I pull and visualize each of the graph models and step levels separately for nearest neighbors and next nearest neighbors.
 
 ## The Options
 
@@ -65,7 +65,7 @@ For this first node count metric, I decided I wanted to know about all the nodes
 
 I love [this algorithm](https://neo4j.com/labs/apoc/4.0/overview/apoc.path/apoc.path.subgraphAll/) in principle. It lets me specify the distance, then return everything within that criteria. I end up using it in the density calculations, but the farther out you go, the slower the algorithm runs.
 
-In the [Entry G19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_cts.ipynb) I went out 6 steps just for the fun of it. This would have taken forever using the `apoc.path.subgraphAll` function.
+In the [Entry G19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_node_cts.ipynb) I went out 6 steps just for the fun of it. This would have taken forever using the `apoc.path.subgraphAll` function.
 
 Another limitation for this use case is that the function returns a list. There isn't an easy way to specify the step distance or grab the node labels. I would have had to do a lot of subtraction counts to get the information I wanted.
 
@@ -126,7 +126,7 @@ The [documentation for the spanningTree algorithm](https://neo4j.com/labs/apoc/4
   - If the return information was different, we could simply return the label for the end node then group counts by label
 - The `RETURN` statement is where we specify what we actually want returned
   - Since we're using a label as the start node, we need `h.name` to break out the counts by each individual person node - you can think of this like using a GROUP BY type statement
-  - `length(path)` tells us what step level we're at. Remember because of the `minLevel` and `maxLevel` parameters, we'll only return the nearest and next nearest neighbors (I did extend this out to farther distances in the [Entry 19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_cts.ipynb), which I talk about later in the post)
+  - `length(path)` tells us what step level we're at. Remember because of the `minLevel` and `maxLevel` parameters, we'll only return the nearest and next nearest neighbors (I did extend this out to farther distances in the [Entry 19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_node_cts.ipynb), which I talk about later in the post)
   - `count(path)` tells us how many paths there are at a given step level
     - Because `apoc.path.spanningTree()` uses breadth first search, we don't have to worry about getting multiple paths to the same node. This allows us to use the path count as a stand in for the number of nodes at each step level
 
@@ -162,7 +162,7 @@ There are a couple of things to keep in mind when looking at these charts:
 
 - the coloring is misleading when looking at the y log scale. The bottom color seems much more prevalent, but that's because 0-10 takes up as much space as 100-1000 due to the log scale
 
-When looking at the charts, I recommend the [Entry G19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_cts.ipynb) because I refind what I wanted to see and how to display it in the other two notebooks. This left notebook "c" the most condensed and information rich notebook.
+When looking at the charts, I recommend the [Entry G19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_node_cts.ipynb) because I refind what I wanted to see and how to display it in the other two notebooks. This left notebook "c" the most condensed and information rich notebook.
 
 ### Assortatitivy, Homophily, and Villain Percent
 
@@ -180,7 +180,7 @@ When moving to other - more real world - datasets, I expect these results to be 
 
 ### Step Level / Distance
 
-Having run the counts out to a distance of 6 in the [Entry 19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_cts.ipynb), we can start to see some interesting things about how an individual's network expands.
+Having run the counts out to a distance of 6 in the [Entry 19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_node_cts.ipynb), we can start to see some interesting things about how an individual's network expands.
 
 At a distance of 1 the vast majority of our nodes have less than 250 degrees, with the maximum being somewhere around 2,000. In statistics, they call this a "long tail."
 

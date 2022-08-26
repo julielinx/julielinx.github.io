@@ -61,7 +61,7 @@ Most of what I'm looking at in this series of posts are graph wide type of metri
 
 Now, looking at a person connected to another person (or comic in the Bimodal Model) won't really tell us anything, either a person is connected (shortest distance = 1) or it's not (shortest distance = 0). So, for my purposes, I'm going to use shortest path to a villain.
 
-Based on the results from the [Entry G19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_cts.ipynb), most nodes will have a villain connection within one or two steps. But let's see just how far you *have* to travel before encountering a villain. Are there even any that are more than two steps away? I also want to have this metric for future reference because other graphs may have longer distances to nodes of interest.
+Based on the results from the [Entry G19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_node_cts.ipynb), most nodes will have a villain connection within one or two steps. But let's see just how far you *have* to travel before encountering a villain. Are there even any that are more than two steps away? I also want to have this metric for future reference because other graphs may have longer distances to nodes of interest.
 
 I considered two solutions for this:
 
@@ -117,7 +117,7 @@ Then I looked for the maximum value. There were 9 people with a maximum distance
 
 - [Dijkstra Shortest Path algorithm](https://neo4j.com/docs/graph-data-science/current/algorithms/dijkstra-source-target/)
 - [Expand Spanning Tree](https://neo4j.com/labs/apoc/4.1/graph-querying/expand-spanning-tree/)
-- [Entry G19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_cts.ipynb)
+- [Entry G19c notebook](https://github.com/julielinx/datascience_diaries/blob/master/graph/19c_nb_neighborhood_node_cts.ipynb)
 - [Expanding Spanning Tree: Label Filters](https://neo4j.com/labs/apoc/4.1/graph-querying/expand-spanning-tree/#expand-spanning-tree-label-filters)
 - [Entry 2: Define the Process](https://julielinx.github.io/blog/02_define_process/)
 - [4 Self-Study Machine Learning Projects](https://machinelearningmastery.com/self-study-machine-learning-projects/)
