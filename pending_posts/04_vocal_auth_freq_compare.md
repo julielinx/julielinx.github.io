@@ -1,12 +1,12 @@
 ---
-title: "Entry NLP1: Corpus Cleaning with RegEx"
+title: "Entry NLP4: Frequencies and Comparison"
 categories:
   - Blog
 tags:
   - nlp
   - text analysis
 ---
-# Entry NLP4: Frequencies and Comparison
+# 
 
 In the previous entries in this series, I loaded all the files in a directory, processed the data, and transformed it into ngrams. Now it's time to do math and analysis!
 

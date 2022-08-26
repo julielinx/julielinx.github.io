@@ -46,7 +46,7 @@ Listing out all files within a directory is pretty straight forward with the `os
 - `scandir` scans the directory
 - `path.join` joins parts of the file path so that handling is operating system agnostic
     - Mac uses '/'
-    - PC uses '\'
+    - PC uses '\\'
 - `getcwd` gets the current working directory
     - This allows the file structure to be independent of the upper file structure
     - This independence allows the .py script to be transferable between computers and/or users
