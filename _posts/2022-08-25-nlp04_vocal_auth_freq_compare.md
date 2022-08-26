@@ -6,7 +6,6 @@ tags:
   - nlp
   - text analysis
 ---
-# 
 
 In the previous entries in this series, I loaded all the files in a directory, processed the data, and transformed it into ngrams. Now it's time to do math and analysis!
 
@@ -22,18 +21,6 @@ import itertools
 import nltk
 nltk.download('stopwords')
 ```
-
-    [nltk_data] Downloading package stopwords to
-    [nltk_data]     /Users/julie.fisher/nltk_data...
-    [nltk_data]   Package stopwords is already up-to-date!
-    
-
-
-
-
-    True
-
-
 
 
 ```python
@@ -118,9 +105,6 @@ auth_ngram_df = create_ngram_df(raw_auth_dict, 'corpus')
 auth_ngram_df.head()
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -198,7 +182,6 @@ auth_ngram_df.head()
 </div>
 
 
-
 I already know I want to use the n-grams as my unique identifier, which means I'll need to create a separate dataframe for each set of frequencies - mixing unigrams with bigrams wouldn't let me do the analysis I want. This both simplifies and complicates the process, since I won't be able to just add on to the same dataframe anymore.
 
 The `frequency_ct` and `dict_to_df` functions that I created in the previous solution to the homework still work. The only new aspect is that I need to put all the n-gram lists from the different scripts together. My initial thought was to use `list.expand`, but that would require looping through every row of the dataframe, which isn't the fastest or memory optimized solution.
@@ -210,9 +193,6 @@ Fortunately, there is an easy alternative: it's easily accomplished by using the
 auth_ngram_df['unigrams'].sum()[:10]
 ```
 
-
-
-
     ['youre',
      'traveling',
      'another',
@@ -223,7 +203,6 @@ auth_ngram_df['unigrams'].sum()[:10]
      'mind',
      'journey',
      'wondrous']
-
 
 
 Now that all of the ngrams are in a single list, it's a simple matter of creating a function to process them.
@@ -245,9 +224,6 @@ test_freq = frequency_ct(auth_ngram_df['unigrams'].sum())
 test_freq
 ```
 
-
-
-
     {'youre': 1410,
      'traveling': 71,
      'another': 358,
@@ -256,1000 +232,7 @@ test_freq
      'sound': 205,
      'mind': 422,
      'journey': 76,
-     'wondrous': 72,
-     'land': 180,
-     'whose': 100,
-     'boundaries': 60,
-     'imagination': 138,
-     'next': 390,
-     'stop': 260,
-     'twilight': 499,
-     'zone': 506,
-     'shes': 220,
-     'set': 95,
-     'mr': 1604,
-     'radin': 27,
-     'system': 36,
-     'check': 118,
-     'ready': 94,
-     'go': 987,
-     'dont': 2199,
-     'know': 1777,
-     'got': 1132,
-     'effects': 8,
-     'youd': 192,
-     'swear': 29,
-     'bomb': 52,
-     'exploding': 3,
-     'mean': 502,
-     'big': 203,
-     'thats': 1367,
-     'precisely': 42,
-     'way': 550,
-     'supposed': 72,
-     'quite': 171,
-     'setup': 1,
-     'part': 108,
-     'illusion': 27,
-     'room': 201,
-     'venture': 3,
-     'guess': 111,
-     'best': 152,
-     'designed': 23,
-     'shelter': 22,
-     'face': 121,
-     'earth': 194,
-     'knows': 94,
-     'hydrogen': 5,
-     'tonight': 160,
-     'gags': 2,
-     'huh': 256,
-     'something': 662,
-     'sort': 67,
-     'practical': 9,
-     'joke': 24,
-     'lets': 338,
-     'say': 657,
-     'start': 115,
-     'stuff': 71,
-     'screen': 12,
-     'world': 244,
-     'getting': 137,
-     'blasted': 2,
-     'idea': 124,
-     'three': 222,
-     'guests': 8,
-     'coming': 183,
-     'evening': 66,
-     'rather': 81,
-     'special': 76,
-     'fool': 30,
-     'friends': 93,
-     'must': 320,
-     'kind': 307,
-     'indeed': 93,
-     'looked': 57,
-     'takes': 62,
-     'place': 279,
-     '300': 19,
-     'feet': 54,
-     'underground': 6,
-     'beneath': 5,
-     'basement': 26,
-     'new': 269,
-     'york': 52,
-     'city': 76,
-     'skyscraper': 1,
-     'owned': 6,
-     'lived': 51,
-     'one': 1304,
-     'paul': 43,
-     'rich': 27,
-     'eccentric': 11,
-     'singleminded': 2,
-     'already': 107,
-     'perceive': 6,
-     'shall': 161,
-     'see': 954,
-     'moment': 181,
-     'entered': 7,
-     'good': 788,
-     'step': 55,
-     'across': 57,
-     'hall': 25,
-     'door': 197,
-     'straight': 30,
-     'ahead': 146,
-     'please': 595,
-     'come': 1071,
-     'sit': 182,
-     'make': 533,
-     'comfortable': 21,
-     'colonel': 92,
-     'hawthorne': 1,
-     'hughes': 4,
-     'mrs': 195,
-     'langsford': 16,
-     'isnt': 387,
-     'arent': 97,
-     'excellent': 21,
-     'memory': 23,
-     'reverend': 19,
-     'recognize': 22,
-     'believe': 225,
-     'served': 9,
-     'didnt': 485,
-     'second': 67,
-     'lieutenant': 64,
-     'infantry': 4,
-     'regiment': 2,
-     'command': 20,
-     'africa': 8,
-     '1942': 5,
-     'recall': 28,
-     'vaguely': 2,
-     'seem': 55,
-     'else': 196,
-     'surprising': 2,
-     'doesnt': 236,
-     'flood': 2,
-     'back': 733,
-     'thousand': 29,
-     'men': 207,
-     'courtmartial': 2,
-     'distinction': 9,
-     'reserved': 3,
-     'ah': 98,
-     'yes': 907,
-     'refused': 8,
-     'lead': 28,
-     'assault': 3,
-     'hill': 10,
-     'direct': 18,
-     'order': 57,
-     'delay': 3,
-     'cost': 32,
-     'us': 664,
-     'almost': 79,
-     'company': 52,
-     'contention': 1,
-     'board': 37,
-     'stripped': 2,
-     'rank': 8,
-     'dishonorably': 1,
-     'discharged': 9,
-     'fortunate': 6,
-     'dictated': 1,
-     'sentence': 12,
-     'would': 653,
-     'shot': 79,
-     'im': 1988,
-     'sure': 449,
-     'wretched': 1,
-     'host': 2,
-     'neglect': 1,
-     'lady': 88,
-     'present': 50,
-     'course': 244,
-     'taught': 8,
-     'high': 54,
-     'school': 53,
-     'forget': 103,
-     'students': 4,
-     'oh': 1580,
-     'sometimes': 49,
-     'names': 39,
-     'faces': 13,
-     'get': 1286,
-     'confused': 3,
-     'prod': 2,
-     'usually': 19,
-     'connect': 5,
-     'name': 267,
-     'case': 107,
-     'character': 23,
-     'flunked': 4,
-     'dressed': 11,
-     'entire': 46,
-     'class': 18,
-     'called': 168,
-     'humiliated': 4,
-     'well': 2272,
-     'let': 459,
-     'delighted': 11,
-     'accepted': 4,
-     'invitation': 7,
-     'request': 19,
-     'ultimatum': 1,
-     'chauffeur': 5,
-     'said': 371,
-     'matter': 286,
-     'life': 274,
-     'death': 131,
-     'broached': 1,
-     'dinner': 67,
-     'wife': 135,
-     'mary': 29,
-     'went': 166,
-     'answer': 81,
-     'came': 186,
-     'strange': 64,
-     'expression': 5,
-     'youve': 422,
-     'never': 511,
-     'ceased': 3,
-     'bit': 95,
-     'wordy': 1,
-     'side': 55,
-     'odd': 63,
-     'really': 338,
-     'changeless': 2,
-     'remain': 45,
-     'years': 344,
-     'suppose': 92,
-     'certain': 50,
-     'lifetime': 6,
-     'habits': 6,
-     'easily': 13,
-     'put': 300,
-     'aside': 16,
-     'perhaps': 111,
-     'enough': 200,
-     'tell': 894,
-     'weve': 194,
-     'asked': 70,
-     'id': 303,
-     'first': 283,
-     'highball': 1,
-     'cup': 36,
-     'coffee': 73,
-     'take': 641,
-     'incredible': 47,
-     'persistence': 1,
-     'call': 313,
-     'still': 240,
-     'sitting': 44,
-     'front': 61,
-     'row': 11,
-     'classroom': 2,
-     'nice': 163,
-     'tea': 21,
-     'thank': 336,
-     'tot': 1,
-     'rum': 4,
-     'appreciate': 32,
-     'made': 222,
-     'point': 114,
-     'leave': 256,
-     'obviously': 30,
-     'welcome': 32,
-     'hearing': 24,
-     'whatever': 73,
-     'staunchly': 1,
-     'military': 10,
-     'drive': 62,
-     'objective': 1,
-     'wipe': 9,
-     'red': 30,
-     'flag': 11,
-     'map': 9,
-     'troops': 4,
-     'sun': 59,
-     'nerves': 10,
-     'steel': 37,
-     'concrete': 8,
-     'head': 118,
-     'longer': 42,
-     'attention': 32,
-     'specific': 15,
-     'purpose': 21,
-     'want': 919,
-     'settle': 18,
-     'old': 526,
-     'scores': 2,
-     'chronology': 8,
-     'dear': 166,
-     'schoolmarm': 5,
-     'begin': 34,
-     'staunch': 2,
-     'intrepid': 3,
-     'educator': 1,
-     'looks': 98,
-     'without': 138,
-     'severe': 4,
-     'spectacles': 1,
-     'covering': 7,
-     'eyes': 86,
-     'looking': 134,
-     'possessing': 1,
-     'vast': 11,
-     'prerogative': 3,
-     'comes': 110,
-     'courage': 11,
-     'pitting': 2,
-     'wits': 3,
-     'instinct': 2,
-     'knowledge': 19,
-     'captive': 1,
-     'children': 77,
-     'finished': 43,
-     'ive': 627,
-     'hardly': 31,
-     'begun': 10,
-     'may': 263,
-     'observation': 13,
-     'comment': 10,
-     'whole': 173,
-     'thing': 479,
-     'man': 807,
-     'like': 1309,
-     'millionaire': 8,
-     'times': 95,
-     'important': 73,
-     'walks': 12,
-     'kings': 6,
-     'heads': 32,
-     'state': 87,
-     'industrial': 4,
-     'tycoons': 2,
-     'tiny': 15,
-     'could': 574,
-     'brood': 2,
-     'incident': 8,
-     '20': 75,
-     'ago': 162,
-     'fester': 1,
-     'inside': 91,
-     'done': 177,
-     'liked': 13,
-     'humiliation': 4,
-     'whether': 53,
-     'happened': 170,
-     'past': 67,
-     'ten': 153,
-     'minutes': 131,
-     'right': 1428,
-     'talk': 267,
-     'caught': 34,
-     'cheating': 6,
-     'examination': 4,
-     'crime': 13,
-     'indicative': 1,
-     'person': 51,
-     'accused': 4,
-     'act': 50,
-     'cocoon': 1,
-     'soon': 95,
-     'become': 45,
-     'tycoon': 3,
-     'tried': 82,
-     'plant': 26,
-     'crib': 3,
-     'sheets': 1,
-     'innocent': 10,
-     'student': 4,
-     'stood': 14,
-     'told': 272,
-     'exactly': 102,
-     'compassion': 16,
-     'iota': 1,
-     'sympathy': 11,
-     'poor': 72,
-     'frightened': 46,
-     'desperate': 10,
-     'boy': 311,
-     'dealt': 1,
-     'surprise': 35,
-     'lent': 2,
-     'neither': 30,
-     'handed': 6,
-     'wholesale': 6,
-     'cheap': 27,
-     'bubble': 3,
-     'gum': 5,
-     'recipient': 2,
-     'worthy': 7,
-     'devious': 2,
-     'dishonest': 4,
-     'troublemaker': 4,
-     'spite': 5,
-     'millions': 12,
-     'doubt': 53,
-     'even': 319,
-     'havent': 184,
-     'changed': 38,
-     'many': 156,
-     'passed': 13,
-     'time': 817,
-     'felt': 32,
-     'suffered': 11,
-     'indignities': 1,
-     'hands': 82,
-     'whats': 579,
-     'gained': 6,
-     'great': 165,
-     'deal': 68,
-     'example': 19,
-     'lack': 11,
-     'scandal': 2,
-     'destroyed': 14,
-     'reputation': 5,
-     'remember': 247,
-     'girl': 171,
-     'drove': 14,
-     'suicide': 16,
-     'early': 40,
-     'stage': 18,
-     'held': 18,
-     'honor': 26,
-     'regard': 3,
-     'devil': 49,
-     'figure': 73,
-     'speech': 18,
-     'built': 51,
-     'walls': 12,
-     '18': 6,
-     'inches': 4,
-     'reinforced': 1,
-     'around': 300,
-     'six': 108,
-     'generator': 2,
-     'air': 74,
-     'beyond': 95,
-     'storeroom': 1,
-     'size': 28,
-     'warehouse': 2,
-     'understand': 285,
-     'logistics': 2,
-     'occur': 16,
-     'toyouwhy': 1,
-     'gone': 119,
-     'trouble': 96,
-     'expense': 6,
-     'vigil': 1,
-     'long': 293,
-     'wait': 290,
-     'countdown': 5,
-     'walked': 21,
-     'listened': 9,
-     'keep': 275,
-     'abreast': 1,
-     'things': 330,
-     'going': 1139,
-     'happen': 162,
-     'pay': 114,
-     'service': 23,
-     'received': 10,
-     'interesting': 32,
-     'news': 40,
-     'end': 101,
-     'ladies': 49,
-     'gentlemen': 106,
-     '1145': 1,
-     'country': 78,
-     '30': 43,
-     'midnight': 24,
-     'dawn': 9,
-     'nothing': 395,
-     'left': 192,
-     'rubble': 7,
-     'bodies': 25,
-     'moments': 25,
-     'youll': 335,
-     'sirens': 1,
-     'shortly': 23,
-     'alert': 8,
-     'means': 91,
-     'missiles': 7,
-     'follow': 33,
-     'survive': 27,
-     'wish': 143,
-     'rest': 130,
-     'pallbearer': 3,
-     'civil': 11,
-     'defense': 16,
-     'announcer': 5,
-     'repeating': 5,
-     'declared': 5,
-     'takecover': 3,
-     'signal': 14,
-     'practice': 6,
-     'warning': 12,
-     'drill': 8,
-     'attack': 34,
-     'enemy': 30,
-     'forces': 8,
-     'expected': 10,
-     'seek': 15,
-     'nearest': 6,
-     'immediately': 30,
-     'home': 267,
-     'prepared': 19,
-     'toward': 23,
-     'center': 12,
-     'house': 134,
-     'possible': 73,
-     'outside': 81,
-     'radio': 74,
-     'type': 18,
-     'building': 51,
-     'lowest': 2,
-     'floor': 55,
-     'close': 79,
-     'safe': 30,
-     'test': 18,
-     'real': 211,
-     'comments': 4,
-     'little': 615,
-     'sophistry': 2,
-     'quote': 4,
-     'general': 94,
-     'grant': 28,
-     'enriching': 1,
-     'gospel': 2,
-     'silence': 9,
-     'repertoire': 1,
-     'pilgrims': 1,
-     'progress': 21,
-     'handle': 30,
-     'situation': 19,
-     'mental': 17,
-     'eraser': 1,
-     'reality': 13,
-     'hold': 136,
-     'die': 119,
-     'together': 125,
-     'turn': 83,
-     'stomach': 19,
-     'colonels': 2,
-     'schoolmarms': 2,
-     'precious': 16,
-     'hide': 18,
-     'sanctified': 1,
-     'flesh': 26,
-     'preoccupies': 1,
-     'someone': 73,
-     'love': 293,
-     'somebody': 150,
-     'theatrical': 2,
-     'burlesque': 5,
-     'legitimate': 5,
-     'decency': 2,
-     'depart': 7,
-     'fragment': 6,
-     'truth': 89,
-     'mouth': 39,
-     'scared': 53,
-     'miserably': 1,
-     'sell': 52,
-     'pound': 6,
-     'meant': 29,
-     'survival': 16,
-     'last': 282,
-     'words': 45,
-     'spoke': 12,
-     'died': 61,
-     'also': 75,
-     'worst': 25,
-     'falsehood': 2,
-     'ever': 285,
-     'uttered': 1,
-     'open': 121,
-     'possibly': 25,
-     'known': 73,
-     'difference': 62,
-     'hell': 100,
-     'reach': 42,
-     'homes': 10,
-     'happens': 87,
-     'drop': 21,
-     'pretenses': 2,
-     'constructed': 1,
-     'nonsense': 22,
-     'walk': 109,
-     'simply': 59,
-     'live': 180,
-     'permit': 8,
-     'luxury': 7,
-     'allow': 20,
-     'stay': 198,
-     'fact': 155,
-     'destroy': 37,
-     'ill': 896,
-     'repay': 2,
-     'compliment': 3,
-     'require': 11,
-     'eye': 41,
-     'primitive': 5,
-     'naked': 5,
-     'price': 31,
-     'interested': 22,
-     'presume': 12,
-     'submit': 5,
-     'probably': 89,
-     'gods': 11,
-     'meaning': 11,
-     'beg': 29,
-     'pardon': 35,
-     'ask': 171,
-     'forgiveness': 6,
-     'need': 237,
-     'knees': 6,
-     'perform': 9,
-     'function': 21,
-     'pretty': 110,
-     'sugar': 19,
-     'hows': 60,
-     'speak': 76,
-     'teacher': 5,
-     'exact': 7,
-     'favor': 30,
-     'spend': 25,
-     'quarter': 26,
-     'hour': 91,
-     'stray': 3,
-     'cat': 24,
-     'alone': 135,
-     'central': 17,
-     'park': 26,
-     'full': 74,
-     'strangers': 9,
-     'blind': 14,
-     'stupid': 41,
-     'none': 57,
-     'literally': 7,
-     'string': 14,
-     'silly': 30,
-     'lesson': 12,
-     'prayer': 11,
-     'sorry': 258,
-     'fine': 161,
-     'five': 122,
-     'theres': 509,
-     'elevator': 23,
-     'farce': 2,
-     'conclusion': 8,
-     'street': 101,
-     'panic': 17,
-     'frenzy': 1,
-     'horror': 9,
-     'salvation': 3,
-     'watch': 97,
-     'shoveled': 4,
-     'grave': 21,
-     'chance': 86,
-     'stinking': 3,
-     'throw': 41,
-     'drain': 2,
-     'infinitely': 2,
-     'valuable': 10,
-     'higher': 6,
-     'expensive': 12,
-     'amen': 152,
-     'try': 199,
-     'lonely': 29,
-     'use': 96,
-     'mirrors': 2,
-     'help': 266,
-     'radins': 1,
-     'itll': 94,
-     'fantasy': 19,
-     'parade': 4,
-     'illusions': 5,
-     'people': 448,
-     'justice': 17,
-     'dignity': 8,
-     'true': 97,
-     'authorities': 11,
-     'ordered': 11,
-     'imminent': 4,
-     'cover': 21,
-     'car': 146,
-     'driving': 19,
-     'away': 305,
-     'continue': 39,
-     'movement': 7,
-     'available': 14,
-     'refuge': 2,
-     'outdoors': 1,
-     'foot': 26,
-     'hurry': 56,
-     'anybody': 101,
-     'hey': 308,
-     'mac': 36,
-     'much': 405,
-     'wont': 285,
-     'listen': 241,
-     'move': 128,
-     'along': 87,
-     'worry': 80,
-     'okay': 175,
-     'gonna': 108,
-     'nobody': 101,
-     'break': 63,
-     'god': 137,
-     'dealer': 9,
-     'sits': 6,
-     'making': 69,
-     'imagines': 1,
-     'hes': 529,
-     'doomed': 7,
-     'perdition': 1,
-     'unutterable': 1,
-     'loneliness': 17,
-     'turned': 37,
-     'nightmare': 34,
-     'funeral': 16,
-     'manufactured': 7,
-     'rod': 59,
-     'serling': 141,
-     'creator': 56,
-     'ofthe': 44,
-     'weeks': 114,
-     'story': 174,
-     'message': 58,
-     'week': 190,
-     'offices': 6,
-     'charles': 26,
-     'beaumont': 13,
-     'dead': 181,
-     'mans': 46,
-     'shoes': 20,
-     'hobo': 2,
-     'recentlydeceased': 1,
-     'hoodlum': 1,
-     'discovers': 4,
-     'shoe': 6,
-     'fits': 6,
-     'wear': 36,
-     'services': 24,
-     'norm': 13,
-     'hope': 114,
-     'seat': 21,
-     'belts': 7,
-     'reduce': 3,
-     'serious': 40,
-     'injury': 3,
-     'onethird': 3,
-     'family': 48,
-     'security': 9,
-     'english': 21,
-     'draw': 13,
-     'perfect': 31,
-     'position': 32,
-     'fats': 48,
-     'brown': 28,
-     'sick': 90,
-     'pool': 70,
-     'cue': 13,
-     'randolph': 14,
-     'jesse': 40,
-     'cardiff': 12,
-     'hewasgood': 1,
-     'hear': 297,
-     '15': 40,
-     'every': 235,
-     'better': 323,
-     'buried': 24,
-     'ground': 34,
-     'alive': 93,
-     'beat': 65,
-     'give': 370,
-     'anything': 357,
-     'play': 187,
-     'game': 123,
-     'report': 60,
-     'listers': 2,
-     'chicago': 10,
-     'show': 150,
-     'lousy': 23,
-     'shark': 4,
-     'learn': 42,
-     'trying': 169,
-     'carries': 11,
-     'risks': 5,
-     'um': 63,
-     'legend': 6,
-     'impossible': 38,
-     'nothings': 12,
-     'less': 41,
-     'likely': 22,
-     'others': 47,
-     'rib': 3,
-     'james': 40,
-     'howard': 3,
-     'shock': 20,
-     'fire': 56,
-     'cook': 30,
-     'claim': 15,
-     'deep': 33,
-     'secondrate': 4,
-     'minute': 217,
-     'afraid': 144,
-     'look': 658,
-     'fooled': 7,
-     'seen': 160,
-     'skill': 5,
-     'knack': 1,
-     'style': 8,
-     'heats': 1,
-     'fold': 3,
-     'fair': 58,
-     'maybe': 326,
-     'change': 100,
-     'records': 6,
-     'job': 130,
-     'fat': 29,
-     'tin': 9,
-     'balloon': 7,
-     'waiting': 117,
-     'stick': 27,
-     'needle': 8,
-     'heres': 55,
-     'legends': 5,
-     'heard': 165,
-     'saw': 149,
-     'ninecushion': 1,
-     'bank': 26,
-     'hit': 59,
-     'ball': 72,
-     'hard': 60,
-     'table': 31,
-     'brains': 9,
-     'yeah': 524,
-     'stakes': 6,
-     'money': 155,
-     'worthwhile': 5,
-     'talking': 180,
-     'mister': 85,
-     'lose': 54,
-     'faith': 16,
-     'bad': 120,
-     'age': 61,
-     'jumped': 10,
-     'champion': 7,
-     'equal': 10,
-     'parts': 13,
-     'talent': 39,
-     'luck': 43,
-     'work': 201,
-     'nerve': 18,
-     'quality': 7,
-     'sadly': 1,
-     'insanity': 7,
-     'risk': 20,
-     'prefer': 12,
-     'player': 13,
-     'mark': 18,
-     'book': 67,
-     'proud': 20,
-     'wouldnt': 242,
-     'wrong': 194,
-     'hours': 153,
-     'nights': 53,
-     'slept': 5,
-     'owner': 10,
-     'closed': 31,
-     'movies': 10,
-     'dated': 2,
-     'read': 98,
-     'everything': 234,
-     'pushing': 6,
-     'race': 40,
-     'driver': 15,
-     'track': 21,
-     'whisper': 6,
-     'tazio': 1,
-     'nuvolarl': 1,
-     'nod': 3,
-     'bullring': 1,
-     'manolete': 1,
-     'faced': 4,
-     'daily': 4,
-     'grade': 1,
-     'playing': 40,
-     'nutty': 5,
-     'accept': 19,
-     'terms': 14,
-     'hunter': 5,
-     'elephant': 1,
-     'gun': 59,
-     'fencer': 1,
-     'uses': 5,
-     'blade': 2,
-     'lima': 1,
-     'st': 5,
-     'louis': 7,
-     '600': 10,
-     'yep': 6,
-     'living': 88,
-     '35': 5,
-     'rotation': 1,
-     'kelly': 9,
-     'uh': 569,
-     '141': 1,
-     'rack': 5,
-     'points': 12,
-     'coin': 8,
-     'toss': 2,
-     'tails': 3,
-     'thinking': 83,
-     'son': 97,
-     'breaks': 12,
-     'disadvantage': 2,
-     'scatters': 1,
-     'balls': 7,
-     'clear': 48,
-     'field': 20,
-     'wow': 7,
-     'two': 386,
-     'rail': 5,
-     'advantage': 6,
-     'given': 49,
-     'scatter': 1,
-     'funny': 81,
-     'sink': 6,
-     'run': 137,
-     'miss': 389,
-     'wide': 9,
-     'nine': 26,
-     'corner': 48,
-     'cushion': 1,
-     'kid': 83,
-     'knew': 91,
-     'lot': 136,
-     'guys': 69,
-     'music': 57,
-     'basketball': 1,
-     'feel': 209,
-     'pocket': 20,
-     'day': 306,
-     '16': 7,
-     'wandered': 3,
-     'cool': 23,
-     'dark': 50,
-     'underwater': 3,
-     'used': 163,
-     'picked': 37,
-     'played': 20,
-     'geometry': 4,
-     'mmhmm': 35,
-     'challenging': 2,
-     'form': 30,
-     'science': 22,
-     'precise': 6,
-     'angles': 2,
-     'sewed': 3,
-     'ha': 17,
-     'four': 136,
-     'twelve': 4,
-     '59': 2,
-     'seven': 44,
-     'young': 142,
-     'yet': 115,
-     'eleven': 6,
-     'eight': 46,
-     'needed': 25,
-     'win': 39,
-     'score': 10,
-     '299': 1,
-     '296': 1,
-     'cooped': 6,
-     'ought': 88,
-     'bench': 1,
-     'spent': 32,
-     'took': 113,
-     'places': 34,
-     'billiards': 7,
-     'uphill': 1,
-     'swam': 1,
-     'ocean': 16,
-     'think': 868,
-     'wonderful': 76,
-     'hurts': 15,
-     'rotting': 2,
      ...}
-
 
 
 Of course now that I have my counts, I want to sort the n-grams from most frequent to least frequent. My favorite method to do this? DataFrames.
@@ -1299,9 +282,6 @@ def create_frequencies(ngram_list, gram_name, corpus_name):
 auth_freq_df = create_frequencies(auth_ngram_df['unigrams'].sum(), 'unigram', 'authentic')
 auth_freq_df.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1362,8 +342,6 @@ auth_freq_df.head()
 </div>
 
 
-
-
 ```python
 test_file_path = os.path.join(os.getcwd(), 'data', '21st-century')
 raw_test_dict = load_files_to_dict(test_file_path, {})
@@ -1378,8 +356,6 @@ for script_group in list(test_ngram_dict.keys()):
 
 test_freq_dict['Pan_Am'].head()
 ```
-
-
 
 
 <div>
@@ -1441,10 +417,7 @@ test_freq_dict['Pan_Am'].head()
 </div>
 
 
-
 # Compare corpora
-
-
 
 The last piece of this homework challenge is to compare the authentic corpus (wrtten regarding the 1960s and penned in the 1960s) to the four test corpora (written regarding the 1960s but not penned until the 21st century).
 
@@ -1461,9 +434,6 @@ for script_group in list(test_freq_dict.keys()):
 ```python
 compare_dict['Pan_Am'].head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1536,7 +506,6 @@ compare_dict['Pan_Am'].head()
 </div>
 
 
-
 The equation I implemented in the previous solution to this homework was:
 
 ```
@@ -1553,11 +522,7 @@ In order to implement this in the various dataframes, I'll need a way to identif
 [compare_dict['Pan_Am'].columns[compare_dict['Pan_Am'].columns.str.contains('norm_freq')]]
 ```
 
-
-
-
     [Index(['Pan_Am_norm_freq', 'authentic_norm_freq'], dtype='object')]
-
 
 
 Referencing the dataframe by the dictionary and script group name is getting rather tedious, so I can just set the dictionary/script name as the dataframe I'm working with. This has a much cleaner appearance and, more importantly, is easier to read. Regardless of how good (or not) code is, it's much more common to have to read code in order to improve, maintain, update, or repair it than write it. My philosophy is to make code as easy to read as possible, so that my future self can decipher what I was thinking when I wrote it the first time around.
@@ -1569,11 +534,7 @@ test_cols = test.columns[test.columns.str.contains('norm_freq')]
 test_cols
 ```
 
-
-
-
     Index(['Pan_Am_norm_freq', 'authentic_norm_freq'], dtype='object')
-
 
 
 Now I can update my code to the more readable version. Since I use the test dataframe as the left object and the authentic dataframe as the right object in the join, I can count on the fact that the test:authentic columns will always be in the same order.
@@ -1594,8 +555,6 @@ for script_group in list(test_freq_dict.keys()):
 ```python
 compare_dict['Pan_Am'].head()
 ```
-
-
 
 
 <div>
@@ -1675,7 +634,6 @@ compare_dict['Pan_Am'].head()
 </div>
 
 
-
 ## High Ratios
 
 High ratios for the normalized frequency show unigrams that were used commonly in the 21st-century scripts, but were extremely rare (but present) in 1960s scripts.
@@ -1690,7 +648,6 @@ for script_group in compare_dict.keys():
 
     Pan_Am
     
-
 
 <div>
 <style scoped>
@@ -2175,11 +1132,8 @@ for script_group in compare_dict.keys():
 
 
     
-    
     Mad_Men
     
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2661,13 +1615,9 @@ for script_group in compare_dict.keys():
 </table>
 </div>
 
-
-    
     
     X-Men_First_Class
     
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3149,13 +2099,9 @@ for script_group in compare_dict.keys():
 </table>
 </div>
 
-
-    
     
     The_Kennedys
     
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3638,10 +2584,6 @@ for script_group in compare_dict.keys():
 </div>
 
 
-    
-    
-    
-
 
 ```python
 high_score_results = pd.DataFrame(columns = ['script', 'score'])
@@ -3721,8 +2663,6 @@ for script_group in compare_dict.keys():
 ```
 
     Pan_Am
-    
-
 
 <div>
 <style scoped>
@@ -4205,13 +3145,9 @@ for script_group in compare_dict.keys():
 </table>
 </div>
 
-
-    
     
     Mad_Men
     
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -4693,13 +3629,9 @@ for script_group in compare_dict.keys():
 </table>
 </div>
 
-
-    
     
     X-Men_First_Class
     
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -5183,11 +4115,8 @@ for script_group in compare_dict.keys():
 
 
     
-    
     The_Kennedys
     
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -5668,11 +4597,6 @@ for script_group in compare_dict.keys():
   </tbody>
 </table>
 </div>
-
-
-    
-    
-    
 
 
 ```python
