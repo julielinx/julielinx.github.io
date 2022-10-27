@@ -29,7 +29,7 @@ For brevity, I'll assume that SageMaker Studio and an IAM role with the appropri
 - For directions on setting up the SageMaker environment see [Onboard to Amazon SageMaker Domain Using Quick setup](https://docs.aws.amazon.com/sagemaker/latest/dg/onboard-quick-start.html)
 - For directions on setting up an AWS account and IAM role see [Set Up Amazon SageMaker Prerequisites](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-set-up.html)
 
-This notebook can be run Jupyter Notebook in SageMaker Studio or as a stand alone SageMaker Jupyter Notebook instance. It *may* work in a local environment where the AWS credentials are specified, but that use case hasn't been tried or tested. This series is designed to take advantage of the managed infrastructure and other benefits of using SageMaker Studio, so that will be the prefered environment for all posts in the series.
+This notebook can be run Jupyter Notebook in SageMaker Studio or as a stand alone SageMaker Jupyter Notebook instance. It *may* work in a local environment where the AWS credentials are specified, but that use case hasn't been tried or tested. This series is designed to take advantage of the managed infrastructure and other benefits of using SageMaker Studio, so that will be the preferred environment for all posts in the series.
 
 ## Write data to S3
 
@@ -42,7 +42,7 @@ First, let's put some data into S3. The below cell reads in four files from the 
 I chose this data set for two main reasons:
 
 - The features represent both textual/categorical and numeric data types
-- Multile files are used to store the data
+- Multiple files are used to store the data
 
 It is common to have to clean data prior to training. This process can easily start with data in multiple files that need to go through an ETL (extract, transform, load) process before a final single file is produced.
 
@@ -67,9 +67,6 @@ ground_truth = pd.read_table(gt_uri, header=None)
 columns = pd.read_table(cols_uri, encoding='latin-1')
 train.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -274,7 +271,7 @@ To see your data in AWS, simply print the `bucket` and `prefix` name and visit t
 f'{bucket}/{prefix}'
 ```
 
-The acutal output has been removed for security purposes. Here is an example of what the output should look like:
+The actual output has been removed for security purposes. Here is an example of what the output should look like:
 
 ![file_path example](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_1_file_path_ex.png?raw=true)
 
@@ -520,7 +517,7 @@ s3_client = boto3.client("s3")
 s3_client.list_objects_v2(Bucket=bucket, Prefix=prefix)
 ```
 
-The acutal output has been removed for security purposes. Here is an example of what the output should look like:
+The actual output has been removed for security purposes. Here is an example of what the output should look like:
 
 ![1_2_client_output.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_2_client_output.png?raw=true)
 
@@ -532,7 +529,7 @@ s3_client = boto3.client("s3")
 s3_client.list_objects_v2(Bucket=bucket, Prefix=prefix)['Contents']
 ```
 
-The acutal output has been removed for security purposes. Here is an example of what the output should look like:
+The actual output has been removed for security purposes. Here is an example of what the output should look like:
 
 ![1_3_client_output_contents.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_3_client_output_contents.png?raw=true)
 
@@ -553,7 +550,7 @@ for object_summary in s3_bucket.objects.filter(Prefix=prefix):
     ins_dataset/raw/train.csv
 
 
-#### Comand line
+#### Command line
 
 
 ```python
@@ -561,7 +558,7 @@ file_path = f's3://{bucket}/{prefix}/raw/'
 file_path
 ```
 
-The acutal output has been removed for security purposes. Here is an example of what the output should look like:
+The actual output has been removed for security purposes. Here is an example of what the output should look like:
 
 ![1_4_s3_uri_ex.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_4_s3_uri_ex.png?raw=true)
 
@@ -628,7 +625,7 @@ for object_summary in s3_bucket.objects.filter(Prefix=prefix):
 files
 ```
 
-The acutal output has been removed for security purposes. Here is an example of what the output should look like:
+The actual output has been removed for security purposes. Here is an example of what the output should look like:
 
 ![1_5_resource_output.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_5_resource_output.png?raw=true)
 
@@ -698,6 +695,6 @@ s3_bucket = s3_resource.Bucket(bucket)
 s3_bucket.objects.filter(Prefix=prefix).delete()
 ```
 
-The acutal output has been removed for security purposes. Here is an example of what the output should look like:
+The actual output has been removed for security purposes. Here is an example of what the output should look like:
 
 ![1_6_delete_files.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_6_delete_files.png?raw=true)
