@@ -1,5 +1,5 @@
 ---
-title: "Entry SM01: SageMaker Read/Write from/to S3"
+title: "Entry SM01: Using S3 from AWS's SageMaker"
 categories:
   - Blog
 tags:
@@ -9,9 +9,8 @@ tags:
   - s3
   - read from s3
   - write  to s3
+  - production pipeline
 ---
-
-# SageMaker and Production Pipelines
 
 There are a lot of considerations in moving from a local model used to train and predict on batch data to a production model. This series of posts explores how to create an MLOps compliant production pipeline using AWS's SageMaker Studio.
 
@@ -277,7 +276,7 @@ f'{bucket}/{prefix}'
 
 The acutal output has been removed for security purposes. Here is an example of what the output should look like:
 
-![file_path example](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_1_file_path_ex.png)
+![file_path example](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_1_file_path_ex.png?raw=true)
 
 ## Set Library Dependencies
 
@@ -301,12 +300,6 @@ import sys
 !{sys.executable} -m pip install category_encoders
 !{sys.executable} -m pip install pandas numpy --upgrade
 ```
-
-    [33mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv[0m[33m
-    [0m
-    [1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m A new release of pip available: [0m[31;49m22.2.2[0m[39;49m -> [0m[32;49m22.3[0m
-    [1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m To update, run: [0m[32;49mpip install --upgrade pip[0m
-   
 
 ```python
 pd.__version__
@@ -529,7 +522,7 @@ s3_client.list_objects_v2(Bucket=bucket, Prefix=prefix)
 
 The acutal output has been removed for security purposes. Here is an example of what the output should look like:
 
-![1_2_client_output.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_2_client_output.png)
+![1_2_client_output.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_2_client_output.png?raw=true)
 
 This is a lot of information and rather messy. We can narrow it down to just the information about the files by looking at the 'Contents'
 
@@ -541,7 +534,7 @@ s3_client.list_objects_v2(Bucket=bucket, Prefix=prefix)['Contents']
 
 The acutal output has been removed for security purposes. Here is an example of what the output should look like:
 
-![1_3_client_output_contents.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_3_client_output_contents.png)
+![1_3_client_output_contents.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_3_client_output_contents.png?raw=true)
 
 #### boto3.resource
 
@@ -570,7 +563,7 @@ file_path
 
 The acutal output has been removed for security purposes. Here is an example of what the output should look like:
 
-![1_4_s3_uri_ex.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_4_s3_uri_ex.png)
+![1_4_s3_uri_ex.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_4_s3_uri_ex.png?raw=true)
 
 We then include the `file_path` variable in a bash command entered right into the Jupyter cell.
 
@@ -637,7 +630,7 @@ files
 
 The acutal output has been removed for security purposes. Here is an example of what the output should look like:
 
-![1_5_resource_output.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_5_resource_output.png)
+![1_5_resource_output.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_5_resource_output.png?raw=true)
 
 From the dictionary of 'name' and 'URI' it's easy to create a dictionary of dataframes.
 
@@ -658,51 +651,38 @@ df_dict
     test
     train
 
-
     {'gt':       0
      0     0
      1     0
      2     1
-     3     0
-     4     0
      ...  ..
-     3996  0
-     3997  1
      3998  0
      3999  0
      4000  0
      
      [4001 rows x 1 columns],
+
      'test':                                                       0
      0     0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18...
      1     33,1,4,2,8,0,6,0,3,5,0,4,1,1,8,2,2,6,0,0,1,2,6...
      2     6,1,3,2,2,0,5,0,4,5,2,2,1,4,5,5,4,0,5,0,0,4,0,...
-     3     39,1,3,3,9,1,4,2,3,5,2,3,2,3,6,2,4,4,2,1,1,3,2...
-     4     9,1,2,3,3,2,3,2,4,5,4,1,2,4,4,2,4,4,2,1,1,5,1,...
      ...                                                 ...
-     3996  33,1,2,4,8,0,7,2,0,5,2,2,2,6,2,0,3,6,5,0,0,1,0...
-     3997  24,1,2,3,5,1,5,1,3,4,2,4,4,4,2,2,4,4,2,0,0,3,3...
      3998  36,1,2,3,8,1,5,1,3,7,0,2,2,5,3,2,3,4,2,0,0,3,4...
      3999  33,1,3,3,8,1,4,2,3,7,1,2,2,3,4,1,3,5,1,1,1,2,3...
      4000  8,1,2,3,2,4,3,0,3,5,2,2,0,6,3,8,0,1,8,0,0,0,0,...
      
      [4001 rows x 1 columns],
+
      'train':                                                       0
      0     0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18...
      1     33,1,3,2,8,0,5,1,3,7,0,2,1,2,6,1,2,7,1,0,1,2,5...
      2     37,1,2,2,8,1,4,1,4,6,2,2,0,4,5,0,5,4,0,0,0,5,0...
-     3     37,1,2,2,8,0,4,2,4,3,2,4,4,4,2,0,5,4,0,0,0,7,0...
-     4     9,1,3,3,3,2,3,2,4,5,2,2,2,3,4,3,4,2,4,0,0,3,1,...
      ...                                                 ...
-     5818  36,1,1,2,8,0,6,1,2,1,2,6,5,3,2,2,5,2,2,0,0,4,1...
-     5819  35,1,4,4,8,1,4,1,4,6,0,3,2,2,5,0,0,9,2,1,1,3,3...
      5820  33,1,3,4,8,0,6,0,3,5,1,4,3,3,4,0,1,8,1,0,0,2,3...
      5821  34,1,3,2,8,0,7,0,2,7,2,0,0,4,5,0,2,7,0,2,0,2,4...
      5822  33,1,3,3,8,0,6,1,2,7,1,2,1,4,4,1,2,6,1,0,1,3,2...
      
      [5823 rows x 1 columns]}
-
-
 
 ## Delete Files
 
@@ -713,7 +693,6 @@ To ensure no ongoing charges are charged to your account, you can delete the fil
 prefix = prefix + '/'
 ```
 
-
 ```python
 s3_bucket = s3_resource.Bucket(bucket)
 s3_bucket.objects.filter(Prefix=prefix).delete()
@@ -721,4 +700,4 @@ s3_bucket.objects.filter(Prefix=prefix).delete()
 
 The acutal output has been removed for security purposes. Here is an example of what the output should look like:
 
-![1_6_delete_files.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_6_delete_files.png)
+![1_6_delete_files.png](https://github.com/julielinx/aws_sagemaker/blob/main/images/1_6_delete_files.png?raw=true)
