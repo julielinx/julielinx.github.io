@@ -114,3 +114,4 @@ Information from Medium article [L1 and L2 Regularization](https://medium.com/da
 - [Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646)
 - [L1 and L2 Regularization](https://medium.com/datadriveninvestor/l1-l2-regularization-7f1b4fe948f2)
 - [Applied Predictive Modeling](https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn-ebook/dp/B00K15TZU0)
+- [Linear Algebra for Machine Learning - Vectors and their properties](https://www.coursera.org/learn/machine-learning-linear-algebra/lecture/5aEoU/vectors-and-their-properties)
